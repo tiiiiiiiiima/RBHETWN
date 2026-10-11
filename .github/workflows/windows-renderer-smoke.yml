@@ -1,0 +1,41 @@
+name: Windows renderer smoke
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  angle:
+    runs-on: windows-2025
+    timeout-minutes: 8
+    env:
+      ANGLE_DEFAULT_PLATFORM: warp
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check official Windows engine with ANGLE
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Force reports, package, engine | Out-Null
+          $url = 'https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_win64.exe.zip'
+          Invoke-WebRequest $url -OutFile package/engine.zip
+          if ((Get-FileHash package/engine.zip).Hash.ToLower() -ne 'e39986a178d585ce7ac198fb8de6ea436366dc0cc00e594810c2e3e104c04b90') { throw 'Official engine archive mismatch' }
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $zip = [System.IO.Compression.ZipFile]::OpenRead((Join-Path $PWD 'package/engine.zip'))
+          $entry = $zip.GetEntry('Godot_v4.6.3-stable_win64.exe')
+          $exe = Join-Path $PWD 'engine/GodotSmoke.exe'
+          [System.IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $exe)
+          $zip.Dispose()
+          if ((Get-FileHash $exe).Hash.ToLower() -ne 'ef90e929ba1a6a4322860285d97f40f4aa349c90329a91b0e8b55b8df0f4cb00') { throw 'Engine hash mismatch' }
+          Set-Content engine/project.godot 'config_version=5'
+          $script = Join-Path $PWD 'qa/renderer_smoke.gd'
+          $reports = Join-Path $PWD 'reports'
+          $p = Start-Process $exe -ArgumentList @('--path',(Join-Path $PWD 'engine'),'--rendering-method','gl_compatibility','--rendering-driver','opengl3_angle','--script',$script,'--log-file',(Join-Path $reports 'engine.log'),'--',"--report-dir=$reports") -PassThru
+          if (-not $p.WaitForExit(45000)) { $p.Kill(); throw 'ANGLE smoke timed out' }
+          if ($p.ExitCode -ne 0) { throw "ANGLE exit code $($p.ExitCode)" }
+          if (-not (Test-Path reports/renderer.json)) { throw 'Renderer report missing' }
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: renderer-smoke-${{ github.run_id }}
+          path: reports/
+          retention-days: 7
