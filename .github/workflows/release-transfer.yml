@@ -15,17 +15,13 @@ jobs:
       EXPECTED_SHA256: 4cee9b0de33e3addb789a41183b279b68becc43fe8ab82270a1eecac04eb49ca
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: release-transfer-0.22
-          path: transfer
       - name: Assemble and verify exact approved Windows ZIP
         shell: bash
         run: |
           python - <<'PY'
-          import hashlib, json, os
+          import hashlib, json, os, subprocess, tempfile
           from pathlib import Path
-          transfer = Path('transfer')
-          manifest = json.loads((transfer/'manifest.json').read_text())
+          manifest = json.loads(Path('qa/transfer-manifest.json').read_text())
           assert manifest['archive_name'] == 'Bakugan-0.22-Windows.zip'
           assert manifest['archive_sha256'] == os.environ['EXPECTED_SHA256']
           parts = manifest['parts']
@@ -37,10 +33,18 @@ jobs:
               for index, part in enumerate(parts):
                   assert part['index'] == index
                   assert part['name'] == f'parts/{index:03d}.bin'
-                  raw = (transfer/part['name']).read_bytes()
+                  # Fetch approved Git objects directly, avoiding a second full
+                  # Git pack and worktree. The disposable branch is retained
+                  # until the final Release asset is confirmed.
+                  with tempfile.TemporaryFile() as chunk:
+                      result = subprocess.run(['gh','api',
+                          f'repos/{os.environ["GITHUB_REPOSITORY"]}/git/blobs/{part["blob"]}',
+                          '--header','Accept: application/vnd.github.raw+json'], stdout=chunk, check=True)
+                      chunk.seek(0); raw = chunk.read()
                   assert len(raw) == part['bytes']
                   assert hashlib.sha256(raw).hexdigest() == part['sha256']
                   target.write(raw); full_hash.update(raw); total += len(raw)
+                  print(f'Assembled {index+1}/{len(parts)} verified parts', flush=True)
           assert total == manifest['bytes'] == 2026518418
           assert full_hash.hexdigest() == os.environ['EXPECTED_SHA256']
           Path('Bakugan-0.22-Windows.sha256').write_text(full_hash.hexdigest()+'  '+output.name+'\n')
