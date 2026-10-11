@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  # Read the draft release, attach diagnostics and publish only after success.
+  contents: write
 
 jobs:
   full-matches:
@@ -102,6 +103,14 @@ jobs:
           }
           if (-not $data.stages.save.saved.state_digest -or $data.stages.save.saved.state_digest -ne $data.stages.resume.resumed.state_digest) { throw 'Binary resumed-state digest mismatch' }
           "Native Windows matches, binary resume and results persistence passed. Software Mesa; no physical gamepad." >> $env:GITHUB_STEP_SUMMARY
+      - name: Attach successful Windows results and publish the prepared release
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          gh release upload $env:RELEASE_TAG reports/matches/summary.json reports/execution.json reports/resources.json reports/regressions.json --repo $env:GITHUB_REPOSITORY --clobber
+          if ($LASTEXITCODE -ne 0) { throw 'Windows diagnostics upload failed' }
+          gh release edit $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY --draft=false
+          if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }
       - name: Preserve diagnostics and screenshots
         if: always()
         uses: actions/upload-artifact@v4

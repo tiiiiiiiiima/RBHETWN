@@ -1,0 +1,54 @@
+name: Assemble approved release transfer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      EXPECTED_SHA256: 4cee9b0de33e3addb789a41183b279b68becc43fe8ab82270a1eecac04eb49ca
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release-transfer-0.22
+          path: transfer
+      - name: Assemble and verify exact approved Windows ZIP
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          transfer = Path('transfer')
+          manifest = json.loads((transfer/'manifest.json').read_text())
+          assert manifest['archive_name'] == 'Bakugan-0.22-Windows.zip'
+          assert manifest['archive_sha256'] == os.environ['EXPECTED_SHA256']
+          parts = manifest['parts']
+          assert len(parts) == 61
+          output = Path('Bakugan-0.22-Windows.zip')
+          total = 0
+          full_hash = hashlib.sha256()
+          with output.open('wb') as target:
+              for index, part in enumerate(parts):
+                  assert part['index'] == index
+                  assert part['name'] == f'parts/{index:03d}.bin'
+                  raw = (transfer/part['name']).read_bytes()
+                  assert len(raw) == part['bytes']
+                  assert hashlib.sha256(raw).hexdigest() == part['sha256']
+                  target.write(raw); full_hash.update(raw); total += len(raw)
+          assert total == manifest['bytes'] == 2026518418
+          assert full_hash.hexdigest() == os.environ['EXPECTED_SHA256']
+          Path('Bakugan-0.22-Windows.sha256').write_text(full_hash.hexdigest()+'  '+output.name+'\n')
+          print('Exact standalone ZIP reassembled; SHA-256 verified.')
+          PY
+      - name: Upload only to the prepared GitHub draft release
+        shell: bash
+        run: |
+          test "$(gh release view v0.22.0 --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          gh release upload v0.22.0 Bakugan-0.22-Windows.zip Bakugan-0.22-Windows.sha256 --repo "$GITHUB_REPOSITORY" --clobber
+          echo 'Standalone Windows ZIP and checksum uploaded to the draft. Run Windows 0.22 verification next.' >> "$GITHUB_STEP_SUMMARY"
