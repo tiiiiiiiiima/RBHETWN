@@ -1,0 +1,111 @@
+name: Windows 0.22 verification
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-matches:
+    runs-on: windows-2025
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: v0.22.0
+      ZIP_SHA256: 4cee9b0de33e3addb789a41183b279b68becc43fe8ab82270a1eecac04eb49ca
+      PCK_SHA256: e2e6d6ca3a390ff203fd9acac7568c29367f1cbcd10848692904fcaa134355b2
+      EXE_SHA256: ef90e929ba1a6a4322860285d97f40f4aa349c90329a91b0e8b55b8df0f4cb00
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and verify exact standalone release
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Force reports, package | Out-Null
+          gh release download $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY --pattern 'Bakugan-0.22-Windows.zip' --dir package
+          if ($LASTEXITCODE -ne 0) { throw 'Release download failed' }
+          $zip = Join-Path $PWD 'package/Bakugan-0.22-Windows.zip'
+          if ((Get-FileHash $zip -Algorithm SHA256).Hash.ToLower() -ne $env:ZIP_SHA256) { throw 'Release ZIP SHA-256 mismatch' }
+          # Stream extraction using .NET, without a second expanded archive in memory.
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          [System.IO.Compression.ZipFile]::ExtractToDirectory($zip, (Join-Path $PWD 'package'))
+          $game = Join-Path $PWD 'package/Bakugan-0.22-Windows'
+          $exe = Join-Path $game 'BakuganPrototype-Windows.exe'
+          $pck = Join-Path $game 'BakuganPrototype-Windows.pck'
+          if ((Get-FileHash $exe -Algorithm SHA256).Hash.ToLower() -ne $env:EXE_SHA256) { throw 'Official Windows EXE mismatch' }
+          if ((Get-FileHash $pck -Algorithm SHA256).Hash.ToLower() -ne $env:PCK_SHA256) { throw 'Tested PCK mismatch' }
+          @{os=[System.Runtime.InteropServices.RuntimeInformation]::OSDescription; runner=$env:RUNNER_OS; zip_sha256=$env:ZIP_SHA256; pck_sha256=$env:PCK_SHA256; exe_sha256=$env:EXE_SHA256; physical_gamepad_tested=$false} | ConvertTo-Json | Set-Content reports/execution.json
+          "GAME_DIR=$game" | Out-File $env:GITHUB_ENV -Encoding utf8 -Append
+      - name: Native Windows resources and regression checks
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $exe = Join-Path $env:GAME_DIR 'BakuganPrototype-Windows.exe'
+          $reports = Join-Path $PWD 'reports'
+          foreach ($test in @(@{script='qa/probe_ds_package.gd'; report='resources.json'}, @{script='qa/test_release22.gd'; report='regressions.json'})) {
+            $script = Join-Path $PWD $test.script
+            $report = Join-Path $reports $test.report
+            $log = Join-Path $reports ($test.report + '.log')
+            $p = Start-Process $exe -ArgumentList @('--headless','--audio-driver','Dummy','--script',$script,'--log-file',$log,'--',"--report=$report") -WorkingDirectory $env:GAME_DIR -PassThru
+            if (-not $p.WaitForExit(240000)) { $p.Kill(); throw "Timeout: $script" }
+            if ($p.ExitCode -ne 0) { throw "Exit code $($p.ExitCode): $script" }
+            if (-not (Test-Path $report)) { throw "Missing report: $report" }
+            $data = Get-Content $report -Raw | ConvertFrom-Json
+            if ($data.failures.Count -ne 0) { throw "Failed assertions: $script" }
+            if ($test.report -eq 'regressions.json' -and ($data.passed -ne $true -or $data.checks -ne 69)) { throw 'Regression report did not pass 69 assertions' }
+            if ($test.report -eq 'resources.json' -and ($data.version -ne '0.22.0' -or $data.native_ds_resource_count -ne 3098)) { throw 'Unexpected packaged resources' }
+          }
+      - name: Prepare isolated software OpenGL for the Windows runner
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          # CI-only Mesa DLLs; the released archive and official EXE remain unchanged.
+          $url = 'https://github.com/pal1000/mesa-dist-win/releases/download/26.2.4/mesa3d-26.2.4-release-msvc.7z'
+          $expected = '351fc8c8b695878ffb3eaa044b3ead08672a48b1a045e3c3e3975811df0f6695'
+          Invoke-WebRequest $url -OutFile mesa.7z
+          if ((Get-FileHash mesa.7z -Algorithm SHA256).Hash.ToLower() -ne $expected) { throw 'Mesa archive hash mismatch' }
+          & 'C:\Program Files\7-Zip\7z.exe' x mesa.7z '-omesa' '-y' | Out-Null
+          if ($LASTEXITCODE -ne 0) { throw 'Mesa extraction failed' }
+          Get-ChildItem mesa/x64 -Filter '*.dll' | Copy-Item -Destination $env:GAME_DIR
+          if (-not (Test-Path (Join-Path $env:GAME_DIR 'opengl32.dll'))) { throw 'Local OpenGL driver missing' }
+          "GALLIUM_DRIVER=llvmpipe" | Out-File $env:GITHUB_ENV -Encoding utf8 -Append
+          "LP_NUM_THREADS=4" | Out-File $env:GITHUB_ENV -Encoding utf8 -Append
+      - name: Play full matches and resume a live throw in new Windows processes
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $exe = Join-Path $env:GAME_DIR 'BakuganPrototype-Windows.exe'
+          $reports = Join-Path $PWD 'reports'
+          $suite = Join-Path $reports 'matches'
+          New-Item -ItemType Directory -Force $suite | Out-Null
+          # Regression tests have their own fixtures; reset only the disposable runner's QA profile.
+          $profile = Join-Path $env:APPDATA 'Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.22'
+          if (Test-Path $profile) { Remove-Item $profile -Recurse -Force }
+          $p = Start-Process $exe -ArgumentList @('--rendering-method','gl_compatibility','--audio-driver','Dummy','--script','res://scripts/release_verifier.gd','--log-file',(Join-Path $suite 'engine-quick.log'),'--','--verify-release',"--report-dir=$suite") -WorkingDirectory $env:GAME_DIR -PassThru
+          $deadline = (Get-Date).AddMinutes(12)
+          $summary = Join-Path $suite 'summary.json'
+          $complete = $false
+          while ((Get-Date) -lt $deadline) {
+            if (Test-Path $summary) {
+              try { $data = Get-Content $summary -Raw | ConvertFrom-Json } catch { $data = $null }
+              if ($null -ne $data -and $data.in_progress -eq $false) { $complete = $true; break }
+            }
+            Start-Sleep -Seconds 3
+          }
+          if (-not $complete) { throw 'Windows full-match suite timed out; inspect engine logs' }
+          if ($data.passed -ne $true -or $data.os -ne 'Windows' -or $data.windows_execution_tested -ne $true) { throw 'Native Windows full-match suite failed' }
+          foreach ($name in @('quick','save','resume')) {
+            $stage = $data.stages.$name
+            if ($stage.passed -ne $true -or $stage.run_id -ne $data.run_id) { throw "Invalid stage: $name" }
+            if ($stage.metrics.process_memory.available -ne $true) { throw "Windows memory counter unavailable: $name" }
+          }
+          if (-not $data.stages.save.saved.state_digest -or $data.stages.save.saved.state_digest -ne $data.stages.resume.resumed.state_digest) { throw 'Binary resumed-state digest mismatch' }
+          "Native Windows matches, binary resume and results persistence passed. Software Mesa; no physical gamepad." >> $env:GITHUB_STEP_SUMMARY
+      - name: Preserve diagnostics and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-qa-${{ github.run_id }}
+          path: reports/
+          retention-days: 7

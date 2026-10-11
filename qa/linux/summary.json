@@ -1,0 +1,1333 @@
+{
+	"in_progress": false,
+	"os": "Linux",
+	"passed": true,
+	"physical_gamepad_tested": false,
+	"process_restart_tested": true,
+	"run_id": "1791756807379-7529",
+	"stages": {
+		"quick": {
+			"captures": [
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/quick-aim.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/quick-rolling.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/quick-result.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/quick-battle_ready.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/quick-battle.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/quick-final.png"
+			],
+			"checks": [
+				{
+					"label": "A real full match reached its result",
+					"passed": true
+				},
+				{
+					"label": "Profile write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Results and rewards survive profile reload",
+					"passed": true
+				},
+				{
+					"label": "Completed match leaves no stale resume",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "/tmp/bakugan022-runtime/packed-final-qa/data/godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.22/profile.cfg",
+			"enemy_stats": {
+				"abilities": 0.0,
+				"battles": 1.0,
+				"captures": 1.0,
+				"collected_g": 20.0,
+				"double_stands": 1.0,
+				"hits": 3.0,
+				"mini_g": 154.0,
+				"misses": 1.0,
+				"throws": 4.0
+			},
+			"events": [
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 5.894
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 6.61
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 7.01
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 7.979
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 10.168
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 11.875
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 21.105
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 22.715
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 23.181
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 23.577
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 24.407
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 25.694
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 27.474
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 27.852
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 29.012
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 30.372
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 30.858
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 31.362
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 33.061
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 34.298
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 35.853
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 36.252
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 37.282
+				},
+				{
+					"phase": "place",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 38.682
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 38.922
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 39.798
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 40.359
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 42.705
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 43.914
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 46.977
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 47.495
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 49.672
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 50.862
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 51.318
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 51.804
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 53.56
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 60.123
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 60.575
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 63.059
+				},
+				{
+					"phase": "result",
+					"scores": [
+						3.0,
+						1.0
+					],
+					"t": 77.666
+				},
+				{
+					"phase": "finished",
+					"scores": [
+						3.0,
+						1.0
+					],
+					"t": 80.467
+				}
+			],
+			"finished": true,
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"journal": [
+				"Ты выиграл мини-игру и забирает ворота.",
+				"Карта недоступна: Эти ворота запрещают карты способностей.",
+				"Открыты ворота Stand Off: В этом бою нельзя играть способности.",
+				"Ускоритель разогнал сферу.",
+				"Бакуган стоит на воротах 29.",
+				"Gorem сохранил +20 G."
+			],
+			"metrics": {
+				"adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 319.0,
+				"marks": [
+					{
+						"at_ms": 1345.827,
+						"elapsed_ms": 1345.68,
+						"label": "main_ready",
+						"nodes": 1002.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 107217729.0
+					}
+				],
+				"os": "Linux",
+				"phases": {
+					"ai": {
+						"cpu_peak_ms": 247.815,
+						"fps": 7.48663513893795,
+						"frame_p95_ms": 145.555666666667,
+						"frame_p99_ms": 150.0,
+						"frames": 41.0,
+						"nodes_peak": 1070.0,
+						"orphans_peak": 0.0,
+						"seconds": 5.47642555555556,
+						"static_peak_bytes": 126623507.0,
+						"video_peak_bytes": 65743801.0
+					},
+					"aim": {
+						"cpu_peak_ms": 6111.917,
+						"fps": 7.67557325567115,
+						"frame_p95_ms": 149.283,
+						"frame_p99_ms": 149.283,
+						"frames": 14.0,
+						"nodes_peak": 1076.0,
+						"orphans_peak": 8.0,
+						"seconds": 1.823968,
+						"static_peak_bytes": 126742663.0,
+						"video_peak_bytes": 70192536.0
+					},
+					"battle": {
+						"cpu_peak_ms": 1078.374,
+						"fps": 7.52475247524752,
+						"frame_p95_ms": 143.836333333333,
+						"frame_p99_ms": 150.0,
+						"frames": 76.0,
+						"nodes_peak": 1092.0,
+						"orphans_peak": 0.0,
+						"seconds": 10.1,
+						"static_peak_bytes": 131785019.0,
+						"video_peak_bytes": 71522842.0
+					},
+					"battle_ready": {
+						"cpu_peak_ms": 241.94,
+						"fps": 7.13119254933002,
+						"frame_p95_ms": 140.229,
+						"frame_p99_ms": 140.229,
+						"frames": 1.0,
+						"nodes_peak": 1092.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.140229,
+						"static_peak_bytes": 131606167.0,
+						"video_peak_bytes": 71309370.0
+					},
+					"ds_scene": {
+						"cpu_peak_ms": 1361.107,
+						"fps": 7.49794852640899,
+						"frame_p95_ms": 147.814666666667,
+						"frame_p99_ms": 150.0,
+						"frames": 43.0,
+						"nodes_peak": 1107.0,
+						"orphans_peak": 0.0,
+						"seconds": 5.734902,
+						"static_peak_bytes": 131742491.0,
+						"video_peak_bytes": 71604198.0
+					},
+					"finished": {
+						"cpu_peak_ms": 134.51,
+						"fps": 7.4760951856439,
+						"frame_p95_ms": 133.759666666667,
+						"frame_p99_ms": 133.759666666667,
+						"frames": 1.0,
+						"nodes_peak": 1045.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.133759666666667,
+						"static_peak_bytes": 130935080.0,
+						"video_peak_bytes": 71432296.0
+					},
+					"flying": {
+						"cpu_peak_ms": 800.214,
+						"fps": 7.50133493584074,
+						"frame_p95_ms": 144.619,
+						"frame_p99_ms": 145.682,
+						"frames": 29.0,
+						"nodes_peak": 1074.0,
+						"orphans_peak": 0.0,
+						"seconds": 3.86597855555556,
+						"static_peak_bytes": 126685163.0,
+						"video_peak_bytes": 70175208.0
+					},
+					"result": {
+						"cpu_peak_ms": 705.214,
+						"fps": 7.89503798341214,
+						"frame_p95_ms": 146.038333333333,
+						"frame_p99_ms": 150.0,
+						"frames": 89.0,
+						"nodes_peak": 1085.0,
+						"orphans_peak": 0.0,
+						"seconds": 11.2729033333333,
+						"static_peak_bytes": 131649935.0,
+						"video_peak_bytes": 71567038.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 598.888,
+						"fps": 7.54072620544792,
+						"frame_p95_ms": 150.0,
+						"frame_p99_ms": 150.0,
+						"frames": 25.0,
+						"nodes_peak": 1074.0,
+						"orphans_peak": 0.0,
+						"seconds": 3.31533055555555,
+						"static_peak_bytes": 126715963.0,
+						"video_peak_bytes": 70194168.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 744837120.0,
+					"source": "proc/self/status",
+					"working_set_bytes": 744837120.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": false
+			},
+			"passed": true,
+			"player_stats": {
+				"abilities": 0.0,
+				"battles": 1.0,
+				"captures": 3.0,
+				"collected_g": 20.0,
+				"double_stands": 2.0,
+				"hits": 5.0,
+				"mini_g": 477.0,
+				"misses": 0.0,
+				"throws": 5.0
+			},
+			"run_id": "1791756807379-7529",
+			"scores": [
+				3.0,
+				1.0
+			],
+			"version": "0.22.0",
+			"winner": 0.0
+		},
+		"resume": {
+			"campaign_progress": {
+				"arenas": [
+					"ds_toy",
+					"ds_aquos"
+				],
+				"attributes": [
+					"Pyrus",
+					"Ventus",
+					"Aquos"
+				],
+				"cards": [
+					"ds_card_119",
+					"ds_card_217",
+					"ds_card_306",
+					"ds_card_408",
+					"ds_card_502",
+					"ds_card_604",
+					"ds_card_136",
+					"ds_card_201",
+					"ds_card_301",
+					"ds_card_401",
+					"ds_card_527",
+					"ds_card_602"
+				],
+				"chapter": 1.0,
+				"claimed": [
+					0.0
+				],
+				"coins": 90.0,
+				"completed": false,
+				"decks": {
+					"ability": [
+						"ds_card_408",
+						"ds_card_502",
+						"ds_card_604"
+					],
+					"gate": [
+						"ds_card_119",
+						"ds_card_217",
+						"ds_card_306"
+					]
+				},
+				"evolution_base": {
+
+				},
+				"levels": {
+
+				},
+				"schema": 1.0,
+				"species": [
+					"serpenoid",
+					"falconeer",
+					"juggernoid",
+					"dragonoid"
+				],
+				"team": [
+					"serpenoid",
+					"falconeer",
+					"juggernoid"
+				]
+			},
+			"captures": [
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/resume-rolling.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/resume-result.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/resume-battle_ready.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/resume-battle.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/resume-aim.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/resume-final.png"
+			],
+			"checks": [
+				{
+					"label": "Exact binary state matches after process restart",
+					"passed": true
+				},
+				{
+					"label": "A real full match reached its result",
+					"passed": true
+				},
+				{
+					"label": "Profile write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Results and rewards survive profile reload",
+					"passed": true
+				},
+				{
+					"label": "Completed match leaves no stale resume",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "/tmp/bakugan022-runtime/packed-final-qa/data/godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.22/profile.cfg",
+			"enemy_stats": {
+				"abilities": 0.0,
+				"battles": 2.0,
+				"captures": 0.0,
+				"collected_g": 20.0,
+				"double_stands": 0.0,
+				"hits": 2.0,
+				"mini_g": 109.0,
+				"misses": 1.0,
+				"throws": 3.0
+			},
+			"events": [
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.392
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 1.009
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 2.222
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 3.731
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 3.984
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 5.771
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 9.968
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 10.311
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 11.807
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 14.191
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 15.784
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 25.41
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 29.035
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 29.693
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 30.598
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 31.834
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 32.917
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 34.527
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 40.612
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 42.153
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 46.392
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 48.436
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 48.929
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 49.393
+				},
+				{
+					"phase": "double",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 51.84
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 52.002
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 53.108
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 54.701
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 55.031
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 56.084
+				},
+				{
+					"phase": "place",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 57.127
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 57.314
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 58.247
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 58.637
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 60.997
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 65.989
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 66.129
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 67.839
+				},
+				{
+					"phase": "result",
+					"scores": [
+						3.0,
+						0.0
+					],
+					"t": 78.705
+				},
+				{
+					"phase": "finished",
+					"scores": [
+						3.0,
+						0.0
+					],
+					"t": 81.444
+				}
+			],
+			"finished": true,
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"journal": [
+				"Ты выиграл мини-игру и забирает ворота.",
+				"Открыты ворота Stand Off: В этом бою нельзя играть способности.",
+				"Serpenoid сохранил +40 G.",
+				"Бакуган стоит на воротах 19.",
+				"Ускоритель разогнал сферу.",
+				"Ты забирает ворота 20."
+			],
+			"metrics": {
+				"adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 453.0,
+				"marks": [
+					{
+						"at_ms": 989.55,
+						"elapsed_ms": 989.475,
+						"label": "main_ready",
+						"nodes": 1002.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 107458797.0
+					}
+				],
+				"os": "Linux",
+				"phases": {
+					"ai": {
+						"cpu_peak_ms": 337.759,
+						"fps": 8.11910767037361,
+						"frame_p95_ms": 139.32,
+						"frame_p99_ms": 141.772333333333,
+						"frames": 30.0,
+						"nodes_peak": 1073.0,
+						"orphans_peak": 0.0,
+						"seconds": 3.69498733333333,
+						"static_peak_bytes": 132164050.0,
+						"video_peak_bytes": 57943293.0
+					},
+					"aim": {
+						"cpu_peak_ms": 347.502,
+						"fps": 7.45943002495179,
+						"frame_p95_ms": 144.618,
+						"frame_p99_ms": 144.618,
+						"frames": 10.0,
+						"nodes_peak": 1084.0,
+						"orphans_peak": 0.0,
+						"seconds": 1.340585,
+						"static_peak_bytes": 132275334.0,
+						"video_peak_bytes": 57969429.0
+					},
+					"battle": {
+						"cpu_peak_ms": 331.167,
+						"fps": 8.0645052231442,
+						"frame_p95_ms": 143.162333333333,
+						"frame_p99_ms": 148.614666666666,
+						"frames": 163.0,
+						"nodes_peak": 1092.0,
+						"orphans_peak": 0.0,
+						"seconds": 20.2120273333333,
+						"static_peak_bytes": 131686991.0,
+						"video_peak_bytes": 58007569.0
+					},
+					"battle_ready": {
+						"cpu_peak_ms": 134.358,
+						"fps": 7.18747080089987,
+						"frame_p95_ms": 139.131,
+						"frame_p99_ms": 139.131,
+						"frames": 1.0,
+						"nodes_peak": 1092.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.139131,
+						"static_peak_bytes": 131486355.0,
+						"video_peak_bytes": 53661226.0
+					},
+					"ds_scene": {
+						"cpu_peak_ms": 621.545,
+						"fps": 8.22655821733644,
+						"frame_p95_ms": 140.684333333333,
+						"frame_p99_ms": 143.564,
+						"frames": 107.0,
+						"nodes_peak": 1107.0,
+						"orphans_peak": 4.0,
+						"seconds": 13.0066544444444,
+						"static_peak_bytes": 131762783.0,
+						"video_peak_bytes": 58034029.0
+					},
+					"finished": {
+						"cpu_peak_ms": 161.32,
+						"fps": 9.54532438194025,
+						"frame_p95_ms": 104.763333333333,
+						"frame_p99_ms": 104.763333333333,
+						"frames": 1.0,
+						"nodes_peak": 1022.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.104763333333333,
+						"static_peak_bytes": 130755870.0,
+						"video_peak_bytes": 57923651.0
+					},
+					"flying": {
+						"cpu_peak_ms": 970.515,
+						"fps": 7.52072610875028,
+						"frame_p95_ms": 145.916666666667,
+						"frame_p99_ms": 146.967,
+						"frames": 26.0,
+						"nodes_peak": 1077.0,
+						"orphans_peak": 0.0,
+						"seconds": 3.457113,
+						"static_peak_bytes": 132233998.0,
+						"video_peak_bytes": 57943293.0
+					},
+					"result": {
+						"cpu_peak_ms": 615.713,
+						"fps": 8.22191720266604,
+						"frame_p95_ms": 142.046,
+						"frame_p99_ms": 150.0,
+						"frames": 89.0,
+						"nodes_peak": 1097.0,
+						"orphans_peak": 0.0,
+						"seconds": 10.8247258888889,
+						"static_peak_bytes": 132383070.0,
+						"video_peak_bytes": 58084633.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 905.836,
+						"fps": 7.67609629170741,
+						"frame_p95_ms": 150.0,
+						"frame_p99_ms": 150.0,
+						"frames": 26.0,
+						"nodes_peak": 1077.0,
+						"orphans_peak": 8.0,
+						"seconds": 3.38713833333333,
+						"static_peak_bytes": 132252422.0,
+						"video_peak_bytes": 57961605.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 503209984.0,
+					"source": "proc/self/status",
+					"working_set_bytes": 503209984.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": false
+			},
+			"passed": true,
+			"player_stats": {
+				"abilities": 1.0,
+				"battles": 2.0,
+				"captures": 3.0,
+				"collected_g": 60.0,
+				"double_stands": 1.0,
+				"hits": 4.0,
+				"mini_g": 1024.0,
+				"misses": 0.0,
+				"throws": 4.0
+			},
+			"resumed": {
+				"chapter": 0.0,
+				"collected": [],
+				"elapsed": 0.25,
+				"phase": "rolling",
+				"position": "(0.796561, 0.441, 6.208861)",
+				"rng_state": "-426044090118385693",
+				"scores": [
+					0.0,
+					0.0
+				],
+				"state_digest": "932189a229b67512a00165e557f60fb5dfe22757ce619dd6d122b43f6be1f639",
+				"velocity": "(2.640336, 0.0, -23.17054)"
+			},
+			"run_id": "1791756807379-7529",
+			"scores": [
+				3.0,
+				0.0
+			],
+			"version": "0.22.0",
+			"winner": 0.0
+		},
+		"save": {
+			"captures": [
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/save-preparation.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/save-aim.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/save-rolling.png",
+				"/workspace/bakugan-pc/builds/qa-0.22/packaged-suite/save-paused-mid-throw.png"
+			],
+			"checks": [
+				{
+					"label": "Paused flight checkpoint is valid",
+					"passed": true
+				},
+				{
+					"label": "Checkpoint write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "/tmp/bakugan022-runtime/packed-final-qa/data/godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.22/profile.cfg",
+			"events": [
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.032
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.991
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 1.265
+				}
+			],
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"metrics": {
+				"adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 5.0,
+				"marks": [
+					{
+						"at_ms": 994.886,
+						"elapsed_ms": 994.861,
+						"label": "main_ready",
+						"nodes": 1002.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 107223885.0
+					}
+				],
+				"os": "Linux",
+				"phases": {
+					"aim": {
+						"cpu_peak_ms": 850.368,
+						"fps": 7.7574002366007,
+						"frame_p95_ms": 141.151666666667,
+						"frame_p99_ms": 141.151666666667,
+						"frames": 2.0,
+						"nodes_peak": 1065.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.257818333333333,
+						"static_peak_bytes": 125828615.0,
+						"video_peak_bytes": 48220857.0
+					},
+					"campaign": {
+						"cpu_peak_ms": 0.0,
+						"fps": 23.7069817061125,
+						"frame_p95_ms": 42.1816666666667,
+						"frame_p99_ms": 42.1816666666667,
+						"frames": 1.0,
+						"nodes_peak": 1008.0,
+						"orphans_peak": 8.0,
+						"seconds": 0.0421816666666667,
+						"static_peak_bytes": 108879376.0,
+						"video_peak_bytes": 32522251.0
+					},
+					"flying": {
+						"cpu_peak_ms": 105.127,
+						"fps": 10.0,
+						"frame_p95_ms": 100.0,
+						"frame_p99_ms": 100.0,
+						"frames": 1.0,
+						"nodes_peak": 1058.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.1,
+						"static_peak_bytes": 125871843.0,
+						"video_peak_bytes": 48203529.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 105.127,
+						"fps": 6.66666666666667,
+						"frame_p95_ms": 150.0,
+						"frame_p99_ms": 150.0,
+						"frames": 1.0,
+						"nodes_peak": 1058.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.15,
+						"static_peak_bytes": 125922255.0,
+						"video_peak_bytes": 48222489.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 438059008.0,
+					"source": "proc/self/status",
+					"working_set_bytes": 437805056.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": false
+			},
+			"passed": true,
+			"run_id": "1791756807379-7529",
+			"saved": {
+				"chapter": 0.0,
+				"collected": [],
+				"elapsed": 0.25,
+				"phase": "rolling",
+				"position": "(0.796561, 0.441, 6.208861)",
+				"rng_state": "-426044090118385693",
+				"scores": [
+					0.0,
+					0.0
+				],
+				"state_digest": "932189a229b67512a00165e557f60fb5dfe22757ce619dd6d122b43f6be1f639",
+				"velocity": "(2.640336, 0.0, -23.17054)"
+			},
+			"version": "0.22.0"
+		}
+	},
+	"version": "0.22.0",
+	"windows_execution_tested": false
+}
