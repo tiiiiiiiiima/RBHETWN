@@ -471,7 +471,7 @@ func _build_hud() -> void:
 	zone.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bottom.add_child(zone)
 	target_text = _label(bottom, "", Vector2(870, 78), Vector2(480, 26), 12, MUTED)
-	_label(hud, "Bakugan Arena  •  v0.22", Vector2(29, 878), Vector2(450, 21), 10, MUTED)
+	_label(hud, "Bakugan Arena  •  v"+str(ProjectSettings.get_setting("application/config/version")).trim_suffix(".0"), Vector2(29, 878), Vector2(450, 21), 10, MUTED)
 	s_power_label = _label(hud,"",Vector2(24,620),Vector2(232,23),13,CYAN,true)
 	var controls = _label(hud, "МЫШЬ — цель   ·   ПРОБЕЛ — бросок   ·   T — траектория   ·   P — усиление   ·   WASD — движение   ·   SHIFT — тормоз   ·   ESC — пауза", Vector2(440, 878), Vector2(970, 21), 10, MUTED)
 	controls.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
@@ -1692,6 +1692,8 @@ func _show_menu() -> void:
 	overlay_resume.add_theme_font_size_override("font_size",15)
 	phase_text.text = "ГОТОВ К БОЮ?"
 	instruction.text = "Правила: %s   ·   Победы: %d   ·   Поражения: %d" % [rules_profile.to_upper(), wins, losses]
+	rules.teams[0]=Roster.make_team(selected_roster,selected_attributes,0,true)
+	if rules_profile=="ds": rules.teams[0]=DSProfiles.apply_team(rules.teams[0])
 	_refresh_hud()
 	_update_cards()
 

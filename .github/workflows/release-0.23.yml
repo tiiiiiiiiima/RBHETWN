@@ -15,7 +15,7 @@ jobs:
       zip_sha256: ${{ steps.build.outputs.zip_sha256 }}
     env:
       GH_TOKEN: ${{ github.token }}
-      PCK_SHA256: 338093c2b587743803ebba96eb0afe9f837d05fd9c242353155c88ae25f59f02
+      PCK_SHA256: d86260b819d0586161276aab77b87706f545133c5fdaba733237870f3a9c99e7
     steps:
       - uses: actions/checkout@v4
       - name: Download the pinned prior release as assembly input
@@ -84,7 +84,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       ANGLE_DEFAULT_PLATFORM: warp
       ZIP_SHA256: ${{ needs.assemble.outputs.zip_sha256 }}
-      PCK_SHA256: 338093c2b587743803ebba96eb0afe9f837d05fd9c242353155c88ae25f59f02
+      PCK_SHA256: d86260b819d0586161276aab77b87706f545133c5fdaba733237870f3a9c99e7
     steps:
       - uses: actions/checkout@v4
       - name: Download and verify the complete standalone release
