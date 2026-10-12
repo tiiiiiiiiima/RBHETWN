@@ -1,0 +1,2717 @@
+{
+	"checks": 542,
+	"controlled_input": true,
+	"duration_seconds": 10,
+	"examples": {
+		"ability_changes_winner": {
+			"blaze": true,
+			"decision_values": [
+				970,
+				910
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"gate": 136,
+			"mini": [
+				600,
+				600
+			],
+			"title": "Leonidas",
+			"winner": 0
+		},
+		"equal_input": {
+			"blaze": false,
+			"decision_values": [
+				890,
+				910
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"gate": 136,
+			"mini": [
+				600,
+				600
+			],
+			"title": "Leonidas",
+			"winner": 1
+		},
+		"gate_changes_winner": {
+			"blaze": false,
+			"decision_values": [
+				870,
+				850
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"gate": 119,
+			"mini": [
+				600,
+				600
+			],
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		"skill_overcomes_g": {
+			"blaze": false,
+			"decision_values": [
+				890,
+				597
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"gate": 136,
+			"mini": [
+				600,
+				287
+			],
+			"title": "Leonidas",
+			"winner": 0
+		}
+	},
+	"failures": [],
+	"frame_frequency_fix": true,
+	"frequency_comparison": {
+		"none": {
+			"120": {
+				"after": 0
+			},
+			"15": {
+				"after": 0
+			},
+			"30": {
+				"after": 0
+			},
+			"60": {
+				"after": 0
+			}
+		},
+		"ordinary": {
+			"120": {
+				"after": 287
+			},
+			"15": {
+				"after": 287
+			},
+			"30": {
+				"after": 287
+			},
+			"60": {
+				"after": 287
+			}
+		},
+		"strong": {
+			"120": {
+				"after": 600
+			},
+			"15": {
+				"after": 600
+			},
+			"30": {
+				"after": 600
+			},
+			"60": {
+				"after": 600
+			}
+		},
+		"weak": {
+			"120": {
+				"after": 95
+			},
+			"15": {
+				"after": 95
+			},
+			"30": {
+				"after": 95
+			},
+			"60": {
+				"after": 95
+			}
+		}
+	},
+	"full_physical_matches": false,
+	"input_event_rate": 30,
+	"limitations": [
+		"A controlled benchmark is not a human win-rate study.",
+		"Campaign AI and all six original minigame formulas require additional gameplay observations."
+	],
+	"nominal_weights_and_cap_changed": false,
+	"original_ds_formula_verified": false,
+	"passed": true,
+	"scenarios": [
+		{
+			"blaze": false,
+			"decision_values": [
+				290,
+				310
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "none",
+			"gate": 136,
+			"mini": [
+				0,
+				0
+			],
+			"player_input": "none",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				290,
+				405
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "weak",
+			"gate": 136,
+			"mini": [
+				0,
+				95
+			],
+			"player_input": "none",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				290,
+				597
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "ordinary",
+			"gate": 136,
+			"mini": [
+				0,
+				287
+			],
+			"player_input": "none",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				290,
+				910
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "strong",
+			"gate": 136,
+			"mini": [
+				0,
+				600
+			],
+			"player_input": "none",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				385,
+				310
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "none",
+			"gate": 136,
+			"mini": [
+				95,
+				0
+			],
+			"player_input": "weak",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				385,
+				405
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "weak",
+			"gate": 136,
+			"mini": [
+				95,
+				95
+			],
+			"player_input": "weak",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				385,
+				597
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "ordinary",
+			"gate": 136,
+			"mini": [
+				95,
+				287
+			],
+			"player_input": "weak",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				385,
+				910
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "strong",
+			"gate": 136,
+			"mini": [
+				95,
+				600
+			],
+			"player_input": "weak",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				577,
+				310
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "none",
+			"gate": 136,
+			"mini": [
+				287,
+				0
+			],
+			"player_input": "ordinary",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				577,
+				405
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "weak",
+			"gate": 136,
+			"mini": [
+				287,
+				95
+			],
+			"player_input": "ordinary",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				577,
+				597
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "ordinary",
+			"gate": 136,
+			"mini": [
+				287,
+				287
+			],
+			"player_input": "ordinary",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				577,
+				910
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "strong",
+			"gate": 136,
+			"mini": [
+				287,
+				600
+			],
+			"player_input": "ordinary",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				890,
+				310
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "none",
+			"gate": 136,
+			"mini": [
+				600,
+				0
+			],
+			"player_input": "strong",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				890,
+				405
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "weak",
+			"gate": 136,
+			"mini": [
+				600,
+				95
+			],
+			"player_input": "strong",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				890,
+				597
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "ordinary",
+			"gate": 136,
+			"mini": [
+				600,
+				287
+			],
+			"player_input": "strong",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				890,
+				910
+			],
+			"display_g": [
+				290,
+				310
+			],
+			"enemy_input": "strong",
+			"gate": 136,
+			"mini": [
+				600,
+				600
+			],
+			"player_input": "strong",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				370,
+				310
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "none",
+			"gate": 136,
+			"mini": [
+				0,
+				0
+			],
+			"player_input": "none",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				370,
+				405
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "weak",
+			"gate": 136,
+			"mini": [
+				0,
+				95
+			],
+			"player_input": "none",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				370,
+				597
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "ordinary",
+			"gate": 136,
+			"mini": [
+				0,
+				287
+			],
+			"player_input": "none",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				370,
+				910
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "strong",
+			"gate": 136,
+			"mini": [
+				0,
+				600
+			],
+			"player_input": "none",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				465,
+				310
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "none",
+			"gate": 136,
+			"mini": [
+				95,
+				0
+			],
+			"player_input": "weak",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				465,
+				405
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "weak",
+			"gate": 136,
+			"mini": [
+				95,
+				95
+			],
+			"player_input": "weak",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				465,
+				597
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "ordinary",
+			"gate": 136,
+			"mini": [
+				95,
+				287
+			],
+			"player_input": "weak",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				465,
+				910
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "strong",
+			"gate": 136,
+			"mini": [
+				95,
+				600
+			],
+			"player_input": "weak",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				657,
+				310
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "none",
+			"gate": 136,
+			"mini": [
+				287,
+				0
+			],
+			"player_input": "ordinary",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				657,
+				405
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "weak",
+			"gate": 136,
+			"mini": [
+				287,
+				95
+			],
+			"player_input": "ordinary",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				657,
+				597
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "ordinary",
+			"gate": 136,
+			"mini": [
+				287,
+				287
+			],
+			"player_input": "ordinary",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				657,
+				910
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "strong",
+			"gate": 136,
+			"mini": [
+				287,
+				600
+			],
+			"player_input": "ordinary",
+			"title": "Leonidas",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				970,
+				310
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "none",
+			"gate": 136,
+			"mini": [
+				600,
+				0
+			],
+			"player_input": "strong",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				970,
+				405
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "weak",
+			"gate": 136,
+			"mini": [
+				600,
+				95
+			],
+			"player_input": "strong",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				970,
+				597
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "ordinary",
+			"gate": 136,
+			"mini": [
+				600,
+				287
+			],
+			"player_input": "strong",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				970,
+				910
+			],
+			"display_g": [
+				370,
+				310
+			],
+			"enemy_input": "strong",
+			"gate": 136,
+			"mini": [
+				600,
+				600
+			],
+			"player_input": "strong",
+			"title": "Leonidas",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				270,
+				250
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "none",
+			"gate": 119,
+			"mini": [
+				0,
+				0
+			],
+			"player_input": "none",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				270,
+				345
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "weak",
+			"gate": 119,
+			"mini": [
+				0,
+				95
+			],
+			"player_input": "none",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				270,
+				537
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "ordinary",
+			"gate": 119,
+			"mini": [
+				0,
+				287
+			],
+			"player_input": "none",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				270,
+				850
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "strong",
+			"gate": 119,
+			"mini": [
+				0,
+				600
+			],
+			"player_input": "none",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				365,
+				250
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "none",
+			"gate": 119,
+			"mini": [
+				95,
+				0
+			],
+			"player_input": "weak",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				365,
+				345
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "weak",
+			"gate": 119,
+			"mini": [
+				95,
+				95
+			],
+			"player_input": "weak",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				365,
+				537
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "ordinary",
+			"gate": 119,
+			"mini": [
+				95,
+				287
+			],
+			"player_input": "weak",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				365,
+				850
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "strong",
+			"gate": 119,
+			"mini": [
+				95,
+				600
+			],
+			"player_input": "weak",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				557,
+				250
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "none",
+			"gate": 119,
+			"mini": [
+				287,
+				0
+			],
+			"player_input": "ordinary",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				557,
+				345
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "weak",
+			"gate": 119,
+			"mini": [
+				287,
+				95
+			],
+			"player_input": "ordinary",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				557,
+				537
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "ordinary",
+			"gate": 119,
+			"mini": [
+				287,
+				287
+			],
+			"player_input": "ordinary",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				557,
+				850
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "strong",
+			"gate": 119,
+			"mini": [
+				287,
+				600
+			],
+			"player_input": "ordinary",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				870,
+				250
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "none",
+			"gate": 119,
+			"mini": [
+				600,
+				0
+			],
+			"player_input": "strong",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				870,
+				345
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "weak",
+			"gate": 119,
+			"mini": [
+				600,
+				95
+			],
+			"player_input": "strong",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				870,
+				537
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "ordinary",
+			"gate": 119,
+			"mini": [
+				600,
+				287
+			],
+			"player_input": "strong",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				870,
+				850
+			],
+			"display_g": [
+				270,
+				250
+			],
+			"enemy_input": "strong",
+			"gate": 119,
+			"mini": [
+				600,
+				600
+			],
+			"player_input": "strong",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				350,
+				250
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "none",
+			"gate": 119,
+			"mini": [
+				0,
+				0
+			],
+			"player_input": "none",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				350,
+				345
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "weak",
+			"gate": 119,
+			"mini": [
+				0,
+				95
+			],
+			"player_input": "none",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				350,
+				537
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "ordinary",
+			"gate": 119,
+			"mini": [
+				0,
+				287
+			],
+			"player_input": "none",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				350,
+				850
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "strong",
+			"gate": 119,
+			"mini": [
+				0,
+				600
+			],
+			"player_input": "none",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				445,
+				250
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "none",
+			"gate": 119,
+			"mini": [
+				95,
+				0
+			],
+			"player_input": "weak",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				445,
+				345
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "weak",
+			"gate": 119,
+			"mini": [
+				95,
+				95
+			],
+			"player_input": "weak",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				445,
+				537
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "ordinary",
+			"gate": 119,
+			"mini": [
+				95,
+				287
+			],
+			"player_input": "weak",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				445,
+				850
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "strong",
+			"gate": 119,
+			"mini": [
+				95,
+				600
+			],
+			"player_input": "weak",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				637,
+				250
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "none",
+			"gate": 119,
+			"mini": [
+				287,
+				0
+			],
+			"player_input": "ordinary",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				637,
+				345
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "weak",
+			"gate": 119,
+			"mini": [
+				287,
+				95
+			],
+			"player_input": "ordinary",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				637,
+				537
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "ordinary",
+			"gate": 119,
+			"mini": [
+				287,
+				287
+			],
+			"player_input": "ordinary",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				637,
+				850
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "strong",
+			"gate": 119,
+			"mini": [
+				287,
+				600
+			],
+			"player_input": "ordinary",
+			"title": "Juggernoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				950,
+				250
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "none",
+			"gate": 119,
+			"mini": [
+				600,
+				0
+			],
+			"player_input": "strong",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				950,
+				345
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "weak",
+			"gate": 119,
+			"mini": [
+				600,
+				95
+			],
+			"player_input": "strong",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				950,
+				537
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "ordinary",
+			"gate": 119,
+			"mini": [
+				600,
+				287
+			],
+			"player_input": "strong",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				950,
+				850
+			],
+			"display_g": [
+				350,
+				250
+			],
+			"enemy_input": "strong",
+			"gate": 119,
+			"mini": [
+				600,
+				600
+			],
+			"player_input": "strong",
+			"title": "Juggernoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				210,
+				260
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "none",
+			"gate": 111,
+			"mini": [
+				0,
+				0
+			],
+			"player_input": "none",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				210,
+				355
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "weak",
+			"gate": 111,
+			"mini": [
+				0,
+				95
+			],
+			"player_input": "none",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				210,
+				547
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "ordinary",
+			"gate": 111,
+			"mini": [
+				0,
+				287
+			],
+			"player_input": "none",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				210,
+				860
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "strong",
+			"gate": 111,
+			"mini": [
+				0,
+				600
+			],
+			"player_input": "none",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				305,
+				260
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "none",
+			"gate": 111,
+			"mini": [
+				95,
+				0
+			],
+			"player_input": "weak",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				305,
+				355
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "weak",
+			"gate": 111,
+			"mini": [
+				95,
+				95
+			],
+			"player_input": "weak",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				305,
+				547
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "ordinary",
+			"gate": 111,
+			"mini": [
+				95,
+				287
+			],
+			"player_input": "weak",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				305,
+				860
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "strong",
+			"gate": 111,
+			"mini": [
+				95,
+				600
+			],
+			"player_input": "weak",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				497,
+				260
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "none",
+			"gate": 111,
+			"mini": [
+				287,
+				0
+			],
+			"player_input": "ordinary",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				497,
+				355
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "weak",
+			"gate": 111,
+			"mini": [
+				287,
+				95
+			],
+			"player_input": "ordinary",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				497,
+				547
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "ordinary",
+			"gate": 111,
+			"mini": [
+				287,
+				287
+			],
+			"player_input": "ordinary",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				497,
+				860
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "strong",
+			"gate": 111,
+			"mini": [
+				287,
+				600
+			],
+			"player_input": "ordinary",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				810,
+				260
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "none",
+			"gate": 111,
+			"mini": [
+				600,
+				0
+			],
+			"player_input": "strong",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				810,
+				355
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "weak",
+			"gate": 111,
+			"mini": [
+				600,
+				95
+			],
+			"player_input": "strong",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				810,
+				547
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "ordinary",
+			"gate": 111,
+			"mini": [
+				600,
+				287
+			],
+			"player_input": "strong",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				810,
+				860
+			],
+			"display_g": [
+				210,
+				260
+			],
+			"enemy_input": "strong",
+			"gate": 111,
+			"mini": [
+				600,
+				600
+			],
+			"player_input": "strong",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				290,
+				260
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "none",
+			"gate": 111,
+			"mini": [
+				0,
+				0
+			],
+			"player_input": "none",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				290,
+				355
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "weak",
+			"gate": 111,
+			"mini": [
+				0,
+				95
+			],
+			"player_input": "none",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				290,
+				547
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "ordinary",
+			"gate": 111,
+			"mini": [
+				0,
+				287
+			],
+			"player_input": "none",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				290,
+				860
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "strong",
+			"gate": 111,
+			"mini": [
+				0,
+				600
+			],
+			"player_input": "none",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				385,
+				260
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "none",
+			"gate": 111,
+			"mini": [
+				95,
+				0
+			],
+			"player_input": "weak",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				385,
+				355
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "weak",
+			"gate": 111,
+			"mini": [
+				95,
+				95
+			],
+			"player_input": "weak",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				385,
+				547
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "ordinary",
+			"gate": 111,
+			"mini": [
+				95,
+				287
+			],
+			"player_input": "weak",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				385,
+				860
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "strong",
+			"gate": 111,
+			"mini": [
+				95,
+				600
+			],
+			"player_input": "weak",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				577,
+				260
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "none",
+			"gate": 111,
+			"mini": [
+				287,
+				0
+			],
+			"player_input": "ordinary",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				577,
+				355
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "weak",
+			"gate": 111,
+			"mini": [
+				287,
+				95
+			],
+			"player_input": "ordinary",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				577,
+				547
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "ordinary",
+			"gate": 111,
+			"mini": [
+				287,
+				287
+			],
+			"player_input": "ordinary",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				577,
+				860
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "strong",
+			"gate": 111,
+			"mini": [
+				287,
+				600
+			],
+			"player_input": "ordinary",
+			"title": "Hydranoid",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				890,
+				260
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "none",
+			"gate": 111,
+			"mini": [
+				600,
+				0
+			],
+			"player_input": "strong",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				890,
+				355
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "weak",
+			"gate": 111,
+			"mini": [
+				600,
+				95
+			],
+			"player_input": "strong",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				890,
+				547
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "ordinary",
+			"gate": 111,
+			"mini": [
+				600,
+				287
+			],
+			"player_input": "strong",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				890,
+				860
+			],
+			"display_g": [
+				290,
+				260
+			],
+			"enemy_input": "strong",
+			"gate": 111,
+			"mini": [
+				600,
+				600
+			],
+			"player_input": "strong",
+			"title": "Hydranoid",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				250,
+				230
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "none",
+			"gate": 217,
+			"mini": [
+				0,
+				0
+			],
+			"player_input": "none",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				250,
+				325
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "weak",
+			"gate": 217,
+			"mini": [
+				0,
+				95
+			],
+			"player_input": "none",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				250,
+				517
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "ordinary",
+			"gate": 217,
+			"mini": [
+				0,
+				287
+			],
+			"player_input": "none",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				250,
+				830
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "strong",
+			"gate": 217,
+			"mini": [
+				0,
+				600
+			],
+			"player_input": "none",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				345,
+				230
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "none",
+			"gate": 217,
+			"mini": [
+				95,
+				0
+			],
+			"player_input": "weak",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				345,
+				325
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "weak",
+			"gate": 217,
+			"mini": [
+				95,
+				95
+			],
+			"player_input": "weak",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				345,
+				517
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "ordinary",
+			"gate": 217,
+			"mini": [
+				95,
+				287
+			],
+			"player_input": "weak",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				345,
+				830
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "strong",
+			"gate": 217,
+			"mini": [
+				95,
+				600
+			],
+			"player_input": "weak",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				537,
+				230
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "none",
+			"gate": 217,
+			"mini": [
+				287,
+				0
+			],
+			"player_input": "ordinary",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				537,
+				325
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "weak",
+			"gate": 217,
+			"mini": [
+				287,
+				95
+			],
+			"player_input": "ordinary",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				537,
+				517
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "ordinary",
+			"gate": 217,
+			"mini": [
+				287,
+				287
+			],
+			"player_input": "ordinary",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				537,
+				830
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "strong",
+			"gate": 217,
+			"mini": [
+				287,
+				600
+			],
+			"player_input": "ordinary",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				850,
+				230
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "none",
+			"gate": 217,
+			"mini": [
+				600,
+				0
+			],
+			"player_input": "strong",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				850,
+				325
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "weak",
+			"gate": 217,
+			"mini": [
+				600,
+				95
+			],
+			"player_input": "strong",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				850,
+				517
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "ordinary",
+			"gate": 217,
+			"mini": [
+				600,
+				287
+			],
+			"player_input": "strong",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": false,
+			"decision_values": [
+				850,
+				830
+			],
+			"display_g": [
+				250,
+				230
+			],
+			"enemy_input": "strong",
+			"gate": 217,
+			"mini": [
+				600,
+				600
+			],
+			"player_input": "strong",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				330,
+				230
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "none",
+			"gate": 217,
+			"mini": [
+				0,
+				0
+			],
+			"player_input": "none",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				330,
+				325
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "weak",
+			"gate": 217,
+			"mini": [
+				0,
+				95
+			],
+			"player_input": "none",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				330,
+				517
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "ordinary",
+			"gate": 217,
+			"mini": [
+				0,
+				287
+			],
+			"player_input": "none",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				330,
+				830
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "strong",
+			"gate": 217,
+			"mini": [
+				0,
+				600
+			],
+			"player_input": "none",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				425,
+				230
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "none",
+			"gate": 217,
+			"mini": [
+				95,
+				0
+			],
+			"player_input": "weak",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				425,
+				325
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "weak",
+			"gate": 217,
+			"mini": [
+				95,
+				95
+			],
+			"player_input": "weak",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				425,
+				517
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "ordinary",
+			"gate": 217,
+			"mini": [
+				95,
+				287
+			],
+			"player_input": "weak",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				425,
+				830
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "strong",
+			"gate": 217,
+			"mini": [
+				95,
+				600
+			],
+			"player_input": "weak",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				617,
+				230
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "none",
+			"gate": 217,
+			"mini": [
+				287,
+				0
+			],
+			"player_input": "ordinary",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				617,
+				325
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "weak",
+			"gate": 217,
+			"mini": [
+				287,
+				95
+			],
+			"player_input": "ordinary",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				617,
+				517
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "ordinary",
+			"gate": 217,
+			"mini": [
+				287,
+				287
+			],
+			"player_input": "ordinary",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				617,
+				830
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "strong",
+			"gate": 217,
+			"mini": [
+				287,
+				600
+			],
+			"player_input": "ordinary",
+			"title": "Aquos Vortex",
+			"winner": 1
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				930,
+				230
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "none",
+			"gate": 217,
+			"mini": [
+				600,
+				0
+			],
+			"player_input": "strong",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				930,
+				325
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "weak",
+			"gate": 217,
+			"mini": [
+				600,
+				95
+			],
+			"player_input": "strong",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				930,
+				517
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "ordinary",
+			"gate": 217,
+			"mini": [
+				600,
+				287
+			],
+			"player_input": "strong",
+			"title": "Aquos Vortex",
+			"winner": 0
+		},
+		{
+			"blaze": true,
+			"decision_values": [
+				930,
+				830
+			],
+			"display_g": [
+				330,
+				230
+			],
+			"enemy_input": "strong",
+			"gate": 217,
+			"mini": [
+				600,
+				600
+			],
+			"player_input": "strong",
+			"title": "Aquos Vortex",
+			"winner": 0
+		}
+	],
+	"scores": {
+		"none": 0,
+		"ordinary": 287,
+		"strong": 600,
+		"weak": 95
+	},
+	"version": "0.23.0"
+}

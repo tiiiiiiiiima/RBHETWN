@@ -1,0 +1,9 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.
+   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:7421)
+OpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)
+
+LIVE aim [0, 0] { "throws": 0, "hits": 0, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+LIVE flying [0, 0] { "throws": 0, "hits": 0, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+RELEASE CHECK save true []
+RELEASE CHECK save true []

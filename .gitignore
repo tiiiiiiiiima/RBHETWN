@@ -3,6 +3,3 @@
 *.exe
 reports/
 .godot/
-
-# Small documentation input for the approved release assembler.
-!qa/release-0.23/documents.zip

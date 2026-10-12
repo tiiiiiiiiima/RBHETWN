@@ -1,0 +1,8 @@
+{
+	"checks": 37,
+	"failures": [],
+	"full_physical_match": false,
+	"passed": true,
+	"prescribed_rule_fixture": true,
+	"version": "0.23.0"
+}

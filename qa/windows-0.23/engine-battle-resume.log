@@ -1,0 +1,14 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.
+   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:7421)
+OpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)
+
+LIVE battle [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 60, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE ds_scene [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 60, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE battle [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 60, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE ds_scene [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 60, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE battle [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 60, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE result [3, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 60, "battles": 1, "mini_g": 600, "abilities": 1, "captures": 3, "double_stands": 2 }
+LIVE finished [3, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 60, "battles": 1, "mini_g": 600, "abilities": 1, "captures": 3, "double_stands": 2 }
+RELEASE CHECK battle-resume true [3, 0]
+RELEASE SUITE true · Windows
