@@ -13,7 +13,7 @@ func run() -> void:
 	Saves.diagnostic_mode=false
 	check(Saves.resolve("user://profile.cfg")=="user://profile.cfg","Ordinary profile path is unchanged")
 	Saves.diagnostic_mode=true
-	check(Saves.resolve("user://profile.cfg")=="user://diagnostics/0.22/profile.cfg","QA profile is isolated")
+	check(Saves.resolve("user://profile.cfg")=="user://diagnostics/"+str(ProjectSettings.get_setting("application/config/version")).trim_suffix(".0")+"/profile.cfg","QA profile is isolated")
 	check(Saves.resolve(Saves.resolve("user://profile.cfg"))==Saves.resolve("user://profile.cfg"),"QA paths never acquire a second prefix")
 	check(Saves.resolve("/tmp/specified.cfg")=="/tmp/specified.cfg","Explicit external fixture paths stay intact")
 	var config:=ConfigFile.new(); config.set_value("deck","gates",[1,2,3])

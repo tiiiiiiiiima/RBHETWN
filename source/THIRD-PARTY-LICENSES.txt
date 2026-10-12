@@ -1,0 +1,163 @@
+
+Imported Bakugan assets — provenance notice for version 0.7
+=========================================================
+
+Source: Bakugan Battle Brawlers [v2.4], Tabletop Simulator Steam Workshop
+https://steamcommunity.com/sharedfiles/filedetails/?id=2480698294
+
+Workshop contributors named on the public page: MrZangetsu, Peridot,
+and Bakugan TTS Community. The description also credits Serr for help
+modeling Tentaclear. Imported OBJ geometry and diffuse/card textures
+remain work from their source; conversion to GLB and integration into
+this prototype do not change their authorship.
+
+69 core species, Closed and Stand toy states, and six attribute textures
+are mapped from the Workshop save. Stand means an open mechanical toy,
+not a monster battle form. The Models Resource Wii and DS pages returned
+HTTP 403; no monster or avatar assets from those pages are included.
+
+Original Bakugan characters, brand, game assets and card illustrations
+remain attributable to their original rights holders. The inspected
+Workshop page did not declare a separate Creative Commons license.
+This notice records provenance; it does not assign a new license to
+the original game or the community assets. Detailed source mappings and
+limitations are in ASSET-SOURCES-0.7.md (docs/ in the source package) and
+assets/imported/catalog.json and cards.json inside the game data.
+
+Godot Engine 4.6.3 uses the MIT license. Runtime packages include its
+full third-party dependency notices, exported from Engine license data,
+before this notice in THIRD-PARTY-LICENSES.txt. The engine MIT license
+is also included as GODOT-LICENSE.txt. DejaVu font notices are in
+FONT-LICENSE.txt (assets/FONT-LICENSE.txt in the source project).
+
+Additional imported resources — provenance notice for version 0.8
+================================================================
+
+Source: Bakugan Anime Style Format, Tabletop Simulator Steam Workshop
+https://steamcommunity.com/sharedfiles/filedetails/?id=3412700725
+The user supplied https://share.google/3LuahSzxTKkRx1G0t, which resolves
+to this public Workshop page.
+
+Contributors named on the inspected public page: MrZangetsu,
+Low Taper Fade Rat, laval2400, Maxh1gh and rush808. The description
+credits BakuganNewGame for card templates and MrZangetsu1997 for models,
+and names Workshop 2480698294 as its model dependency.
+
+30 previously absent ordinary species and 18 separate support/trap toys
+were mapped from the source save. Cosmetic skins of already imported
+species are excluded. Closed and open toys are distinct static models,
+not recovered animated transformations or monster battle forms.
+Original texture files remain unchanged; OBJ geometry is converted to
+normalized GLB. Native attribute availability is preserved.
+
+The additional art collection contains 636 distinct source card cells.
+Atlas cells are cropped without resizing or recoloring. Seven source
+card assets are MP4 videos; the shipped PNG is their first decoded frame,
+and source animation is not played. Art collection entries do not by
+themselves implement the printed effects.
+
+One source table-board model/texture and one panorama are adapted to
+the prototype field. Other furniture in the source is not claimed as
+original Bakugan Wii or Bloxugan combat levels.
+
+Detailed provenance, source URLs, SHA-256 values and transformations:
+ASSET-SOURCES-0.8.md (docs/ in source), assets/imported/catalog.json,
+assets/imported/source_cards.json and arenas/source_manifest.json.
+
+The playable anime-duel subset contains 70 gates (60 attribute gates
+and 10 commands) plus 20 abilities. It uses public descriptions from
+https://bloxugan.info/json/cards.json?=v14 . Attribution and limitations
+are recorded in BLOXUGAN-COMPARISON-0.8.md. This is a standalone fan
+adaptation, not an official Roblox/Bloxugan client or a complete copy.
+Resource integration does not change the original authorship or assign
+a new license to the original games, brands or community resources.
+
+Anime identity and support metadata — version 0.9
+================================================
+
+The new canonical_profiles.json records anime-character identity separately
+from physical toy colours and the older Wii-mode prototype balance. Source
+URLs, excerpts, confidence and per-attribute power variants accompany the
+recorded facts. Public encyclopedia tables and available indexed wiki
+excerpts support only the specific facts cited in each entry. Unknown or
+ambiguous starting G-Power remains explicitly conditional; the catalog is
+not attributed as a complete recovered table from the original games.
+
+The trap_profiles.json records 17 traps and the distinct paired support
+Shadow Wing. Printed support effects and source-format rules are credited
+to the previously listed Anime Style Format Workshop contributors. The
+source format's rule that traps lack their own G is recorded separately
+from any anime G, and native model colours do not establish anime identity.
+Battle deployment is a local adaptation. Metadata integration does not
+alter authorship of the source card art, text, geometry or textures.
+
+Fact-by-fact attribution and limitations: CANONICAL-PROFILES-0.9.md,
+TRAPS-0.9.md and the two JSON manifests (docs/ in the source package).
+
+User-supplied Nintendo DS resources — version 0.10
+=================================================
+
+Source: the user's Bakugan Battle Brawlers DS archive, downloaded using the
+provided Google Drive folder. ROM header BAKUGAN W, game code B6RE.
+Source archive SHA-256:
+4f369e92b78efdbca016a653a1b2638500bf2ecbe1cbd01464043e9e88c9c748
+Source ROM SHA-256:
+7185fc031847a8bd84ab44e802dd3c0184bd27e59563cf1fb4ccf55b6d0084bb
+
+Selected original models, textures, supported joint animations, UI graphics
+and text tables were converted for use in the standalone PC prototype.
+Original Bakugan game assets, characters, text, illustrations and branding
+remain attributable to their original rights holders. Conversion does not
+change authorship or assign a new open license to original game resources.
+The ROM, BIOS, native console executable code and raw extraction staging
+are not included in the project or release package.
+
+Model/environment conversion used apicula 0.1.1-dev:
+https://github.com/scurest/apicula
+Converter binary SHA-256:
+a31aa16867a4d30f9c16b2c10b76a8e6ae252426b18c1be7904c352435b9b088
+UI and message decoding uses the project's extraction tools. Per-file hashes,
+NitroFS paths, palette provenance and conversion limits remain in the PCK:
+assets/ds/models/model_manifest.json, assets/ds/arenas/arena_manifest.json,
+assets/ds/ui_manifest.json and assets/ds/messages.json.
+
+The PC battle layout, event-to-motion assignments, scene fitting and existing
+rules/physics are adaptations. Complete original DS screen sequencing, camera,
+material animation and obstacle physics are not attributed as recovered.
+Details: ASSET-SOURCES-0.10.md, DS-MODEL-CONVERSION.md, DS-ARENAS.md and
+DS-HUD-ASSETS.md (docs/ in the source project).
+
+User-supplied Nintendo DS audio — version 0.16
+Original ADX/AHX and SDAT waves/sequences from the user's Bakugan Battle
+Brawlers US DS archive. 29 music tracks, 254 effects, 326 English voice
+clips are decoded and encoded as OGG Vorbis. This import does not assign
+a new license to the original game music, voices or effects. See
+ASSET-SOURCES-0.16.md and assets/ds/audio/manifest.json for provenance.
+The extraction tools (vgmstream r2117, ndspy, ffmpeg) and the DS ROM are
+not redistributed in the Windows runtime package.
+
+0.17 donor assets: user-supplied Bakugan Defenders of the Core DS (B4BE).
+Original model, texture and animation rights remain with their original owners.
+Apicula converts native resources to GLB; the donor ROM and executable code are not distributed.
+See docs/ASSET-SOURCES-0.17.md and the embedded assets/doc/models/model_manifest.json.
+
+
+0.17.2 source provenance
+Monster batch — jacksamurai29, Steam Workshop 3696633172, Tabletop Simulator.
+https://steamcommunity.com/sharedfiles/filedetails/?id=3696633172
+[Bakugan] Battle Field — PenDragon, Steam Workshop 3256465343, SFM.
+https://steamcommunity.com/sharedfiles/filedetails/?id=3256465343
+Original authors/IP ownership retained; no new asset license is inferred
+from availability on Workshop. See ASSET-SOURCES-0.17.2.md for conversions,
+source hashes and limits. Donor scripts and executable code are not included.
+
+Version 0.21 animated DS human avatars
+=====================================
+18 original DS brawler meshes/textures with native joint BCA0 animation,
+converted using apicula to GLB. Indexed character names are from the
+original mes_StoryCharaName.mes. Per-file source hashes and native clips
+are retained in assets/ds/avatars/manifest.json inside the game PCK.
+Original game asset authorship and rights remain with their original owners.
+The PC tutorial, interface, input mappings and event dispatch are authored
+for this prototype. Numeric voice groups are not asserted to be verified
+character assignments. See ASSET-SOURCES-0.21.md for exact limits.
