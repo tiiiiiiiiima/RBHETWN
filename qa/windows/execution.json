@@ -1,0 +1,11 @@
+{
+  "runner": "Windows",
+  "os": "Microsoft Windows 10.0.26100",
+  "verifier_adapter": "external graphics/launcher arguments only",
+  "renderer_requested": "opengl3_angle",
+  "zip_sha256": "4cee9b0de33e3addb789a41183b279b68becc43fe8ab82270a1eecac04eb49ca",
+  "pck_sha256": "e2e6d6ca3a390ff203fd9acac7568c29367f1cbcd10848692904fcaa134355b2",
+  "exe_sha256": "ef90e929ba1a6a4322860285d97f40f4aa349c90329a91b0e8b55b8df0f4cb00",
+  "angle_platform": "warp",
+  "physical_gamepad_tested": false
+}

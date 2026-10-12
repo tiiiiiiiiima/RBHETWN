@@ -1,0 +1,45 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+OpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)
+
+LIVE rolling [0, 0] { "throws": 0, "hits": 0, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+LIVE result [0, 0] { "throws": 1, "hits": 1, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+LIVE ai [0, 0] { "throws": 1, "hits": 1, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+LIVE flying [0, 0] { "throws": 1, "hits": 1, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+LIVE result [0, 0] { "throws": 1, "hits": 1, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+LIVE aim [0, 0] { "throws": 1, "hits": 1, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+LIVE flying [0, 0] { "throws": 1, "hits": 1, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+LIVE rolling [0, 0] { "throws": 1, "hits": 1, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 0, "double_stands": 0 }
+LIVE result [1, 0] { "throws": 2, "hits": 2, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE ai [1, 0] { "throws": 2, "hits": 2, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE flying [1, 0] { "throws": 2, "hits": 2, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE result [1, 0] { "throws": 2, "hits": 2, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE aim [1, 0] { "throws": 2, "hits": 2, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE flying [1, 0] { "throws": 2, "hits": 2, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE rolling [1, 0] { "throws": 2, "hits": 2, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE result [1, 0] { "throws": 3, "hits": 3, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE ai [1, 0] { "throws": 3, "hits": 3, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE flying [1, 0] { "throws": 3, "hits": 3, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE result [1, 0] { "throws": 3, "hits": 3, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE aim [1, 0] { "throws": 3, "hits": 3, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE flying [1, 0] { "throws": 3, "hits": 3, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE rolling [1, 0] { "throws": 3, "hits": 3, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE double [1, 0] { "throws": 4, "hits": 4, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 1, "double_stands": 1 }
+LIVE result [2, 0] { "throws": 4, "hits": 4, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE ai [2, 0] { "throws": 4, "hits": 4, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE flying [2, 0] { "throws": 4, "hits": 4, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE result [2, 0] { "throws": 4, "hits": 4, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE aim [2, 0] { "throws": 4, "hits": 4, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE flying [2, 0] { "throws": 4, "hits": 4, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE rolling [2, 0] { "throws": 4, "hits": 4, "misses": 0, "collected_g": 0, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE result [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE ai [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE flying [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE result [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE aim [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE flying [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE rolling [2, 0] { "throws": 5, "hits": 5, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE double [2, 0] { "throws": 6, "hits": 6, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 2, "double_stands": 2 }
+LIVE result [3, 0] { "throws": 6, "hits": 6, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 3, "double_stands": 3 }
+LIVE finished [3, 0] { "throws": 6, "hits": 6, "misses": 0, "collected_g": 20, "battles": 0, "mini_g": 0, "abilities": 0, "captures": 3, "double_stands": 3 }
+RELEASE CHECK resume true [3, 0]
+RELEASE SUITE true · Windows

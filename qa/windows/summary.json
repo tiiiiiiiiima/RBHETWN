@@ -1,0 +1,1370 @@
+{
+	"in_progress": false,
+	"os": "Windows",
+	"passed": true,
+	"physical_gamepad_tested": false,
+	"process_restart_tested": true,
+	"run_id": "1791821483357-8116",
+	"stages": {
+		"quick": {
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-aim.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-rolling.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-result.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-battle_ready.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-battle.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-final.png"
+			],
+			"checks": [
+				{
+					"label": "A real full match reached its result",
+					"passed": true
+				},
+				{
+					"label": "Profile write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Results and rewards survive profile reload",
+					"passed": true
+				},
+				{
+					"label": "Completed match leaves no stale resume",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.22/profile.cfg",
+			"enemy_stats": {
+				"abilities": 1.0,
+				"battles": 3.0,
+				"captures": 1.0,
+				"collected_g": 40.0,
+				"double_stands": 0.0,
+				"hits": 3.0,
+				"mini_g": 371.0,
+				"misses": 1.0,
+				"throws": 4.0
+			},
+			"events": [
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 4.385
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 4.675
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 5.059
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 5.694
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 7.076
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 8.336
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 8.748
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 10.533
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 14.732
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 15.068
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 16.474
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 19.083
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 20.682
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 21.681
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 23.402
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 30.396
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 33.194
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 33.368
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 33.749
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 34.498
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 35.419
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 36.689
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 37.393
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 38.015
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 41.889
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 41.975
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 43.33
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 53.367
+				},
+				{
+					"phase": "place",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 56.136
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 56.276
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 56.959
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 57.43
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 58.432
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 59.357
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 60.586
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 61.009
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 61.908
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 65.822
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 65.926
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 67.238
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 77.29
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 80.05
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 80.239
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 80.738
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 81.357
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 82.308
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 83.578
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 89.003
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 89.92
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 90.114
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 90.562
+				},
+				{
+					"phase": "result",
+					"scores": [
+						3.0,
+						1.0
+					],
+					"t": 90.811
+				},
+				{
+					"phase": "finished",
+					"scores": [
+						3.0,
+						1.0
+					],
+					"t": 91.744
+				}
+			],
+			"finished": true,
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"journal": [
+				"Ты забирает ворота 29.",
+				"Ускоритель разогнал сферу.",
+				"Соперник промахнулся: собранный G потерян.",
+				"Бакуган стоит на воротах 29.",
+				"Ускоритель разогнал сферу.",
+				"Ты выиграл мини-игру и забирает ворота."
+			],
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 938.0,
+				"marks": [
+					{
+						"at_ms": 1064.795,
+						"elapsed_ms": 1064.758,
+						"label": "main_ready",
+						"nodes": 1002.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 108585384.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"ai": {
+						"cpu_peak_ms": 287.334,
+						"fps": 15.1514331492538,
+						"frame_p95_ms": 72.1073333333318,
+						"frame_p99_ms": 140.048333333333,
+						"frames": 75.0,
+						"nodes_peak": 1073.0,
+						"orphans_peak": 0.0,
+						"seconds": 4.95002679028379,
+						"static_peak_bytes": 135649533.0,
+						"video_peak_bytes": 78596612.0
+					},
+					"aim": {
+						"cpu_peak_ms": 4530.539,
+						"fps": 11.3075277915559,
+						"frame_p95_ms": 136.768666666666,
+						"frame_p99_ms": 136.768666666666,
+						"frames": 19.0,
+						"nodes_peak": 1084.0,
+						"orphans_peak": 8.0,
+						"seconds": 1.68029655555555,
+						"static_peak_bytes": 135815549.0,
+						"video_peak_bytes": 78613748.0
+					},
+					"battle": {
+						"cpu_peak_ms": 342.207,
+						"fps": 11.9097419863211,
+						"frame_p95_ms": 87.5,
+						"frame_p99_ms": 89.135,
+						"frames": 358.0,
+						"nodes_peak": 1092.0,
+						"orphans_peak": 0.0,
+						"seconds": 30.0594253352574,
+						"static_peak_bytes": 135066804.0,
+						"video_peak_bytes": 78630964.0
+					},
+					"battle_ready": {
+						"cpu_peak_ms": 84.587,
+						"fps": 12.2727272727273,
+						"frame_p95_ms": 81.4814814814815,
+						"frame_p99_ms": 81.4814814814815,
+						"frames": 1.0,
+						"nodes_peak": 1092.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0814814814814815,
+						"static_peak_bytes": 132592433.0,
+						"video_peak_bytes": 60007348.0
+					},
+					"ds_scene": {
+						"cpu_peak_ms": 840.36,
+						"fps": 12.2022562521892,
+						"frame_p95_ms": 85.4073333333334,
+						"frame_p99_ms": 148.295373737373,
+						"frames": 241.0,
+						"nodes_peak": 1107.0,
+						"orphans_peak": 4.0,
+						"seconds": 19.7504457388168,
+						"static_peak_bytes": 135130280.0,
+						"video_peak_bytes": 78657424.0
+					},
+					"finished": {
+						"cpu_peak_ms": 276.707,
+						"fps": 15.0,
+						"frame_p95_ms": 66.6666666666667,
+						"frame_p99_ms": 66.6666666666667,
+						"frames": 1.0,
+						"nodes_peak": 1045.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0666666666666667,
+						"static_peak_bytes": 134358691.0,
+						"video_peak_bytes": 78571754.0
+					},
+					"flying": {
+						"cpu_peak_ms": 4530.539,
+						"fps": 8.43788180193454,
+						"frame_p95_ms": 142.236333333333,
+						"frame_p99_ms": 148.419999999998,
+						"frames": 37.0,
+						"nodes_peak": 1077.0,
+						"orphans_peak": 0.0,
+						"seconds": 4.38498676190476,
+						"static_peak_bytes": 135710069.0,
+						"video_peak_bytes": 78615572.0
+					},
+					"result": {
+						"cpu_peak_ms": 416.92,
+						"fps": 12.7760932232396,
+						"frame_p95_ms": 100.170888888889,
+						"frame_p99_ms": 140.662,
+						"frames": 184.0,
+						"nodes_peak": 1088.0,
+						"orphans_peak": 0.0,
+						"seconds": 14.4018986700337,
+						"static_peak_bytes": 135840081.0,
+						"video_peak_bytes": 78675160.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 423.942,
+						"fps": 7.64153600894382,
+						"frame_p95_ms": 140.93433333333,
+						"frame_p99_ms": 145.992333333336,
+						"frames": 22.0,
+						"nodes_peak": 1077.0,
+						"orphans_peak": 0.0,
+						"seconds": 2.87900233333334,
+						"static_peak_bytes": 135720161.0,
+						"video_peak_bytes": 78615572.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 627974144.0,
+					"source": "Get-Process",
+					"working_set_bytes": 622477312.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"player_stats": {
+				"abilities": 1.0,
+				"battles": 3.0,
+				"captures": 3.0,
+				"collected_g": 20.0,
+				"double_stands": 1.0,
+				"hits": 5.0,
+				"mini_g": 1800.0,
+				"misses": 0.0,
+				"throws": 5.0
+			},
+			"run_id": "1791821483357-8116",
+			"scores": [
+				3.0,
+				1.0
+			],
+			"version": "0.22.0",
+			"winner": 0.0
+		},
+		"resume": {
+			"campaign_progress": {
+				"arenas": [
+					"ds_toy",
+					"ds_aquos"
+				],
+				"attributes": [
+					"Pyrus",
+					"Ventus",
+					"Aquos"
+				],
+				"cards": [
+					"ds_card_119",
+					"ds_card_217",
+					"ds_card_306",
+					"ds_card_408",
+					"ds_card_502",
+					"ds_card_604",
+					"ds_card_136",
+					"ds_card_201",
+					"ds_card_301",
+					"ds_card_401",
+					"ds_card_527",
+					"ds_card_602"
+				],
+				"chapter": 1.0,
+				"claimed": [
+					0.0
+				],
+				"coins": 90.0,
+				"completed": false,
+				"decks": {
+					"ability": [
+						"ds_card_408",
+						"ds_card_502",
+						"ds_card_604"
+					],
+					"gate": [
+						"ds_card_119",
+						"ds_card_217",
+						"ds_card_306"
+					]
+				},
+				"evolution_base": {
+
+				},
+				"levels": {
+
+				},
+				"schema": 1.0,
+				"species": [
+					"serpenoid",
+					"falconeer",
+					"juggernoid",
+					"dragonoid"
+				],
+				"team": [
+					"serpenoid",
+					"falconeer",
+					"juggernoid"
+				]
+			},
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-rolling.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-result.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-aim.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-final.png"
+			],
+			"checks": [
+				{
+					"label": "Exact binary state matches after process restart",
+					"passed": true
+				},
+				{
+					"label": "A real full match reached its result",
+					"passed": true
+				},
+				{
+					"label": "Profile write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Results and rewards survive profile reload",
+					"passed": true
+				},
+				{
+					"label": "Completed match leaves no stale resume",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.22/profile.cfg",
+			"enemy_stats": {
+				"abilities": 0.0,
+				"battles": 0.0,
+				"captures": 0.0,
+				"collected_g": 0.0,
+				"double_stands": 0.0,
+				"hits": 0.0,
+				"mini_g": 0.0,
+				"misses": 5.0,
+				"throws": 5.0
+			},
+			"events": [
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.353
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.852
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 1.96
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 3.127
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 7.009
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 7.939
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 8.287
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 8.674
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 9.156
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 10.068
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 11.276
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 16.484
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 17.477
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 17.668
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 17.839
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 19.131
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 20.064
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 21.226
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 26.43
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 27.351
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 27.515
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 27.916
+				},
+				{
+					"phase": "double",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 28.64
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 28.713
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 29.69
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 30.883
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 34.576
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 35.56
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 35.736
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 36.159
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 36.4
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 37.317
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 38.542
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 42.302
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 43.222
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 43.398
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 43.83
+				},
+				{
+					"phase": "double",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 44.3
+				},
+				{
+					"phase": "result",
+					"scores": [
+						3.0,
+						0.0
+					],
+					"t": 44.374
+				},
+				{
+					"phase": "finished",
+					"scores": [
+						3.0,
+						0.0
+					],
+					"t": 45.362
+				}
+			],
+			"finished": true,
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"journal": [
+				"Ты забирает ворота 28.",
+				"Соперник промахнулся: собранный G потерян.",
+				"Бакуган стоит на воротах 28.",
+				"Falconeer сохранил +20 G.",
+				"Соперник промахнулся: собранный G потерян.",
+				"Соперник добавляет закрытые ворота 28."
+			],
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 379.0,
+				"marks": [
+					{
+						"at_ms": 1156.606,
+						"elapsed_ms": 1156.584,
+						"label": "main_ready",
+						"nodes": 1002.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 108826712.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"ai": {
+						"cpu_peak_ms": 277.493,
+						"fps": 15.6653819514587,
+						"frame_p95_ms": 67.7013333333335,
+						"frame_p99_ms": 83.0733333333333,
+						"frames": 93.0,
+						"nodes_peak": 1065.0,
+						"orphans_peak": 0.0,
+						"seconds": 5.93665703703704,
+						"static_peak_bytes": 127672018.0,
+						"video_peak_bytes": 65601723.0
+					},
+					"aim": {
+						"cpu_peak_ms": 265.881,
+						"fps": 11.1762360438083,
+						"frame_p95_ms": 148.505777777778,
+						"frame_p99_ms": 148.505777777778,
+						"frames": 10.0,
+						"nodes_peak": 1076.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.894755619047619,
+						"static_peak_bytes": 127858595.0,
+						"video_peak_bytes": 65619363.0
+					},
+					"finished": {
+						"cpu_peak_ms": 69.603,
+						"fps": 15.3488372093023,
+						"frame_p95_ms": 65.1515151515152,
+						"frame_p99_ms": 65.1515151515152,
+						"frames": 1.0,
+						"nodes_peak": 1037.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0651515151515152,
+						"static_peak_bytes": 126429277.0,
+						"video_peak_bytes": 65577369.0
+					},
+					"flying": {
+						"cpu_peak_ms": 303.009,
+						"fps": 7.91857483179474,
+						"frame_p95_ms": 145.521333333333,
+						"frame_p99_ms": 149.9,
+						"frames": 100.0,
+						"nodes_peak": 1069.0,
+						"orphans_peak": 0.0,
+						"seconds": 12.6285350740741,
+						"static_peak_bytes": 127736514.0,
+						"video_peak_bytes": 65620995.0
+					},
+					"result": {
+						"cpu_peak_ms": 535.072,
+						"fps": 14.2546288623189,
+						"frame_p95_ms": 126.797,
+						"frame_p99_ms": 140.890333333333,
+						"frames": 160.0,
+						"nodes_peak": 1089.0,
+						"orphans_peak": 0.0,
+						"seconds": 11.2244241183261,
+						"static_peak_bytes": 127892143.0,
+						"video_peak_bytes": 65670747.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 297.13,
+						"fps": 7.85019867108348,
+						"frame_p95_ms": 147.121666666666,
+						"frame_p99_ms": 147.121666666666,
+						"frames": 15.0,
+						"nodes_peak": 1069.0,
+						"orphans_peak": 8.0,
+						"seconds": 1.91077966666667,
+						"static_peak_bytes": 127745294.0,
+						"video_peak_bytes": 65620995.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 538705920.0,
+					"source": "Get-Process",
+					"working_set_bytes": 533217280.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"player_stats": {
+				"abilities": 0.0,
+				"battles": 0.0,
+				"captures": 3.0,
+				"collected_g": 20.0,
+				"double_stands": 3.0,
+				"hits": 6.0,
+				"mini_g": 0.0,
+				"misses": 0.0,
+				"throws": 6.0
+			},
+			"resumed": {
+				"chapter": 0.0,
+				"collected": [],
+				"elapsed": 0.183333333333333,
+				"phase": "rolling",
+				"position": "(0.615561, 0.441, 7.797249)",
+				"rng_state": "3177490772653416176",
+				"scores": [
+					0.0,
+					0.0
+				],
+				"state_digest": "49e6850c55d218384f241171dc44dbf1b7015127c419cbd908b26c48f534588c",
+				"velocity": "(2.774017, 0.0, -24.34367)"
+			},
+			"run_id": "1791821483357-8116",
+			"scores": [
+				3.0,
+				0.0
+			],
+			"version": "0.22.0",
+			"winner": 0.0
+		},
+		"save": {
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-preparation.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-aim.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-paused-mid-throw.png"
+			],
+			"checks": [
+				{
+					"label": "Paused flight checkpoint is valid",
+					"passed": true
+				},
+				{
+					"label": "Checkpoint write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.22/profile.cfg",
+			"events": [
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.026
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.392
+				}
+			],
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 5.0,
+				"marks": [
+					{
+						"at_ms": 1128.675,
+						"elapsed_ms": 1128.648,
+						"label": "main_ready",
+						"nodes": 1002.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 108591796.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"aim": {
+						"cpu_peak_ms": 426.474,
+						"fps": 7.62732871879946,
+						"frame_p95_ms": 141.645333333333,
+						"frame_p99_ms": 141.645333333333,
+						"frames": 2.0,
+						"nodes_peak": 1065.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.262215,
+						"static_peak_bytes": 126807330.0,
+						"video_peak_bytes": 48220857.0
+					},
+					"campaign": {
+						"cpu_peak_ms": 0.0,
+						"fps": 10.9065526568362,
+						"frame_p95_ms": 91.688,
+						"frame_p99_ms": 91.688,
+						"frames": 1.0,
+						"nodes_peak": 1008.0,
+						"orphans_peak": 8.0,
+						"seconds": 0.091688,
+						"static_peak_bytes": 110796871.0,
+						"video_peak_bytes": 32522251.0
+					},
+					"flying": {
+						"cpu_peak_ms": 59.057,
+						"fps": 10.5973739707301,
+						"frame_p95_ms": 125.962333333333,
+						"frame_p99_ms": 125.962333333333,
+						"frames": 2.0,
+						"nodes_peak": 1058.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.188726,
+						"static_peak_bytes": 126893302.0,
+						"video_peak_bytes": 48222489.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 507801600.0,
+					"source": "Get-Process",
+					"working_set_bytes": 502464512.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"run_id": "1791821483357-8116",
+			"saved": {
+				"chapter": 0.0,
+				"collected": [],
+				"elapsed": 0.183333333333333,
+				"phase": "rolling",
+				"position": "(0.615561, 0.441, 7.797249)",
+				"rng_state": "3177490772653416176",
+				"scores": [
+					0.0,
+					0.0
+				],
+				"state_digest": "49e6850c55d218384f241171dc44dbf1b7015127c419cbd908b26c48f534588c",
+				"velocity": "(2.774017, 0.0, -24.34367)"
+			},
+			"version": "0.22.0"
+		}
+	},
+	"version": "0.22.0",
+	"windows_execution_tested": true
+}
