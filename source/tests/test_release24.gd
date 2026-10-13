@@ -59,6 +59,7 @@ func run() -> void:
 	check(attack.event=="sphere_attack" and attack.remaining_g==1,"Invulnerable prevents Critical K.O. without negating all damage")
 	fixture(); game._activate_field_card(709); game.rules.land(0,0,20,120,0,game.field_effects)
 	check(game.rules.gates[20].bakugan[0].roll_bonus==240,"All For One doubles pickups above the ordinary 120 cap")
+	game.roll_bonus=120; check(game._effective_pickup_g()==240,"Flight indicator/statistic uses the same doubled G as landing")
 	fixture(); game._activate_field_card(710); check(game.s_power[0]==100,"Fill'er Up fills the real S meter")
 	fixture(); game._activate_field_card(711); check(game.roll_bonus==0 and game.rules.gates[19].bakugan[0].roll_bonus==0,"Subtraction clears current and standing pickup boosts")
 	fixture(); game._activate_field_card(712); game._activate_field_card(712)

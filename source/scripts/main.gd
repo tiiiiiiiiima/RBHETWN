@@ -2894,7 +2894,7 @@ func _update_ds_sphere(delta: float) -> void:
 			return
 	_refresh_s_power()
 	power_bar.value = maxf(0,1.0-ds_sphere.elapsed/ds_sphere.duration)*100
-	power_label.text = "СБОР +%d G · УРОН −%d G" % [roll_bonus,field_damage] if field_damage>0 else "СОБРАНО +%d G" % roll_bonus
+	power_label.text = "СБОР +%d G · УРОН −%d G" % [_effective_pickup_g(),field_damage] if field_damage>0 else "СОБРАНО +%d G" % _effective_pickup_g()
 	target_text.text = "СКОРОСТЬ %.1f · КОРОТКИЙ ЖЕСТ — КОРРЕКЦИЯ" % ds_sphere.velocity.length()
 	instruction.text = Controls.hints("Короткий жест / WASD / стик — коррекция · Shift / B — тормоз · Пробел / A — прыжок",preferences) if flight_owner==0 else "Соперник бросает бакугана."
 	if ds_sphere.is_finished():
@@ -3100,6 +3100,9 @@ func _gate_on_segment(from: Vector3, to: Vector3, magnet: float = -1.0) -> int:
 			first_slot = int(value)
 	return first_slot
 
+func _effective_pickup_g() -> int:
+	return clampi(roll_bonus,0,120)*clampi(int(field_effects.get("multiplier",1)),1,2) if rules_profile=="ds" else roll_bonus
+
 func _collect_pickups(from: Vector3, to: Vector3) -> void:
 	if phase not in ["rolling","flying"] or paused:
 		return
@@ -3174,7 +3177,7 @@ func _land_ball() -> void:
 				_complete_capture(slot, flight_owner, false, "CRITICAL K.O.!")
 				return
 	var event: Dictionary = rules.land(flight_owner, flight_unit, slot, roll_bonus,field_damage if rules_profile=="ds" else 0,field_effects if rules_profile=="ds" else {})
-	match_stats.record_throw(flight_owner, str(event.event) in ["stand", "battle", "double_stand", "double_choice"], roll_bonus)
+	match_stats.record_throw(flight_owner, str(event.event) in ["stand", "battle", "double_stand", "double_choice"], _effective_pickup_g())
 	if str(event.event) in ["miss", "invalid"]:
 		_log("%s промахнулся: собранный G потерян." % ("Ты" if flight_owner == 0 else "Соперник"))
 		_play_sound("miss")
@@ -3185,7 +3188,7 @@ func _land_ball() -> void:
 		return
 	_sync_units()
 	if roll_bonus > 0:
-		_log("%s сохранил +%d G." % [str(rules.teams[flight_owner][flight_unit].name), roll_bonus])
+		_log("%s сохранил +%d G." % [str(rules.teams[flight_owner][flight_unit].name), _effective_pickup_g()])
 	arena.landing_flash(arena.slot_position(slot), ORANGE if flight_owner == 0 else CYAN)
 	audio.event("land")
 	_handle_landing_event(event, slot, flight_owner)
