@@ -81,7 +81,7 @@ func _draw() -> void:
 	if not is_instance_valid(game) or not visible:
 		return
 	draw_style_box(_background(),Rect2(Vector2.ZERO,size))
-	var title: String = "PYRUS · ЛАВА −30 G" if game.arena.theme_id=="ds_pyrus" else "ПОЛЕ · НАЖМИ ДЛЯ ПРИЦЕЛА"
+	var title: String = "PYRUS · ЖЁЛТЫЙ: СКОРО ЛАВА" if game.arena.theme_id=="ds_pyrus" else "ПОЛЕ · НАЖМИ ДЛЯ ПРИЦЕЛА"
 	draw_string(ThemeDB.fallback_font,Vector2(9,17),title,HORIZONTAL_ALIGNMENT_LEFT,-1,10,Color("9cb2c8"))
 	for polygon: PackedVector2Array in _polygons:
 		draw_colored_polygon(polygon,Color("253c50"))
@@ -111,9 +111,10 @@ func _draw() -> void:
 				for corner: Vector3 in [Vector3(-1,0,-1),Vector3(1,0,-1),Vector3(1,0,1),Vector3(-1,0,1)]:
 					polygon.append(world_to_map(item.node.global_transform*(corner*item.extent)))
 				if not Geometry2D.triangulate_polygon(polygon).is_empty():
-					draw_colored_polygon(polygon,Color("e65a26"))
+					var status: String=game.arena.field_objects.hazard_status(item)
+					draw_colored_polygon(polygon,Color("e65a26") if status=="active" else Color("eebf5c") if status=="warning" else Color("684e44"))
 				continue
-			draw_circle(point,2.0,colors.get(item.kind,Color.WHITE))
+			draw_circle(point,3.0 if item.kind=="field_card" else 2.0,Color("e77aff") if item.kind=="field_card" else colors.get(item.kind,Color.WHITE))
 	for slot: Variant in game.rules.gates:
 		var center: Vector2 = world_to_map(game.arena.slot_position(int(slot)))
 		var half: Vector2 = Board.card_size("ds")*0.5*map_scale()

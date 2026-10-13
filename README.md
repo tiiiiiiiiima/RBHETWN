@@ -1,12 +1,12 @@
-# Bakugan Arena — 0.23
+# Bakugan Arena — 0.24
 
-[Скачать Windows ZIP — 1,89 ГиБ](https://github.com/tiiiiiiiiima/RBHETWN/releases/download/v0.23.0/Bakugan-0.23-Windows.zip) · [Все выпуски](https://github.com/tiiiiiiiiima/RBHETWN/releases)
+[Скачать Windows ZIP — 1,89 ГиБ](https://github.com/tiiiiiiiiima/RBHETWN/releases/download/v0.24.0/Bakugan-0.24-Windows.zip) · [Все выпуски](https://github.com/tiiiiiiiiima/RBHETWN/releases)
 
 Распакуйте архив целиком и откройте **BakuganPrototype-Windows.exe**,
 оставив одноимённый `.pck` рядом. Движок и ресурсы включены;
 интернет при запуске не нужен. Нужны Windows x64 и OpenGL 3.3.
 
-В 0.23 добавлены девять слотов: три независимые кампании, три свободных
+В 0.24 добавлены девять слотов: три независимые кампании, три свободных
 матча/турнира и три аниме-дуэли. Старое сохранение переносится автоматически;
 замена занятого слота подтверждается в игре.
 
@@ -18,13 +18,13 @@ Scratch исправляет потерю очков при высоком FPS. 
 
 На Windows-сервере с ANGLE/WARP прошли победа 3:2, поражение 1:3,
 продолжение броска 3:1 и боя 3:0. Бинарное состояние восстановлено точно,
-результаты и награды сохранены. [Отчёты Windows](qa/windows-0.23) · [Linux](qa/linux-0.23).
+результаты и награды сохранены. [Отчёты Windows](qa/windows-0.24) · [Linux](qa/linux-0.24).
 Физический геймпад, звуковой вывод и FPS пользовательской видеокарты
 остаются для проверки на устройстве. Полное совпадение с DS/Wii не заявляется.
 
-[Изменения](docs/RELEASE-0.23.md) · [Scratch и карты](docs/MINIGAME-BALANCE-0.23.md) · [Проверка Windows](docs/WINDOWS-QA-0.23.md) · [Код](source)
+[Изменения](docs/RELEASE-0.24.md) · [Scratch и карты](docs/MINIGAME-BALANCE-0.24.md) · [Проверка Windows](docs/WINDOWS-QA-0.24.md) · [Код](source)
 
-Готовая игра находится в **Releases → Assets → Bakugan-0.23-Windows.zip**.
+Готовая игра находится в **Releases → Assets → Bakugan-0.24-Windows.zip**.
 Автоматический GitHub Source code ZIP содержит скрипты, сцены,
 документацию и диагностику; большие игровые ресурсы в нём отсутствуют.
 Контрольная сумма игрового архива публикуется рядом в Assets.

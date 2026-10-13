@@ -82,7 +82,7 @@ def build(base_index, target, output):
                 literal(entry['offset'], entry['size'])
             end = entry['offset']+entry['size']
         literal(end, new['bytes']-end)
-    manifest = {'schema': 1, 'version': '0.23.0', 'base_bytes': old['bytes'],
+    manifest = {'schema': 1, 'version': '0.24.0', 'base_bytes': old['bytes'],
                 'base_sha256': old['sha256'], 'target_bytes': new['bytes'],
                 'target_sha256': digest(target), 'payload_bytes': payload_path.stat().st_size,
                 'payload_sha256': digest(payload_path), 'segments': segments,

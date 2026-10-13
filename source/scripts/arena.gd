@@ -399,6 +399,11 @@ func set_field_layout(variant: int) -> void:
 		environment_root = null
 		set_theme(theme_id)
 
+func preview_field_response(from: Vector3,to: Vector3,time: float) -> Array[Dictionary]:
+	var responses: Array[Dictionary]=[]
+	if native_physics and is_instance_valid(field_objects): responses.assign(field_objects.response(from,to,time))
+	return responses
+
 func field_response(from: Vector3,to: Vector3) -> Array[Dictionary]:
 	var responses: Array[Dictionary] = []
 	if native_physics and is_instance_valid(field_objects):

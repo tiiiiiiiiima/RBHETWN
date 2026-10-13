@@ -3,3 +3,5 @@
 *.exe
 reports/
 .godot/
+
+!qa/release-0.24/documents.zip

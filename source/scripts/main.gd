@@ -4,6 +4,8 @@ const Rules = preload("res://scripts/match_rules.gd")
 const BoardLayout = preload("res://scripts/board_layout.gd")
 const Arena = preload("res://scripts/arena.gd")
 const RollMotion = preload("res://scripts/roll_motion.gd")
+const SpecialShots = preload("res://scripts/ds_special_shots.gd")
+const FieldCards = preload("res://scripts/ds_field_cards.gd")
 const DSSphere = preload("res://scripts/ds_sphere_motion.gd")
 const DSGesture = preload("res://scripts/ds_throw_gesture.gd")
 const DSProfiles = preload("res://scripts/ds_sphere_profiles.gd")
@@ -147,6 +149,9 @@ var timing_window_hit: bool = false
 var circle_sequence: int = 0
 var powered_throw: bool = false
 var flight_powered: bool = false
+var flight_special: String = ""
+var field_effects: Dictionary = FieldCards.initial()
+var extra_throw_owner: int = -1
 var throw_style: String = "lob"
 var flight_style: String = "lob"
 var flight_charge: float = 0.0
@@ -1842,6 +1847,9 @@ func start_match() -> void:
 	pending_double_slot = -1
 	powered_throw = false
 	flight_powered = false
+	flight_special = ""
+	field_effects = FieldCards.initial()
+	extra_throw_owner = -1
 	flight_style = ThrowMotion.normalize_style(throw_style)
 	flight_charge = 0.0
 	battle_streak = 0
@@ -1979,10 +1987,79 @@ func _phase_action() -> void:
 	elif phase == "double":
 		_resolve_double(-1)
 
+func _special_ready(owner: int, index: int) -> bool:
+	return rules.teams.size()==2 and owner in [0,1] and index in [0,1,2] and SpecialShots.available(rules.teams[owner][index],s_power[owner],match_mode)
+
+func _activate_field_card(id: int) -> void:
+	if rules_profile!="ds" or id not in FieldCards.IDS or phase not in ["flying","rolling"]: return
+	field_effects.ids.append(id)
+	_log("Карта поля: "+FieldCards.title(id)+".")
+	audio.event("ability")
+	match id:
+		701: extra_throw_owner=flight_owner
+		702: field_effects["restart"]=true
+		703: field_effects.swap_gate=true
+		704: field_effects.replace_unit=true
+		705: field_effects.early=true
+		706: field_effects.surprise=true
+		707: field_effects.road_trip=true
+		708: field_effects.invulnerable=true
+		709: field_effects.multiplier=2
+		710: s_power[flight_owner]=100; _refresh_s_power()
+		711,712:
+			rules.change_field_pickups(id==712)
+			if id==711: roll_bonus=0
+			field_effects.multiplier=2 if id==712 else 1
+
+func _field_card_landing_slot(slot: int) -> int:
+	if not rules.gates.has(slot): return slot
+	if field_effects.get("road_trip",false):
+		var slots: Array=rules.gates.keys(); slots.sort()
+		slot=int(slots[rng.randi_range(0,slots.size()-1)])
+		_log("Road Trip: перемещение на ворота %d." % (slot+1))
+	if field_effects.get("surprise",false):
+		var targets: Array[int]=[]
+		for key: Variant in rules.gates:
+			var occupants: Array=rules.gates[key].bakugan
+			if occupants.size()==1 and int(occupants[0].owner)!=flight_owner: targets.append(int(key))
+		if not targets.is_empty():
+			targets.sort(); slot=targets[rng.randi_range(0,targets.size()-1)]
+	if field_effects.get("swap_gate",false) and rules.swap_field_gate(flight_owner,slot,clampi(selected_gate if flight_owner==0 else 0,0,rules.hands[flight_owner].size()-1)):
+		arena.remove_gate(slot); _draw_gate(slot)
+		_log("Sleight of Hand: ворота заменены картой из руки.")
+	if field_effects.get("replace_unit",false):
+		for index: int in rules.available_units(flight_owner):
+			if index==flight_unit: continue
+			flight_unit=index
+			_log("Trickster: на карте встанет "+str(rules.teams[flight_owner][index].name)+".")
+			break
+	return slot
+
+func _special_landing(slot: int) -> bool:
+	if not rules.gates.has(slot): return false
+	field_effects.invulnerable=bool(field_effects.get("invulnerable",false)) or SpecialShots.protected(flight_special)
+	field_effects["removal_protected"]=flight_special=="Darkus"
+	var opposed: bool=rules.gates[slot].bakugan.size()==1 and int(rules.gates[slot].bakugan[0].owner)!=flight_owner
+	if flight_special=="Subterra" or (flight_special=="Haos" and opposed and sphere_collision_slot==slot):
+		var targets: Array=[slot]
+		if flight_special=="Subterra": targets.append_array(BoardLayout.neighbors(slot,"ds"))
+		else: targets=rules.gates.keys()
+		var removed: int=rules.remove_field_units(targets)
+		rules.consume_throw(flight_owner,flight_unit,false)
+		_sync_units(); _refresh_hud()
+		arena.landing_flash(arena.slot_position(slot),ORANGE)
+		_log("%s: с поля убрано %d бакуганов; карты остались." % [SpecialShots.title(flight_special),removed])
+		_announce_then_advance(SpecialShots.title(flight_special).to_upper(),CYAN)
+		return true
+	if flight_special=="Ventus" and opposed and sphere_collision_slot==slot:
+		rules.remove_field_units([slot]); _sync_units()
+		_log("Ventus Storm: противник сдут с ворот, защищённые бакуганы остаются.")
+	return false
+
 func _toggle_throw_mode() -> void:
 	if phase != "aim" or paused:
 		return
-	if rules_profile=="ds" and not powered_throw and s_power[0]<100:
+	if rules_profile=="ds" and not powered_throw and not _special_ready(0,selected_unit):
 		return
 	powered_throw = not powered_throw
 	_update_cards()
@@ -2509,6 +2586,12 @@ func _resume_match() -> void:
 	Checkpoint.put(rules,data.rules,Checkpoint.RULE_FIELDS)
 	Checkpoint.put(self,data.main,Checkpoint.MAIN_FIELDS)
 	Checkpoint.put(ds_sphere,data.sphere,Checkpoint.SPHERE_FIELDS)
+	if data.get("special") is Dictionary:
+		Checkpoint.put(self,data.special.get("main",{}),["flight_special","field_effects","extra_throw_owner"])
+		Checkpoint.put(ds_sphere,data.special.get("sphere",{}),["special_shot","field_start_clock"])
+	elif flight_powered:
+		# Old saves keep the legacy power impulse, not a newly invented shot.
+		flight_special=""
 	arena.configure_roll(roll_motion)
 	Checkpoint.put(roll_motion,data.roll,Checkpoint.ROLL_FIELDS)
 	Checkpoint.put(battle_effects,data.effects,Checkpoint.EFFECT_FIELDS)
@@ -2528,6 +2611,7 @@ func _resume_match() -> void:
 		var unit: Dictionary=rules.teams[flight_owner][flight_unit]
 		flight_ball=arena.make_ball(str(unit.attribute),flight_owner,str(unit.name))
 		flight_ball.transform=data.flight_transform
+		_attach_special_aura()
 	_spawn_pickups()
 	if not data.pickups.is_empty():
 		if rules_profile=="ds" and is_instance_valid(arena.field_objects):
@@ -2718,7 +2802,7 @@ func _draw_trajectory() -> void:
 
 func _draw_ds_trajectory() -> void:
 	var preview_charge: float = charge if charging else 0.70
-	var signature: Array = [arena.theme_id,aim_point,preview_charge,throw_style,powered_throw,rules.gates.keys()]
+	var signature: Array = [arena.theme_id,aim_point,preview_charge,throw_style,powered_throw,s_power[0],selected_unit,match_mode,rules.gates.keys()]
 	# Moving geometry changes the path. Limit this expensive forecast to 8 Hz.
 	if trajectory.mesh != null and Time.get_ticks_msec()-_ds_preview_time<125:
 		return
@@ -2727,7 +2811,7 @@ func _draw_ds_trajectory() -> void:
 	var predicted = DSSphere.new()
 	predicted.configure_field(arena)
 	predicted.configure_unit(rules.teams[0][selected_unit])
-	predicted.launch(arena.launch_position(0),arena.aim_ground_point(aim_point),preview_charge,throw_style,powered_throw and s_power[0]>=100)
+	predicted.launch(arena.launch_position(0),arena.aim_ground_point(aim_point),preview_charge,throw_style,false,str(rules.teams[0][selected_unit].attribute) if powered_throw and _special_ready(0,selected_unit) else "")
 	var line := ImmediateMesh.new()
 	line.surface_begin(Mesh.PRIMITIVE_LINES)
 	for index: int in range(150):
@@ -2736,13 +2820,20 @@ func _draw_ds_trajectory() -> void:
 		for segment: Dictionary in predicted.travel_segments:
 			line.surface_add_vertex(segment.from)
 			line.surface_add_vertex(segment.to)
-			hit = _gate_on_segment(segment.from,segment.to,predicted.magnet_margin())
+			hit = _ds_shot_gate_contact(segment.from,segment.to,predicted.special_shot,predicted.velocity.length(),predicted.magnet_margin())
 			if hit>=0:
 				break
 		if hit>=0 or predicted.is_finished():
 			break
 	line.surface_end()
 	trajectory.mesh = line
+
+func _ds_shot_gate_contact(from: Vector3,to: Vector3,shot: String,speed: float,margin: float=0.0,owner: int=0) -> int:
+	var slot: int=_gate_on_segment(from,to,margin)
+	if shot=="Darkus" and speed>=2.2 and rules.gates.has(slot):
+		var occupants: Array=rules.gates[slot].bakugan
+		if occupants.size()==1 and int(occupants[0].owner)!=owner: return -1
+	return slot
 
 func _update_ds_sphere(delta: float) -> void:
 	if not is_instance_valid(flight_ball):
@@ -2772,7 +2863,7 @@ func _update_ds_sphere(delta: float) -> void:
 	action_button.text = "ПРЫЖОК · %s / A" % Controls.key_name("action",preferences)
 	action_button.disabled = not ds_sphere.can_jump()
 	for segment: Dictionary in ds_sphere.travel_segments:
-		var hit: int = _gate_on_segment(segment.from,segment.to)
+		var hit: int = _ds_shot_gate_contact(segment.from,segment.to,flight_special,float(segment.speed),ds_sphere.magnet_margin(),flight_owner)
 		var hit_fraction: float = BoardLayout.gate_contact_fraction(segment.from,segment.to,arena.slot_position(hit),ds_sphere.magnet_margin()) if hit>=0 else 1.0
 		for event: Dictionary in segment.get("events",[]):
 			if float(event.get("fraction",0.0))>hit_fraction: continue
@@ -2788,6 +2879,12 @@ func _update_ds_sphere(delta: float) -> void:
 		if hit >= 0:
 			end = segment.from.lerp(segment.to,hit_fraction)
 		_collect_pickups(segment.from,end)
+		if bool(field_effects.get("restart",false)):
+			field_effects.erase("restart")
+			roll_bonus=0; field_damage=0
+			ds_sphere.launch(flight_start,roll_target,flight_charge,flight_style,false,flight_special)
+			flight_ball.position=flight_start; flight_time=0.0; roll_time=0.0
+			return
 		if hit>=0:
 			var occupants: Array = rules.gates[hit].bakugan
 			if occupants.size()==1 and int(occupants[0].owner)!=flight_owner and float(segment.speed)>=2.2:
@@ -2817,6 +2914,15 @@ func _current_flight_duration() -> float:
 	var base_duration: float = flight_duration if is_finite(flight_duration) and flight_duration > 0.0 else 1.55
 	return base_duration * ThrowMotion.flight_duration(flight_style, flight_powered) / ThrowMotion.flight_duration("lob")
 
+func _attach_special_aura() -> void:
+	if not is_instance_valid(flight_ball) or flight_special.is_empty(): return
+	var aura:=MeshInstance3D.new(); var mesh:=SphereMesh.new()
+	mesh.radius=0.53; mesh.height=1.06; mesh.radial_segments=20; mesh.rings=10; aura.mesh=mesh
+	var material:=StandardMaterial3D.new(); material.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA
+	material.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.albedo_color={"Pyrus":Color(1,0.2,0.05,0.23),"Aquos":Color(0.1,0.7,1,0.23),"Subterra":Color(0.8,0.6,0.2,0.23),"Haos":Color(1,0.95,0.6,0.23),"Darkus":Color(0.6,0.2,1,0.15),"Ventus":Color(0.2,1,0.6,0.23)}.get(flight_special,Color.WHITE)
+	aura.material_override=material; aura.name="SpecialAura"; flight_ball.add_child(aura)
+
 func _launch_ball(owner: int, unit_index: int, endpoint: Vector3) -> void:
 	if owner==0 and is_instance_valid(tutorial):
 		if not tutorial.permits_throw(): return
@@ -2829,7 +2935,9 @@ func _launch_ball(owner: int, unit_index: int, endpoint: Vector3) -> void:
 	flight_unit = unit_index
 	flight_powered = powered_throw if owner == 0 else rng.randf() < 0.35
 	if rules_profile=="ds":
-		flight_powered = (powered_throw if owner==0 else true) and s_power[owner]>=100
+		flight_powered = (powered_throw if owner==0 else true) and _special_ready(owner,unit_index)
+		flight_special = str(rules.teams[owner][unit_index].attribute) if flight_powered else ""
+		field_effects = FieldCards.initial()
 		if flight_powered:
 			s_power[owner] -= 100
 		powered_throw = false
@@ -2851,7 +2959,8 @@ func _launch_ball(owner: int, unit_index: int, endpoint: Vector3) -> void:
 	if rules_profile == "ds":
 		ds_sphere.configure_field(arena)
 		ds_sphere.configure_unit(rules.teams[owner][flight_unit])
-		ds_sphere.launch(flight_start,roll_target,flight_charge,flight_style,flight_powered)
+		ds_sphere.launch(flight_start,roll_target,flight_charge,flight_style,false,flight_special)
+		_attach_special_aura()
 		ds_gesture.cancel()
 		_spawn_pickups()
 	target_marker.visible = false
@@ -3000,7 +3109,9 @@ func _collect_pickups(from: Vector3, to: Vector3) -> void:
 			continue
 		pickup.collected = true
 		var previous_bonus: int = roll_bonus
-		if rules_profile=="ds" and str(pickup.get("kind","g_power"))=="experience":
+		if rules_profile=="ds" and str(pickup.get("kind",""))=="field_card":
+			_activate_field_card(FieldCards.IDS[rng.randi_range(0,FieldCards.IDS.size()-1)])
+		elif rules_profile=="ds" and str(pickup.get("kind","g_power"))=="experience":
 			if flight_owner==0:
 				experience_gained+=int(pickup.amount)
 				_log("Опыт: +%d очков развития%s." % [int(pickup.amount)," после матча" if match_mode=="campaign" else " · развитие доступно в кампании"])
@@ -3044,7 +3155,10 @@ func _land_ball() -> void:
 	flight_ball = null
 	_clear_pickups()
 	ball.queue_free()
-	if flight_powered and sphere_collision_slot == slot and rules.gates.has(slot):
+	if rules_profile=="ds":
+		slot = _field_card_landing_slot(slot)
+		if _special_landing(slot): return
+	if flight_powered and (rules_profile!="ds" or flight_special in ["","Pyrus"]) and sphere_collision_slot == slot and rules.gates.has(slot):
 		var occupants: Array = rules.gates[slot].bakugan
 		if occupants.size() == 1 and int(occupants[0].owner) != flight_owner:
 			# The mechanic is Wii-derived; this damage curve is PC prototype balance.
@@ -3059,12 +3173,15 @@ func _land_ball() -> void:
 				match_stats.record_throw(flight_owner, true, 0)
 				_complete_capture(slot, flight_owner, false, "CRITICAL K.O.!")
 				return
-	var event: Dictionary = rules.land(flight_owner, flight_unit, slot, roll_bonus,field_damage if rules_profile=="ds" else 0)
+	var event: Dictionary = rules.land(flight_owner, flight_unit, slot, roll_bonus,field_damage if rules_profile=="ds" else 0,field_effects if rules_profile=="ds" else {})
 	match_stats.record_throw(flight_owner, str(event.event) in ["stand", "battle", "double_stand", "double_choice"], roll_bonus)
 	if str(event.event) in ["miss", "invalid"]:
 		_log("%s промахнулся: собранный G потерян." % ("Ты" if flight_owner == 0 else "Соперник"))
 		_play_sound("miss")
 		_announce_then_advance("МИМО КАРТЫ", MUTED)
+		return
+	if rules_profile=="ds" and field_effects.get("early",false) and str(event.event)!="invalid":
+		_complete_capture(slot,flight_owner,false,"EARLY VICTORY!")
 		return
 	_sync_units()
 	if roll_bonus > 0:
@@ -3164,6 +3281,15 @@ func _advance_turn() -> void:
 	if rules.winner >= 0:
 		_end_match()
 		return
+	if extra_throw_owner==rules.turn and not rules.available_units(rules.turn).is_empty():
+		extra_throw_owner=-1
+		rules.turn_action_taken=false
+		_log("Another Throw: дополнительный бросок.")
+		if rules.turn==0:
+			selected_unit=int(rules.available_units(0)[0]); _begin_aim()
+		else: _ai_turn()
+		return
+	extra_throw_owner=-1
 	if not rules.finish_turn():
 		return
 	ds_battle.reset()
@@ -3273,6 +3399,9 @@ func _begin_battle(slot: int) -> void:
 	ds_ai_opportunities=0; ds_enemy_progress=0.0; ds_skip_pending=false
 	if rules_profile=="ds":
 		battle_type = practice_kind if match_mode=="practice" and DSMiniCatalog.MODES.has(practice_kind) else DSMiniCatalog.choose("scratch" if tutorial.active else str(preferences.ds_minigame),int(rules.scores[0])+int(rules.scores[1]))
+		if field_effects.get("surprise",false):
+			battle_type=DSMiniCatalog.MODES[rng.randi_range(0,DSMiniCatalog.MODES.size()-1)]
+			_log("Surprise Attack: случайная мини-игра "+battle_type+".")
 		battle_duration = 10.0
 	else:
 		battle_duration = 8.0
@@ -3750,11 +3879,13 @@ func _update_cards() -> void:
 	action_button.disabled = false
 	throw_mode_button.visible = phase == "aim"
 	throw_mode_button.text = "%s · P" % ("СИЛОВОЙ БРОСОК" if powered_throw else "БЕЗ УСИЛЕНИЯ")
-	throw_mode_button.disabled = rules_profile=="ds" and not powered_throw and s_power[0]<100
+	throw_mode_button.disabled = rules_profile=="ds" and not powered_throw and not _special_ready(0,selected_unit)
 	if rules_profile=="ds":
-		throw_mode_button.text = "УСИЛЕНИЕ ГОТОВО · P" if s_power[0]>=100 else "НУЖНО 100 S · P"
-		if powered_throw:
-			throw_mode_button.text = "УСИЛЕНИЕ ВКЛЮЧЕНО · P"
+		var unit: Dictionary=rules.teams[0][selected_unit] if rules.teams.size()==2 else {}
+		var title: String=SpecialShots.title(str(unit.get("attribute","")))
+		throw_mode_button.text = title+" · P" if _special_ready(0,selected_unit) else "НУЖЕН УР. 3 · P" if match_mode=="campaign" and int(unit.get("level",1))<3 else "НУЖНО 100 S · P"
+		if powered_throw: throw_mode_button.text="✓ "+title+" · P"
+		throw_mode_button.tooltip_text=SpecialShots.description(str(unit.get("attribute","")))+"\nЦена: 100 S. В кампании нужен уровень 3; в свободном бою броски открыты."
 	_refresh_s_power()
 	throw_style_button.visible = phase == "aim"
 	throw_style_button.text = "%s · T" % ("ПРЯМОЙ БРОСОК" if ThrowMotion.normalize_style(throw_style) == "straight" else "ВЫСОКИЙ БРОСОК")

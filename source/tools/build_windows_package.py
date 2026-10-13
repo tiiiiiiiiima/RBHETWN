@@ -15,7 +15,7 @@ import shutil
 import struct
 import zipfile
 
-RELEASE_VERSION = '0.23'
+RELEASE_VERSION = '0.24'
 ENGINE_VERSION = '4.6.3'
 ENGINE_NAME = 'Godot_v4.6.3-stable_win64.exe'
 OFFICIAL_ZIP_SHA256 = 'e39986a178d585ce7ac198fb8de6ea436366dc0cc00e594810c2e3e104c04b90'
@@ -393,6 +393,27 @@ Backspace пропускает выбранную карту. Аниме — п�
 DS/Wii не заявляется. Подробности: RELEASE-0.23.md,
 MINIGAME-BALANCE-0.23.md, WINDOWS-QA-0.23.md и VALIDATION.md.
 '''
+    if release_version == '0.24':
+        readme = '''Bakugan Arena 0.24 — стихийные броски и карты поля DS
+
+Распакуйте папку целиком и откройте BakuganPrototype-Windows.exe.
+Одноимённый .pck должен оставаться рядом; интернет не нужен.
+
+P выбирает Special Shot текущей стихии: цена 100 S.
+В кампании нужен уровень 3; в свободном бою броски открыты.
+T выбирает прямую или высокую траекторию. WASD/стик — коррекция,
+Shift/B — тормоз, Пробел/A — прыжок.
+12 фиолетовых карт-предметов на поле активируются при сборе.
+В коллекции у них отдельно указаны эффект и доступность на поле.
+На Pyrus жёлтое кольцо предупреждает об активной лаве, красное опасно.
+Разрушенные препятствия и собранные предметы восстанавливаются из сохранения.
+Слоты кампании, свободного боя и аниме-дуэли сохраняются отдельно.
+В аниме-дуэли остаётся прямая постановка бакугана.
+
+Имена и описания бросков/карт взяты из исходных текстов DS;
+численная физика, уровень открытия и распределение предметов — адаптация ПК.
+Подробнее: RELEASE-0.24.md, DS-FIELD-0.24.md, WINDOWS-QA-0.24.md.
+'''
     (destination / 'README-RU.txt').write_text(readme, encoding='utf-8-sig')
     package_files = [pack_name, 'README-RU.txt']
     packaged_readme = (project / 'README.md').read_text(encoding='utf-8').replace('(docs/', '(')
@@ -419,7 +440,7 @@ MINIGAME-BALANCE-0.23.md, WINDOWS-QA-0.23.md и VALIDATION.md.
                       'RELEASE-0.20.md', 'ASSET-SOURCES-0.20.md',
                       'RELEASE-0.22.md', 'WINDOWS-QA-0.22.md', 'PERFORMANCE-0.22.md', 'RELEASE-0.21.md', 'ASSET-SOURCES-0.21.md',
                       'DS-GAMEPLAY-COMPARISON.md', 'DS-REFERENCE-VERIFICATION.md', 'ROADMAP.md',
-                      'RELEASE-0.23.md', 'WINDOWS-QA-0.23.md', 'MINIGAME-BALANCE-0.23.md', 'PROJECT-AUDIT-0.22.md']:
+                      'RELEASE-0.24.md', 'DS-FIELD-0.24.md', 'WINDOWS-QA-0.24.md', 'RELEASE-0.23.md', 'WINDOWS-QA-0.23.md', 'MINIGAME-BALANCE-0.23.md', 'PROJECT-AUDIT-0.22.md']:
         text = (project / 'docs' / reference).read_text(encoding='utf-8')
         # Source catalogs live inside the PCK, not beside the EXE. A source
         # checkout's clickable ../assets link must not become a broken ZIP link.

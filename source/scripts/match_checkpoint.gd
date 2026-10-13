@@ -47,7 +47,7 @@ static func capture(game: Node3D) -> Dictionary:
 	for item: Dictionary in game.pickups:
 		var copy: Dictionary=item.duplicate(); copy.erase("node"); pickups.append(copy)
 	var remaining: float=game.pending_timer.time_left if game.pending_timer!=null else 0.0
-	return {"schema":1,"release":"0.20","main":grab(game,MAIN_FIELDS),"rules":grab(game.rules,RULE_FIELDS),"sphere":grab(game.ds_sphere,SPHERE_FIELDS),"roll":grab(game.roll_motion,ROLL_FIELDS),"effects":grab(game.battle_effects,EFFECT_FIELDS),"mini":grab(game.scratch,MINI_FIELDS),"stats":game.match_stats.totals.duplicate(true),"rng_state":game.rng.state,"rng_seed":game.rng.seed,"timer_remaining":remaining,
+	return {"schema":1,"release":"0.24","special":{"main":grab(game,["flight_special","field_effects","extra_throw_owner"]),"sphere":grab(game.ds_sphere,["special_shot","field_start_clock"])},"main":grab(game,MAIN_FIELDS),"rules":grab(game.rules,RULE_FIELDS),"sphere":grab(game.ds_sphere,SPHERE_FIELDS),"roll":grab(game.roll_motion,ROLL_FIELDS),"effects":grab(game.battle_effects,EFFECT_FIELDS),"mini":grab(game.scratch,MINI_FIELDS),"stats":game.match_stats.totals.duplicate(true),"rng_state":game.rng.state,"rng_seed":game.rng.seed,"timer_remaining":remaining,
 		"field":{"theme":game.arena.theme_id,"layout":game.arena.field_layout,"clock":game.arena.native_surface.clock if game.arena.native_surface!=null else 0.0,"collected":collected,"quadrant":game.arena.view_quadrant,"zoom":game.arena.camera_zoom,"camera":game.arena.camera.transform,"camera_state":grab(game.arena,CAMERA_FIELDS)},
 		"pickups":pickups,"flight_transform":game.flight_ball.transform if is_instance_valid(game.flight_ball) else Transform3D.IDENTITY,"has_flight":is_instance_valid(game.flight_ball),"ui":{"phase":game.phase_text.text,"instruction":game.instruction.text,"banner":game.result_banner.text,"banner_visible":game.result_banner.visible},"presentation":game.ds_battle.snapshot.duplicate(true)}
 static func _safe(value: Variant, depth: int=0) -> bool:
@@ -97,6 +97,19 @@ static func valid(data: Variant) -> bool:
 	for pair: Array in [["main",MAIN_FIELDS],["rules",RULE_FIELDS],["sphere",SPHERE_FIELDS],["roll",ROLL_FIELDS],["effects",EFFECT_FIELDS],["mini",MINI_FIELDS]]:
 		for field: String in pair[1]:
 			if not data[pair[0]].has(field): return false
+	if data.has("special"):
+		if not data.special is Dictionary or not data.special.get("main") is Dictionary or not data.special.get("sphere") is Dictionary: return false
+		var extra: Dictionary=data.special.main; var ball: Dictionary=data.special.sphere
+		if not extra.get("flight_special",null) is String or str(extra.flight_special) not in ["","Pyrus","Aquos","Subterra","Haos","Darkus","Ventus"]: return false
+		if not extra.get("field_effects") is Dictionary or typeof(extra.get("extra_throw_owner"))!=TYPE_INT or extra.extra_throw_owner not in [-1,0,1]: return false
+		var cards: Dictionary=extra.field_effects
+		if not cards.get("ids") is Array or cards.ids.size()>128 or typeof(cards.get("multiplier"))!=TYPE_INT or cards.multiplier not in [1,2]: return false
+		for id: Variant in cards.ids:
+			if typeof(id)!=TYPE_INT or id<701 or id>712: return false
+		for flag: String in ["invulnerable","swap_gate","replace_unit","early","surprise","road_trip"]:
+			if typeof(cards.get(flag))!=TYPE_BOOL: return false
+		if not ball.get("special_shot",null) is String or str(ball.special_shot) not in ["","Pyrus","Aquos","Subterra","Haos","Darkus","Ventus"]: return false
+		if typeof(ball.get("field_start_clock")) not in [TYPE_FLOAT,TYPE_INT] or float(ball.field_start_clock)<0.0: return false
 	var main: Dictionary=data.main; var rules: Dictionary=data.rules
 	var environment: Dictionary=data.field
 	for key: String in ["theme","layout","clock","collected","quadrant","zoom","camera"]:

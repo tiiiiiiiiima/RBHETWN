@@ -19,7 +19,7 @@ var rubbing_events: int=0
 var rub_clock: int=0
 var battle_checkpoint: bool=false
 var losing: bool=false
-const STAGES: Array[String]=["quick","loss","save","resume","battle-save","battle-resume"]
+const STAGES: Array[String]=["quick","loss","save","resume","battle-save","battle-resume","elemental"]
 func _initialize() -> void:
 	Saves.diagnostic_mode=true
 	call_deferred("run")
@@ -39,7 +39,7 @@ func capture(label: String) -> void:
 func run() -> void:
 	root.size=Vector2i(1440,900)
 	root.show()
-	output_dir=ProjectSettings.globalize_path("user://diagnostics/0.23/reports")
+	output_dir=ProjectSettings.globalize_path("user://diagnostics/0.24/reports")
 	for arg: String in OS.get_cmdline_user_args():
 		if arg.begins_with("--report-dir="): output_dir=arg.trim_prefix("--report-dir=")
 		elif arg.begins_with("--qa-run-id="): run_id=arg.trim_prefix("--qa-run-id=")
@@ -58,6 +58,7 @@ func run() -> void:
 	if OS.get_cmdline_user_args().has("--resume"): prefix="battle-resume" if battle_checkpoint else "resume"
 	elif OS.get_cmdline_user_args().has("--checkpoint-and-exit"): prefix="battle-save" if battle_checkpoint else "save"
 	elif losing: prefix="loss"
+	if OS.get_cmdline_user_args().has("--elemental"): prefix="elemental"
 	if OS.get_cmdline_user_args().has("--campaign") and prefix=="quick": prefix="campaign"
 	metrics=Metrics.new(); root.add_child(metrics)
 	var load_started: int=Time.get_ticks_usec()
@@ -65,7 +66,7 @@ func run() -> void:
 	metrics.game=game; metrics.mark("main_ready",(Time.get_ticks_usec()-load_started)/1000.0)
 	await process_frame
 	game.rng.seed=230000+STAGES.find(prefix)
-	game._set_rules_profile("ds"); game.selected_arena="ds_toy"
+	game._set_rules_profile("ds"); game.selected_arena="ds_pyrus" if prefix=="elemental" else "ds_toy"
 	if battle_checkpoint: game.free_slot="free_2"
 	game.preferences.ds_minigame="scratch"; game.muted=true; game._apply_settings()
 	# Same quick-match button available in the menu, no rule mutations.
@@ -178,13 +179,15 @@ func run() -> void:
 			"quick": launch_next(["--lose"])
 			"loss": launch_next(["--campaign","--checkpoint-and-exit"])
 			"resume": launch_next(["--battle-checkpoint","--checkpoint-and-exit"])
-			"battle-resume": write_summary()
+			"battle-resume": launch_next(["--elemental"])
+			"elemental": write_summary()
 	elif not bool(report.passed): write_summary()
 	game.match_id+=1; game.queue_free(); await process_frame
 	quit(0 if bool(report.get("passed",false)) else 1)
 
 func state_facts() -> Dictionary:
 	var facts: Dictionary={"phase":game.phase,"position":game.ds_sphere.position,"velocity":game.ds_sphere.velocity,"scores":game.rules.scores.duplicate(),"chapter":game.campaign_chapter,"elapsed":game.ds_sphere.elapsed,"rng_state":game.rng.state,"collected":Store.capture(game).get("field",{}).get("collected",[]),"battle_time":game.battle_time,"battle_points":game.battle_points,"enemy_progress":game.ds_enemy_progress,"mini":Store.grab(game.scratch,Store.MINI_FIELDS),"effects":Store.grab(game.battle_effects,Store.EFFECT_FIELDS),"hands":game.rules.abilities.duplicate(true),"camera_state":Store.grab(game.arena,Store.CAMERA_FIELDS)}
+	facts["special"]=Store.capture(game).get("special",{})
 	facts["state_digest"]=Store._digest(var_to_bytes(facts))
 	facts.position=str(facts.position); facts.velocity=str(facts.velocity); facts.rng_state=str(facts.rng_state)
 	for field: String in ["_camera_focus","_aim_sphere","_follow_sphere_point","_throw_heading"]: facts.camera_state[field]=str(facts.camera_state[field])
@@ -217,7 +220,7 @@ func launch_next(stage: Array) -> void:
 		if arg.begins_with("--qa-pack="): pack=arg.trim_prefix("--qa-pack=")
 	if FileAccess.file_exists(pack): arguments.append_array(["--main-pack",pack])
 	else: arguments.append_array(["--path",ProjectSettings.globalize_path("res://")])
-	var next_prefix: String="battle-resume" if stage.has("--battle-checkpoint") and stage.has("--resume") else "battle-save" if stage.has("--battle-checkpoint") else "loss" if stage.has("--lose") else "resume" if stage.has("--resume") else "save"
+	var next_prefix: String="elemental" if stage.has("--elemental") else "battle-resume" if stage.has("--battle-checkpoint") and stage.has("--resume") else "battle-save" if stage.has("--battle-checkpoint") else "loss" if stage.has("--lose") else "resume" if stage.has("--resume") else "save"
 	arguments.append_array(["--script","res://scripts/release_verifier.gd","--log-file",output_dir.path_join("engine-"+next_prefix+".log"),"--","--verify-release","--qa-pack="+pack,"--qa-run-id="+run_id,"--report-dir="+output_dir])
 	arguments.append_array(stage)
 	var pid: int=OS.create_process(OS.get_executable_path(),arguments)
@@ -230,7 +233,7 @@ func write_summary() -> void:
 		var value: Variant=JSON.parse_string(FileAccess.get_file_as_string(path)) if FileAccess.file_exists(path) else null
 		stages[name]=value if value is Dictionary else {}
 		passed=passed and bool(stages[name].get("passed",false)) and str(stages[name].get("run_id",""))==run_id
-	var summary: Dictionary={"version":str(ProjectSettings.get_setting("application/config/version")),"passed":passed,"os":OS.get_name(),"windows_execution_tested":OS.get_name()=="Windows","process_restart_tested":not stages.resume.is_empty(),"physical_gamepad_tested":false,"in_progress":false,"run_id":run_id,"stages":stages,"victory_and_defeat_tested":bool(stages.get("quick",{}).get("winner",-1)==0 and stages.get("loss",{}).get("winner",-1)==1),"battle_restart_tested":not stages.get("battle-resume",{}).is_empty()}
+	var summary: Dictionary={"version":str(ProjectSettings.get_setting("application/config/version")),"passed":passed,"os":OS.get_name(),"windows_execution_tested":OS.get_name()=="Windows","process_restart_tested":not stages.resume.is_empty(),"physical_gamepad_tested":false,"in_progress":false,"run_id":run_id,"stages":stages,"victory_and_defeat_tested":bool(stages.get("quick",{}).get("winner",-1)==0 and stages.get("loss",{}).get("winner",-1)==1),"battle_restart_tested":not stages.get("battle-resume",{}).is_empty(),"elemental_field_tested":bool(stages.get("elemental",{}).get("finished",false))}
 	var file: FileAccess=FileAccess.open(output_dir.path_join("summary.json"),FileAccess.WRITE)
 	if file==null: push_error("Cannot write final summary"); quit(1); return
 	file.store_string(JSON.stringify(summary,"\t")); file.close()

@@ -25,12 +25,15 @@ var _destroyed_objects: Dictionary = {}
 var motion_scale: float = 1.0
 var speed_limit: float = MAX_SPEED
 var attribute: String = ""
+var special_shot: String = ""
+var field_start_clock: float = 0.0
 var jump_count: int = 0
 var _support_normal: Vector3 = Vector3.UP
 const ROLLING_RESISTANCE: float = 0.50
 const ROLLING_DRAG: float = 0.72
 const REST_IMPACT_SPEED: float = 1.05
 func configure_field(arena: Node3D) -> void:
+	field_start_clock = float(arena.field_objects.clock) if arena.get("field_objects")!=null else 0.0
 	motion_scale = clampf(float(arena.throw_scale()),1.0,4.0) if arena.has_method("throw_scale") else 1.0
 	speed_limit = MAX_SPEED*motion_scale*speed_factor()
 func configure_unit(unit: Dictionary) -> void:
@@ -41,18 +44,20 @@ func speed_factor() -> float:
 	return 0.65+float(clampi(int(unit_profile.get("speed",2)),1,5))*0.17
 func magnet_margin() -> float:
 	return float(clampi(int(unit_profile.get("magnet",1)),1,5)-1)*0.08
-func launch(start: Vector3, target: Vector3, power: float, style: String = "lob", powered: bool = false) -> void:
+func launch(start: Vector3, target: Vector3, power: float, style: String = "lob", powered: bool = false, shot: String = "") -> void:
 	position = start if start.is_finite() else Vector3(0,0.5,5)
 	var heading: Vector3 = target-position if target.is_finite() else Vector3.FORWARD
 	heading.y = 0.0
 	var fraction: float = clampf(power,0.0,1.0) if is_finite(power) else 0.0
-	var vertical: float = lerpf(5.0,8.0,fraction) if style == "lob" else 0.25
+	special_shot = shot if shot==attribute else ""
+	speed_limit = MAX_SPEED*motion_scale*speed_factor()*(1.45 if special_shot=="Pyrus" else 1.0)
+	var vertical: float = 11.0 if special_shot=="Subterra" else lerpf(5.0,8.0,fraction) if style == "lob" else 0.25
 	# Target determines heading only. A farther aim point must not manufacture
 	# extra speed. Stat-to-coefficient curves remain documented desktop fits.
 	if heading.length_squared()<0.000001:
 		heading = Vector3.FORWARD
 	var speed: float = speed_limit*lerpf(0.18,0.94,fraction)
-	if powered:
+	if powered and special_shot.is_empty():
 		speed *= 1.22
 	velocity = heading.normalized()*minf(speed,speed_limit)
 	velocity.y = vertical
@@ -89,7 +94,7 @@ func jump() -> bool:
 func impulse(direction: Vector2, strength: float = 1.0) -> void:
 	if not direction.is_finite() or not is_finite(strength):
 		return
-	var responsiveness: float = 0.65+float(int(unit_profile.get("steering",2)))*0.20
+	var responsiveness: float = (0.65+float(int(unit_profile.get("steering",2)))*0.20)*(2.8 if special_shot=="Aquos" else 1.0)
 	var input: Vector2 = direction.limit_length(1.0) * clampf(strength,0.0,1.0)*2.4*motion_scale*responsiveness
 	velocity += Vector3(input.x,0,input.y)
 	var horizontal: Vector2 = Vector2(velocity.x,velocity.z).limit_length(speed_limit)
@@ -113,7 +118,7 @@ func step(delta: float, arena: Node3D, steering: Vector2 = Vector2.ZERO, braking
 		if grounded:
 			# A solid rolling sphere accelerates at 5/7 of the slope component.
 			gravity = gravity.slide(_support_normal)*(5.0/7.0)+_support_normal*gravity.dot(_support_normal)
-		var responsiveness: float = 0.65+float(int(unit_profile.get("steering",2)))*0.20
+		var responsiveness: float = (0.65+float(int(unit_profile.get("steering",2)))*0.20)*(2.8 if special_shot=="Aquos" else 1.0)
 		velocity += (Vector3(safe_input.x*4.0*motion_scale,0,safe_input.y*4.0*motion_scale)*responsiveness+gravity)*STEP
 		var horizontal: Vector2 = Vector2(velocity.x,velocity.z).limit_length(speed_limit)
 		velocity.x = horizontal.x
@@ -149,7 +154,7 @@ func step(delta: float, arena: Node3D, steering: Vector2 = Vector2.ZERO, braking
 		if grounded:
 			var relative: Vector3 = (velocity-_support_velocity).slide(_support_normal)
 			var control: float = 0.7+float(int(unit_profile.get("control",2)))*0.20
-			var drag: float = 4.2*control if braking else ROLLING_DRAG
+			var drag: float = 4.2*control if braking else ROLLING_DRAG*(0.6 if special_shot=="Pyrus" else 1.0)
 			var resistance: float = 4.0*control if braking else ROLLING_RESISTANCE * _support_normal.y
 			var speed: float = maxf(0.0,(relative.length()-resistance*STEP)*exp(-drag*STEP))
 			velocity = relative.normalized()*speed+_support_velocity
@@ -170,7 +175,8 @@ func _apply_field_objects(previous: Vector3, arena: Node3D, commit: bool = true)
 	if not arena.has_method("field_response"):
 		return
 	var contacts: Dictionary = {}
-	for item: Dictionary in arena.field_response(previous,position):
+	var responses: Array=arena.preview_field_response(previous,position,field_start_clock+elapsed+STEP) if not commit and arena.has_method("preview_field_response") else arena.field_response(previous,position)
+	for item: Dictionary in responses:
 		var id: int = int(item.id)
 		if _destroyed_objects.has(id): continue
 		contacts[id] = true

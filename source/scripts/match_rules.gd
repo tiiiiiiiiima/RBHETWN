@@ -168,7 +168,7 @@ func place_gate(owner: int, hand_index: int, slot: int, opening: bool = false) -
 	return true
 
 
-func land(owner: int, unit_index: int, slot: int, roll_bonus: int = 0, field_damage: int = 0) -> Dictionary:
+func land(owner: int, unit_index: int, slot: int, roll_bonus: int = 0, field_damage: int = 0, field_effects: Dictionary = {}) -> Dictionary:
 	if winner != -1 or not _valid_owner(owner) or not _can_throw(owner):
 		return {"event": "invalid"}
 	if unit_index < 0 or unit_index >= teams[owner].size():
@@ -193,7 +193,10 @@ func land(owner: int, unit_index: int, slot: int, roll_bonus: int = 0, field_dam
 		"name": unit["name"],
 		"attribute": unit["attribute"],
 		"g": unit["g"],
-		"roll_bonus": clampi(roll_bonus, 0, 120),
+		"roll_bonus": clampi(roll_bonus, 0, 120)*clampi(int(field_effects.get("multiplier",1)),1,2),
+		"pickup_base": clampi(roll_bonus, 0, 120),
+		"knockoff_protected": bool(field_effects.get("invulnerable",false)),
+		"removal_protected": bool(field_effects.get("removal_protected",false)),
 		"sphere_damage": 0,
 		"field_damage": maxi(0,field_damage),
 		"motion_profile": unit.get("motion_profile", {}).duplicate(true),
@@ -422,6 +425,8 @@ func apply_sphere_attack(owner: int, slot: int, damage: int) -> Dictionary:
 	var unit: Dictionary = occupants[0]
 	var previous: int = _standing_base_power(unit)
 	var applied: int = mini(damage, previous)
+	if bool(unit.get("knockoff_protected",false)):
+		applied=mini(applied,maxi(0,previous-1))
 	unit["sphere_damage"] = int(unit.get("sphere_damage", 0)) + applied
 	var remaining: int = _standing_base_power(unit)
 	var result: Dictionary = {
@@ -437,6 +442,41 @@ func apply_sphere_attack(owner: int, slot: int, damage: int) -> Dictionary:
 		result["winner"] = winner
 	return result
 
+
+func remove_field_units(slots: Array, respect_protection: bool = true) -> int:
+	var removed: int=0
+	for slot: Variant in slots:
+		if not gates.has(slot): continue
+		var keep: Array=[]
+		for unit: Dictionary in gates[slot].bakugan:
+			if respect_protection and bool(unit.get("removal_protected",false)):
+				keep.append(unit); continue
+			var team_unit: Dictionary=teams[int(unit.owner)][int(unit.index)]
+			team_unit["used"]=true; team_unit["landed_cycle"]=false
+			removed+=1
+		gates[slot].bakugan=keep
+		if keep.is_empty(): _clear_stay_for_slot(int(slot))
+	return removed
+
+func change_field_pickups(double: bool) -> void:
+	for gate: Dictionary in gates.values():
+		for unit: Dictionary in gate.bakugan:
+			var base: int=clampi(int(unit.get("pickup_base",unit.get("roll_bonus",0))),0,120)
+			unit["pickup_base"]=base if double else 0
+			unit["roll_bonus"]=base*2 if double else 0
+
+func swap_field_gate(owner: int, slot: int, index: int) -> bool:
+	if owner not in [0,1] or not gates.has(slot) or index<0 or index>=hands[owner].size(): return false
+	var previous: Dictionary=gates[slot]
+	var old_owner: int=int(previous.owner)
+	if hands[old_owner].size()>=3 and old_owner!=owner: return false
+	var replacement: Dictionary=hands[owner].pop_at(index)
+	var occupants: Array=previous.bakugan
+	previous["bakugan"]=[]; previous["revealed"]=false
+	hands[old_owner].append(previous)
+	replacement["bakugan"]=occupants; replacement["revealed"]=false
+	gates[slot]=replacement
+	return true
 
 func _standing_base_power(unit: Dictionary) -> int:
 	return maxi(0, int(unit["g"]) + int(unit.get("roll_bonus", 0)) - int(unit.get("sphere_damage", 0)) - int(unit.get("field_damage", 0)))

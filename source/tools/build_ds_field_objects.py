@@ -19,7 +19,7 @@ from decode_ds_messages import read_message_table
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = ['toy', 'pyrus', 'aquos', 'subterra', 'haos', 'darkus', 'ventus', 'anime']
 OBJECTS = {1: ('g_power', 'fieldpower_g_0'), 2: ('s_power', 'fieldpower_s_0'),
-           9: ('s_power_small', 'fieldpower_s_1'), 4: ('trampoline', 'jumpobj_00'),
+           9: ('s_power_small', 'fieldpower_s_1'), 3: ('field_card', 'ability_filed0'), 4: ('trampoline', 'jumpobj_00'),
            5: ('speed_pad', 'dashbase_00'), 30: ('lava_pool', 'Pyruseruption_n'),
            7: ('experience', 'exepoint_00'), 6: ('breakable', 'fielddestroy_n_0'),
            41: ('water_jet', 'aqousfukidasi_n'), 60: ('energy_orb', 'Haosball'),

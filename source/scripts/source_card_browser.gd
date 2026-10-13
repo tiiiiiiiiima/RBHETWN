@@ -1,4 +1,5 @@
 extends Control
+const FieldCards = preload("res://scripts/ds_field_cards.gd")
 const DSPlayable = preload("res://scripts/ds_playable_catalog.gd")
 ## Reusable collection overlay. Parent pauses its own game while this is open.
 ## show_browser()/close_browser(), closed signal; no gameplay card effects.
@@ -283,8 +284,8 @@ func _refresh_matches() -> void:
 	_matches = _library().cards(_kind, _query)
 	_playable_toggle.disabled=_source!="ds"
 	if _source=="ds" and _playable_only:
-		_matches=_matches.filter(func(entry:Dictionary)->bool:return not DSPlayable.metadata(str(entry.get("key",""))).is_empty())
-	_source_note.text = "Исходные изображения и тексты Nintendo DS. %d карт доступны в колодах режима DS; остальные пока входят в коллекцию." % DSPlayable.cards().size() if _source == "ds" else "Полные изображения из Bakugan Anime Style Format. Карты этой коллекции пока не участвуют в дуэлях."
+		_matches=_matches.filter(func(entry:Dictionary)->bool:return not DSPlayable.metadata(str(entry.get("key",""))).is_empty() or not FieldCards.metadata(str(entry.get("key",""))).is_empty())
+	_source_note.text = "Исходные изображения и тексты Nintendo DS. %d карт доступны в колодах режима DS; 12 специальных карт собираются на поле; остальные пока входят в коллекцию." % DSPlayable.cards().size() if _source == "ds" else "Полные изображения из Bakugan Anime Style Format. Карты этой коллекции пока не участвуют в дуэлях."
 	if _source == "monster_batch":
 		_source_note.text = "Monster batch: ворота, способности и карточки характеристик. Только коллекция; эффекты фанатского набора пока не добавлены в дуэли."
 	for key: String in _filter_buttons:
@@ -346,7 +347,7 @@ func _refresh_page() -> void:
 		name.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		inner.add_child(name)
 		if _source=="ds":
-			var playable: bool = not DSPlayable.metadata(key).is_empty()
+			var playable: bool = not DSPlayable.metadata(key).is_empty() or not FieldCards.metadata(key).is_empty()
 			var badge: Label=_label("ДОСТУПНА ДЛЯ БОЯ" if playable else "ТОЛЬКО КОЛЛЕКЦИЯ",10,CYAN if playable else MUTED)
 			badge.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 			badge.mouse_filter=Control.MOUSE_FILTER_IGNORE
@@ -372,8 +373,12 @@ func _open_zoom(key: String) -> void:
 	var description: String = str(entry.get("source_description", ""))
 	_zoom_description.text = description if not description.is_empty() else "Описание для этой карты пока недоступно." if _source == "ds" else "Текст карты находится на исходном изображении."
 	if _source == "ds":
+		var field_card: Dictionary=FieldCards.metadata(key)
+		if not field_card.is_empty():
+			_zoom_type.text += "\nРаботает как предмет на поле DS; в колоду не входит"
+			_zoom_description.text += "\n\nВ игре: "+str(field_card.description)
 		var playable: Dictionary = DSPlayable.metadata(key)
-		_zoom_type.text += "\nДоступна в колоде DS" if not playable.is_empty() else "\nТолько коллекция"
+		_zoom_type.text += "\nДоступна в колоде DS" if not playable.is_empty() else "" if not field_card.is_empty() else "\nТолько коллекция"
 		if not playable.is_empty():
 			_zoom_description.text += "\n\nВ игре: " + str(playable.get("description", ""))
 			if str(playable.get("kind", "")) == "gate":
