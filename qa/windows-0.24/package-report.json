@@ -1,0 +1,11 @@
+{
+  "version": "0.24.0",
+  "archive_bytes": 2026588741,
+  "archive_sha256": "0543065bb89a00b223c097e588e00fbcadfe242bbef6c09bcf4844ac64ceb383",
+  "pck_sha256": "87f2845c49d3ef8940816d5a1343208a433c5f9bf378136a1eb5a5ae057fb0bb",
+  "pck_bytes": 2617308880,
+  "engine_sha256": "ef90e929ba1a6a4322860285d97f40f4aa349c90329a91b0e8b55b8df0f4cb00",
+  "files": 71,
+  "crc_ok": true,
+  "unchanged_official_engine": true
+}

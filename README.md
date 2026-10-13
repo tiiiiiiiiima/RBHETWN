@@ -5,8 +5,11 @@
 Новые эффекты сохраняются вместе с незавершённым матчем; отдельные
 слоты и прямое размещение в аниме-дуэли из прошлых выпусков сохранены.
 
-Сборка 0.24 проходит окончательную проверку на Windows.
-[Опубликованные выпуски](https://github.com/tiiiiiiiiima/RBHETWN/releases).
+[Скачать Windows ZIP — 1,89 ГиБ](https://github.com/tiiiiiiiiima/RBHETWN/releases/download/v0.24.0/Bakugan-0.24-Windows.zip) · [Все выпуски](https://github.com/tiiiiiiiiima/RBHETWN/releases).
+
+Windows-прогон завершён: победа 3:2, поражение 1:3, продолжение полёта 3:1,
+продолжение боя 3:0 и отдельный Pyrus 3:1. Оба сохранения восстановлены точно.
+[Отчёты и снимки Windows](qa/windows-0.24).
 
 [Изменения](source/docs/RELEASE-0.24.md) · [Источники и правила](source/docs/DS-FIELD-0.24.md) · [Проверка Windows](source/docs/WINDOWS-QA-0.24.md) · [Код](source)
 

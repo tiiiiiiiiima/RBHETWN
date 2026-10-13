@@ -1,0 +1,80 @@
+name: Verify public Bakugan 0.24 on Windows
+'on':
+  workflow_dispatch: null
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-2025
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ANGLE_DEFAULT_PLATFORM: warp
+      ZIP_SHA256: 0543065bb89a00b223c097e588e00fbcadfe242bbef6c09bcf4844ac64ceb383
+      PCK_SHA256: 87f2845c49d3ef8940816d5a1343208a433c5f9bf378136a1eb5a5ae057fb0bb
+    steps:
+    - uses: actions/checkout@v4
+    - name: Download and verify the complete standalone release
+      shell: pwsh
+      run: '$ErrorActionPreference=''Stop''
+
+        New-Item -ItemType Directory -Force reports, package | Out-Null
+
+        gh release download v0.24.0 --repo $env:GITHUB_REPOSITORY --pattern ''Bakugan-0.24-Windows.zip'' --dir package
+
+        if ($LASTEXITCODE -ne 0) { throw ''Release download failed'' }
+
+        $zip=Join-Path $PWD ''package/Bakugan-0.24-Windows.zip''
+
+        if ((Get-FileHash $zip -Algorithm SHA256).Hash.ToLower() -ne $env:ZIP_SHA256) { throw ''ZIP hash mismatch'' }
+
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+        [System.IO.Compression.ZipFile]::ExtractToDirectory($zip,(Join-Path $PWD ''package''))
+
+        $game=Join-Path $PWD ''package/Bakugan-0.24-Windows''
+
+        if ((Get-FileHash (Join-Path $game ''BakuganPrototype-Windows.pck'') -Algorithm SHA256).Hash.ToLower() -ne $env:PCK_SHA256) { throw ''PCK hash mismatch''
+        }
+
+        if ((Get-FileHash (Join-Path $game ''BakuganPrototype-Windows.exe'') -Algorithm SHA256).Hash.ToLower() -ne ''ef90e929ba1a6a4322860285d97f40f4aa349c90329a91b0e8b55b8df0f4cb00'')
+        { throw ''Official EXE mismatch'' }
+
+        @{os=[System.Runtime.InteropServices.RuntimeInformation]::OSDescription; zip_sha256=$env:ZIP_SHA256; pck_sha256=$env:PCK_SHA256; renderer=''ANGLE/WARP'';
+        physical_gamepad_tested=$false} | ConvertTo-Json | Set-Content reports/execution.json
+
+        "GAME_DIR=$game" | Out-File $env:GITHUB_ENV -Encoding utf8 -Append
+
+        '
+    - name: Native resources, slots, prior regressions and controlled balance
+      shell: pwsh
+      run: "$ErrorActionPreference='Stop'\n$exe=Join-Path $env:GAME_DIR 'BakuganPrototype-Windows.exe'\nforeach ($test in @(@{script='qa/probe_ds_package.gd';report='resources.json';checks=13293},@{script='qa/test_release22.gd';report='regressions.json';checks=69},@{script='qa/test_release23.gd';report='slots.json';checks=37},@{script='qa/test_release24.gd';report='fields.json';checks=83},@{script='qa/audit_minigame23.gd';report='balance.json';checks=542}))\
+        \ {\n  $script=Join-Path $PWD $test.script; $report=Join-Path (Join-Path $PWD 'reports') $test.report\n  $p=Start-Process $exe -ArgumentList @('--headless','--audio-driver','Dummy','--script',$script,'--log-file',($report+'.log'),'--',\"\
+        --report=$report\") -WorkingDirectory $env:GAME_DIR -PassThru\n  if (-not $p.WaitForExit(240000)) { $p.Kill(); throw \"Test timeout: $script\" }\n\
+        \  if ($p.ExitCode -ne 0 -or -not (Test-Path $report)) { throw \"Test failed: $script\" }\n  $data=Get-Content $report -Raw | ConvertFrom-Json\n\
+        \  if ($data.failures.Count -ne 0 -or ($test.checks -gt 0 -and $data.checks -ne $test.checks) -or ($test.checks -eq 0 -and $data.checks -lt 13282))\
+        \ { throw \"Assertions failed: $script\" }\n}\n"
+    - name: Real matches, flight/battle restarts and complete Pyrus match
+      shell: pwsh
+      run: "$ErrorActionPreference='Stop'\n$profile=Join-Path $env:APPDATA 'Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.24'\nif (Test-Path\
+        \ $profile) { Remove-Item $profile -Recurse -Force }\n$suite=Join-Path $PWD 'reports/matches'; New-Item -ItemType Directory -Force $suite | Out-Null\n\
+        $exe=Join-Path $env:GAME_DIR 'BakuganPrototype-Windows.exe'\n$p=Start-Process $exe -ArgumentList @('--rendering-method','gl_compatibility','--rendering-driver','opengl3_angle','--audio-driver','Dummy','--script','res://scripts/release_verifier.gd','--log-file',(Join-Path\
+        \ $suite 'engine-quick.log'),'--','--verify-release',\"--report-dir=$suite\") -WorkingDirectory $env:GAME_DIR -PassThru\n$deadline=(Get-Date).AddMinutes(20);\
+        \ $summary=Join-Path $suite 'summary.json'; $done=$false\nwhile ((Get-Date) -lt $deadline) {\n  if (Test-Path $summary) {\n    try { $data=Get-Content\
+        \ $summary -Raw | ConvertFrom-Json } catch { $data=$null }\n    if ($null -ne $data -and $data.in_progress -eq $false) { $done=$true; break }\n\
+        \  }\n  foreach ($log in Get-ChildItem $suite -Filter 'engine-*.log') {\n    $errorLines=Select-String -Path $log -Pattern 'Failed to create native|SCRIPT\
+        \ ERROR|Parse Error'\n    if ($errorLines) { throw ($errorLines.Line -join \"`n\") }\n  }\n  if ($p.HasExited -and -not (Test-Path $summary)) {\
+        \ throw 'Suite did not start' }\n  Start-Sleep -Seconds 3\n}\nif (-not $done -or $data.passed -ne $true -or $data.os -ne 'Windows' -or $data.version\
+        \ -ne '0.24.0') { throw 'Full Windows suite failed or timed out' }\nforeach ($name in @('quick','loss','save','resume','battle-save','battle-resume','elemental'))\
+        \ {\n  $stage=$data.stages.$name\n  if ($stage.passed -ne $true -or $stage.run_id -ne $data.run_id -or $stage.metrics.process_memory.available -ne\
+        \ $true) { throw \"Invalid stage: $name\" }\n}\nif ($data.victory_and_defeat_tested -ne $true -or $data.battle_restart_tested -ne $true -or $data.elemental_field_tested\
+        \ -ne $true) { throw 'Required gameplay coverage missing' }\nif ($data.stages.save.saved.state_digest -ne $data.stages.resume.resumed.state_digest)\
+        \ { throw 'Flight digest mismatch' }\nif ($data.stages.'battle-save'.saved.state_digest -ne $data.stages.'battle-resume'.resumed.state_digest) {\
+        \ throw 'Battle digest mismatch' }\n"
+    - name: Preserve Windows diagnostics and screenshots
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: windows-0.24-${{ github.run_id }}
+        path: reports/
+        retention-days: 7

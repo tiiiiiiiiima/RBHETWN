@@ -1,0 +1,9 @@
+{
+	"checks": 83,
+	"failures": [],
+	"full_physical_match": false,
+	"passed": true,
+	"prescribed_rule_fixture": true,
+	"real_pyrus_resources": true,
+	"version": "0.24.0"
+}

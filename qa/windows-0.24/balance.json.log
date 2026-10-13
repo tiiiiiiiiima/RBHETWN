@@ -1,0 +1,3 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+MINIGAME AUDIT {"checks":542,"examples":{"ability_changes_winner":{"blaze":true,"decision_values":[970,910],"display_g":[370,310],"gate":136,"mini":[600,600],"title":"Leonidas","winner":0},"equal_input":{"blaze":false,"decision_values":[890,910],"display_g":[290,310],"gate":136,"mini":[600,600],"title":"Leonidas","winner":1},"gate_changes_winner":{"blaze":false,"decision_values":[870,850],"display_g":[270,250],"gate":119,"mini":[600,600],"title":"Juggernoid","winner":0},"skill_overcomes_g":{"blaze":false,"decision_values":[890,597],"display_g":[290,310],"gate":136,"mini":[600,287],"title":"Leonidas","winner":0}},"failures":[],"scores":{"none":0,"ordinary":287,"strong":600,"weak":95}}

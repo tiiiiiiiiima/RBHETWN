@@ -1,0 +1,587 @@
+{
+	"captures": [
+		"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-preparation.png",
+		"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-aim.png",
+		"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-rolling.png",
+		"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-paused-mid-throw.png"
+	],
+	"checks": [
+		{
+			"label": "Paused flight checkpoint is valid",
+			"passed": true
+		},
+		{
+			"label": "Checkpoint write succeeded",
+			"passed": true
+		},
+		{
+			"label": "Next verification process starts",
+			"passed": true
+		}
+	],
+	"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.24/profile.cfg",
+	"events": [
+		{
+			"phase": "aim",
+			"scores": [
+				0,
+				0
+			],
+			"t": 0.02
+		},
+		{
+			"phase": "flying",
+			"scores": [
+				0,
+				0
+			],
+			"t": 0.312
+		},
+		{
+			"phase": "rolling",
+			"scores": [
+				0,
+				0
+			],
+			"t": 0.556
+		}
+	],
+	"forced_landings": false,
+	"forced_winner": false,
+	"input_driven": true,
+	"metrics": {
+		"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+		"engine": {
+			"build": "official",
+			"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+			"hex": 263683,
+			"major": 4,
+			"minor": 6,
+			"patch": 3,
+			"status": "stable",
+			"string": "4.6.3-stable (official)",
+			"timestamp": 0
+		},
+		"frames": 6,
+		"marks": [
+			{
+				"at_ms": 914.046,
+				"elapsed_ms": 914.023,
+				"label": "main_ready",
+				"nodes": 1015,
+				"orphans": 0,
+				"static_memory_bytes": 109310095
+			}
+		],
+		"os": "Windows",
+		"phases": {
+			"aim": {
+				"cpu_peak_ms": 395.709,
+				"fps": 8.0,
+				"frame_p95_ms": 132.175333333333,
+				"frame_p99_ms": 132.175333333333,
+				"frames": 2,
+				"nodes_peak": 1078,
+				"orphans_peak": 0,
+				"seconds": 0.25,
+				"static_peak_bytes": 127380461,
+				"video_peak_bytes": 48220857
+			},
+			"campaign": {
+				"cpu_peak_ms": 0.0,
+				"fps": 15.0,
+				"frame_p95_ms": 66.6666666666667,
+				"frame_p99_ms": 66.6666666666667,
+				"frames": 1,
+				"nodes_peak": 1021,
+				"orphans_peak": 8,
+				"seconds": 0.0666666666666667,
+				"static_peak_bytes": 111377290,
+				"video_peak_bytes": 32522251
+			},
+			"flying": {
+				"cpu_peak_ms": 395.709,
+				"fps": 13.8719984463362,
+				"frame_p95_ms": 94.1753333333333,
+				"frame_p99_ms": 94.1753333333333,
+				"frames": 2,
+				"nodes_peak": 1071,
+				"orphans_peak": 0,
+				"seconds": 0.144175333333333,
+				"static_peak_bytes": 127466561,
+				"video_peak_bytes": 48222489
+			},
+			"rolling": {
+				"cpu_peak_ms": 143.542,
+				"fps": 7.18607625864126,
+				"frame_p95_ms": 139.158,
+				"frame_p99_ms": 139.158,
+				"frames": 1,
+				"nodes_peak": 1071,
+				"orphans_peak": 0,
+				"seconds": 0.139158,
+				"static_peak_bytes": 127493985,
+				"video_peak_bytes": 48222489
+			}
+		},
+		"physical_gamepad_tested": false,
+		"process_memory": {
+			"available": true,
+			"peak_working_set_bytes": 506507264,
+			"source": "Get-Process",
+			"working_set_bytes": 501088256
+		},
+		"renderer": "gl_compatibility",
+		"windows_execution_tested": true
+	},
+	"passed": true,
+	"policy": "Target enemy stands and use controlled mouse input",
+	"run_id": "1791922539025-3080",
+	"saved": {
+		"battle_points": 0,
+		"battle_time": 0.0,
+		"camera_state": {
+			"_aim_camera": false,
+			"_aim_sphere": "(0.0, 0.5, 12.24)",
+			"_camera_focus": "(0.972655, 0.455435, 5.117467)",
+			"_camera_following": true,
+			"_follow_sphere_point": "(0.883763, 0.441, 5.443618)",
+			"_throw_heading": "(0.128329, 0.0, -0.991732)"
+		},
+		"chapter": 0,
+		"collected": [
+			7
+		],
+		"effects": {
+			"counts": [
+				0,
+				0
+			],
+			"forced_type": "",
+			"played_ids": [
+				{
+
+				},
+				{
+
+				}
+			],
+			"states": [
+				{
+					"blocked_families": [],
+					"drain": 0,
+					"focus": 1.0,
+					"g_bonus": 0,
+					"input_block": 0.0,
+					"input_multiplier": 1.0,
+					"power": 0,
+					"redo_used": false,
+					"shield": false
+				},
+				{
+					"blocked_families": [],
+					"drain": 0,
+					"focus": 1.0,
+					"g_bonus": 0,
+					"input_block": 0.0,
+					"input_multiplier": 1.0,
+					"power": 0,
+					"redo_used": false,
+					"shield": false
+				}
+			],
+			"used": [
+				false,
+				false
+			]
+		},
+		"elapsed": 0.283333333333333,
+		"enemy_progress": 0.0,
+		"hands": [
+			[
+				{
+					"attributes": [
+						"Pyrus",
+						"Aquos",
+						"Subterra",
+						"Haos",
+						"Darkus",
+						"Ventus"
+					],
+					"bonus": 0,
+					"boosts": {
+						"Aquos": 0,
+						"Darkus": 0,
+						"Haos": 0,
+						"Pyrus": 0,
+						"Subterra": 0,
+						"Ventus": 0
+					},
+					"color_type": "red",
+					"description": "Поменять текущие G местами, если стихии отличаются.",
+					"effect": {
+						"relationship": "different",
+						"type": "power_swap"
+					},
+					"id": "p0_ds_card_408",
+					"key": "ds_card_408",
+					"kind": "ability",
+					"message_index": 111,
+					"name": "Counter Swap",
+					"owner": 0,
+					"parameter_source": {
+						"decompressed_arm9_offset": "0xa1846",
+						"multiplier": 10.0,
+						"native_card_table_index": 111.0,
+						"native_g_units": [
+							0.0,
+							0.0,
+							0.0,
+							0.0,
+							0.0,
+							0.0
+						]
+					},
+					"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_408_nce.png",
+					"playable": true,
+					"printed_rule": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+					"rules_profile": "ds",
+					"source_card_id": 408,
+					"source_description": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+					"source_image_sha256": "e81c5dfb4a3df3ed36db93d27676bc7147364425eb9c083a1ee93690b2b668d5",
+					"source_key": "ds_card_408",
+					"title": "Counter Swap",
+					"type": "power_swap"
+				},
+				{
+					"attributes": [
+						"Pyrus",
+						"Aquos",
+						"Subterra",
+						"Haos",
+						"Darkus",
+						"Ventus"
+					],
+					"bonus": 0,
+					"boosts": {
+						"Aquos": 0,
+						"Darkus": 0,
+						"Haos": 0,
+						"Pyrus": 0,
+						"Subterra": 0,
+						"Ventus": 0
+					},
+					"color_type": "green",
+					"description": "Заблокировать у соперника карты типа swap.",
+					"effect": {
+						"family": "swap",
+						"type": "block_family"
+					},
+					"id": "p0_ds_card_502",
+					"key": "ds_card_502",
+					"kind": "ability",
+					"message_index": 137,
+					"name": "No Trading",
+					"owner": 0,
+					"parameter_source": {
+						"decompressed_arm9_offset": "0xa18e2",
+						"multiplier": 10.0,
+						"native_card_table_index": 137.0,
+						"native_g_units": [
+							0.0,
+							0.0,
+							0.0,
+							0.0,
+							0.0,
+							0.0
+						]
+					},
+					"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_502_nce.png",
+					"playable": true,
+					"printed_rule": "Your opponent cannot use any Swap cards.",
+					"rules_profile": "ds",
+					"source_card_id": 502,
+					"source_description": "Your opponent cannot use any Swap cards.",
+					"source_image_sha256": "184b2e9227b86358800f6b22bca0b6df25a102c80e731e953e250872f94bfdc8",
+					"source_key": "ds_card_502",
+					"title": "No Trading",
+					"type": "block_family"
+				},
+				{
+					"attributes": [
+						"Pyrus",
+						"Aquos",
+						"Ventus"
+					],
+					"bonus": 0,
+					"boosts": {
+						"Aquos": 50,
+						"Darkus": 0,
+						"Haos": 0,
+						"Pyrus": 80,
+						"Subterra": 0,
+						"Ventus": 50
+					},
+					"color_type": "blue",
+					"description": "Бонус G зависит от стихии вашего бакугана.",
+					"effect": {
+						"boosts": {
+							"Aquos": 50,
+							"Darkus": 0,
+							"Haos": 0,
+							"Pyrus": 80,
+							"Subterra": 0,
+							"Ventus": 50
+						},
+						"type": "attribute_power"
+					},
+					"id": "p0_ds_card_604",
+					"key": "ds_card_604",
+					"kind": "ability",
+					"message_index": 171,
+					"name": "Blaze",
+					"owner": 0,
+					"parameter_source": {
+						"decompressed_arm9_offset": "0xa19ae",
+						"multiplier": 10.0,
+						"native_card_table_index": 171.0,
+						"native_g_units": [
+							8.0,
+							5.0,
+							0.0,
+							0.0,
+							0.0,
+							5.0
+						]
+					},
+					"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_604_nce.png",
+					"playable": true,
+					"printed_rule": "Your Bakugan gains G-Power based on its Attribute.",
+					"rules_profile": "ds",
+					"source_card_id": 604,
+					"source_description": "Your Bakugan gains G-Power based on its Attribute.",
+					"source_image_sha256": "afc6ae9d3c9acca9dd7c7fb8448a9db6e0b793cec5b5b30077f2cb478f704ac9",
+					"source_key": "ds_card_604",
+					"title": "Blaze",
+					"type": "attribute_power"
+				}
+			],
+			[
+				{
+					"attributes": [
+						"Pyrus",
+						"Aquos",
+						"Subterra",
+						"Haos",
+						"Darkus",
+						"Ventus"
+					],
+					"bonus": 0,
+					"boosts": {
+						"Aquos": 0,
+						"Darkus": 0,
+						"Haos": 0,
+						"Pyrus": 0,
+						"Subterra": 0,
+						"Ventus": 0
+					},
+					"color_type": "red",
+					"description": "Darkus: поменять текущие G бакуганов местами.",
+					"effect": {
+						"own_attribute": "Darkus",
+						"type": "power_swap"
+					},
+					"id": "p1_ds_card_405",
+					"key": "ds_card_405",
+					"kind": "ability",
+					"message_index": 108,
+					"name": "Darkus Swap",
+					"owner": 1,
+					"parameter_source": {
+						"decompressed_arm9_offset": "0xa1834",
+						"multiplier": 10.0,
+						"native_card_table_index": 108.0,
+						"native_g_units": [
+							0.0,
+							0.0,
+							0.0,
+							0.0,
+							0.0,
+							0.0
+						]
+					},
+					"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_405_nce.png",
+					"playable": true,
+					"printed_rule": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+					"rules_profile": "ds",
+					"source_card_id": 405,
+					"source_description": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+					"source_image_sha256": "c332694f83da9a68d58ca9d9d6cd0b622e6d80946fe8eec83f19dbfd865a2b22",
+					"source_key": "ds_card_405",
+					"title": "Darkus Swap",
+					"type": "power_swap"
+				},
+				{
+					"attributes": [
+						"Pyrus",
+						"Aquos",
+						"Subterra",
+						"Haos",
+						"Darkus",
+						"Ventus"
+					],
+					"bonus": 200,
+					"boosts": {
+						"Aquos": 0,
+						"Darkus": 0,
+						"Haos": 0,
+						"Pyrus": 0,
+						"Subterra": 0,
+						"Ventus": 0
+					},
+					"color_type": "green",
+					"description": "Hydranoid получает +200 G.",
+					"effect": {
+						"bonus": 200,
+						"species": "Hydranoid",
+						"type": "species_bonus"
+					},
+					"id": "p1_ds_card_520",
+					"key": "ds_card_520",
+					"kind": "ability",
+					"message_index": 155,
+					"name": "Chaos of the Darkness",
+					"owner": 1,
+					"parameter_source": {
+						"decompressed_arm9_offset": "0xa194e",
+						"multiplier": 10.0,
+						"native_card_table_index": 155.0,
+						"native_g_units": [
+							0.0,
+							0.0,
+							0.0,
+							0.0,
+							0.0,
+							0.0
+						]
+					},
+					"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_520_nce.png",
+					"playable": true,
+					"printed_rule": "Hydranoid gets +200 G-Power.",
+					"rules_profile": "ds",
+					"source_card_id": 520,
+					"source_description": "Hydranoid gets +200 G-Power.",
+					"source_image_sha256": "98b5fc456fc2613638e38a7a18874def18880530818065c1915bbf67d5010f1a",
+					"source_key": "ds_card_520",
+					"title": "Chaos of the Darkness",
+					"type": "species_bonus"
+				},
+				{
+					"attributes": [
+						"Haos",
+						"Darkus"
+					],
+					"bonus": 0,
+					"boosts": {
+						"Aquos": 0,
+						"Darkus": 140,
+						"Haos": 60,
+						"Pyrus": 0,
+						"Subterra": 0,
+						"Ventus": 0
+					},
+					"color_type": "blue",
+					"description": "Бонус G по стихии, если бой идёт на воротах соперника.",
+					"effect": {
+						"boosts": {
+							"Aquos": 0,
+							"Darkus": 140,
+							"Haos": 60,
+							"Pyrus": 0,
+							"Subterra": 0,
+							"Ventus": 0
+						},
+						"gate_relation": "opponent",
+						"type": "gate_owned_power"
+					},
+					"id": "p1_ds_card_606",
+					"key": "ds_card_606",
+					"kind": "ability",
+					"message_index": 173,
+					"name": "Power From Darkness",
+					"owner": 1,
+					"parameter_source": {
+						"decompressed_arm9_offset": "0xa19ba",
+						"multiplier": 10.0,
+						"native_card_table_index": 173.0,
+						"native_g_units": [
+							0.0,
+							0.0,
+							0.0,
+							6.0,
+							14.0,
+							0.0
+						]
+					},
+					"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_606_nce.png",
+					"playable": true,
+					"printed_rule": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+					"rules_profile": "ds",
+					"source_card_id": 606,
+					"source_description": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+					"source_image_sha256": "216ca474666149cc5403a14e5de43d615b63897d5f69e5d7232d55bbb440aa40",
+					"source_key": "ds_card_606",
+					"title": "Power From Darkness",
+					"type": "gate_owned_power"
+				}
+			]
+		],
+		"mini": {
+			"_angle": 0.0,
+			"_bound_move": 0.0,
+			"_burst": 0.0,
+			"_hit_ids": {
+
+			},
+			"_pointer": "(0.0, 0.0)",
+			"_spin_direction": 0,
+			"advantage": 0.5,
+			"blocked": 0.0,
+			"clock": 0.0,
+			"hits": 0,
+			"input_multiplier": 1.0,
+			"mode": "scratch",
+			"score": 0.0
+		},
+		"phase": "rolling",
+		"position": "(0.883763, 0.441, 5.443618)",
+		"rng_state": "-4136346584464952565",
+		"scores": [
+			0,
+			0
+		],
+		"special": {
+			"main": {
+				"extra_throw_owner": -1,
+				"field_effects": {
+					"early": false,
+					"ids": [],
+					"invulnerable": false,
+					"multiplier": 1,
+					"replace_unit": false,
+					"road_trip": false,
+					"surprise": false,
+					"swap_gate": false
+				},
+				"flight_special": ""
+			},
+			"sphere": {
+				"field_start_clock": 0.25,
+				"special_shot": ""
+			}
+		},
+		"state_digest": "f5a714248219a1d2dfc0bcd6493b4e3025902ef6895e9bc29f7ec7c257f589c4",
+		"velocity": "(2.575864, 0.0, -22.60476)"
+	},
+	"version": "0.24.0"
+}

@@ -1,0 +1,5548 @@
+{
+	"battle_restart_tested": true,
+	"elemental_field_tested": true,
+	"in_progress": false,
+	"os": "Windows",
+	"passed": true,
+	"physical_gamepad_tested": false,
+	"process_restart_tested": true,
+	"run_id": "1791922539025-3080",
+	"stages": {
+		"battle-resume": {
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-resume-slot-menu.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-resume-battle.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-resume-result.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-resume-final.png"
+			],
+			"checks": [
+				{
+					"label": "Exact binary state matches after process restart",
+					"passed": true
+				},
+				{
+					"label": "A real full match reached its result",
+					"passed": true
+				},
+				{
+					"label": "Profile write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Results and rewards survive profile reload",
+					"passed": true
+				},
+				{
+					"label": "Completed match leaves no stale resume",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.24/profile.cfg",
+			"enemy_stats": {
+				"abilities": 1.0,
+				"battles": 1.0,
+				"captures": 0.0,
+				"collected_g": 0.0,
+				"double_stands": 0.0,
+				"hits": 1.0,
+				"mini_g": 136.0,
+				"misses": 4.0,
+				"throws": 5.0
+			},
+			"events": [
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 0.026
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 1.256
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 2.912
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 3.933
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 5.626
+				},
+				{
+					"phase": "result",
+					"scores": [
+						3.0,
+						0.0
+					],
+					"t": 12.642
+				},
+				{
+					"phase": "finished",
+					"scores": [
+						3.0,
+						0.0
+					],
+					"t": 15.544
+				}
+			],
+			"finished": true,
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"journal": [
+				"Ты забирает ворота. G: 380 / 670; очки мини-игры: 600 / 136.",
+				"Соперник: Chaos of the Darkness: Hydranoid получает +200 G.",
+				"Blaze: Бонус G зависит от стихии вашего бакугана.",
+				"Матч продолжен с сохранённого момента.",
+				"Открыты ворота Sunrise: Бонус стихии ворот применяется при раскрытии.",
+				"Ускоритель разогнал сферу."
+			],
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 230.0,
+				"marks": [
+					{
+						"at_ms": 1014.664,
+						"elapsed_ms": 1014.639,
+						"label": "main_ready",
+						"nodes": 1015.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 109560659.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"battle": {
+						"cpu_peak_ms": 378.801,
+						"fps": 14.68181721449,
+						"frame_p95_ms": 69.0443333333333,
+						"frame_p99_ms": 129.177,
+						"frames": 132.0,
+						"nodes_peak": 1082.0,
+						"orphans_peak": 0.0,
+						"seconds": 8.99071266666667,
+						"static_peak_bytes": 133713760.0,
+						"video_peak_bytes": 52715313.0
+					},
+					"ds_scene": {
+						"cpu_peak_ms": 322.035,
+						"fps": 14.9469369366694,
+						"frame_p95_ms": 70.64,
+						"frame_p99_ms": 97.6243333333333,
+						"frames": 52.0,
+						"nodes_peak": 1093.0,
+						"orphans_peak": 4.0,
+						"seconds": 3.47897366666667,
+						"static_peak_bytes": 133788704.0,
+						"video_peak_bytes": 52727089.0
+					},
+					"finished": {
+						"cpu_peak_ms": 68.859,
+						"fps": 18.9473684210526,
+						"frame_p95_ms": 52.7777777777778,
+						"frame_p99_ms": 52.7777777777778,
+						"frames": 1.0,
+						"nodes_peak": 1035.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0527777777777778,
+						"static_peak_bytes": 133260086.0,
+						"video_peak_bytes": 52633183.0
+					},
+					"result": {
+						"cpu_peak_ms": 265.212,
+						"fps": 15.3316321164177,
+						"frame_p95_ms": 75.969666666667,
+						"frame_p99_ms": 140.627,
+						"frames": 43.0,
+						"nodes_peak": 1064.0,
+						"orphans_peak": 0.0,
+						"seconds": 2.804659,
+						"static_peak_bytes": 134243578.0,
+						"video_peak_bytes": 52905409.0
+					},
+					"saves": {
+						"cpu_peak_ms": 0.0,
+						"fps": 10.2950033201386,
+						"frame_p95_ms": 127.602333333333,
+						"frame_p99_ms": 127.602333333333,
+						"frames": 2.0,
+						"nodes_peak": 1015.0,
+						"orphans_peak": 8.0,
+						"seconds": 0.194269,
+						"static_peak_bytes": 111828836.0,
+						"video_peak_bytes": 32268379.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 518479872.0,
+					"source": "Get-Process",
+					"working_set_bytes": 504868864.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"player_stats": {
+				"abilities": 1.0,
+				"battles": 1.0,
+				"captures": 3.0,
+				"collected_g": 60.0,
+				"double_stands": 2.0,
+				"hits": 5.0,
+				"mini_g": 600.0,
+				"misses": 0.0,
+				"throws": 5.0
+			},
+			"policy": "Target enemy stands and use controlled mouse input",
+			"resumed": {
+				"battle_points": 101.0,
+				"battle_time": 1.01484274747475,
+				"camera_state": {
+					"_aim_camera": false,
+					"_aim_sphere": "(0.0, 0.5, 12.24)",
+					"_camera_focus": "(0.0, 0.0, 0.0)",
+					"_camera_following": false,
+					"_follow_sphere_point": "(-3.864459, 0.441, -1.87031)",
+					"_throw_heading": "(-0.637339, 0.0, 0.770583)"
+				},
+				"chapter": 0.0,
+				"collected": [
+					7.0,
+					9.0,
+					12.0,
+					13.0,
+					14.0
+				],
+				"effects": {
+					"counts": [
+						0.0,
+						0.0
+					],
+					"forced_type": "",
+					"played_ids": [
+						{
+
+						},
+						{
+
+						}
+					],
+					"states": [
+						{
+							"blocked_families": [],
+							"drain": 0.0,
+							"focus": 1.0,
+							"g_bonus": 0.0,
+							"input_block": 0.0,
+							"input_multiplier": 1.0,
+							"power": 0.0,
+							"redo_used": false,
+							"shield": false
+						},
+						{
+							"blocked_families": [],
+							"drain": 0.0,
+							"focus": 1.0,
+							"g_bonus": 0.0,
+							"input_block": 0.0,
+							"input_multiplier": 1.0,
+							"power": 0.0,
+							"redo_used": false,
+							"shield": false
+						}
+					],
+					"used": [
+						false,
+						false
+					]
+				},
+				"elapsed": 0.55,
+				"enemy_progress": 13.8018613656566,
+				"hands": [
+					[
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "red",
+							"description": "Поменять текущие G местами, если стихии отличаются.",
+							"effect": {
+								"relationship": "different",
+								"type": "power_swap"
+							},
+							"id": "p0_ds_card_408",
+							"key": "ds_card_408",
+							"kind": "ability",
+							"message_index": 111.0,
+							"name": "Counter Swap",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa1846",
+								"multiplier": 10.0,
+								"native_card_table_index": 111.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_408_nce.png",
+							"playable": true,
+							"printed_rule": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+							"rules_profile": "ds",
+							"source_card_id": 408.0,
+							"source_description": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+							"source_image_sha256": "e81c5dfb4a3df3ed36db93d27676bc7147364425eb9c083a1ee93690b2b668d5",
+							"source_key": "ds_card_408",
+							"title": "Counter Swap",
+							"type": "power_swap"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "green",
+							"description": "Заблокировать у соперника карты типа swap.",
+							"effect": {
+								"family": "swap",
+								"type": "block_family"
+							},
+							"id": "p0_ds_card_502",
+							"key": "ds_card_502",
+							"kind": "ability",
+							"message_index": 137.0,
+							"name": "No Trading",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa18e2",
+								"multiplier": 10.0,
+								"native_card_table_index": 137.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_502_nce.png",
+							"playable": true,
+							"printed_rule": "Your opponent cannot use any Swap cards.",
+							"rules_profile": "ds",
+							"source_card_id": 502.0,
+							"source_description": "Your opponent cannot use any Swap cards.",
+							"source_image_sha256": "184b2e9227b86358800f6b22bca0b6df25a102c80e731e953e250872f94bfdc8",
+							"source_key": "ds_card_502",
+							"title": "No Trading",
+							"type": "block_family"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 50.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 80.0,
+								"Subterra": 0.0,
+								"Ventus": 50.0
+							},
+							"color_type": "blue",
+							"description": "Бонус G зависит от стихии вашего бакугана.",
+							"effect": {
+								"boosts": {
+									"Aquos": 50.0,
+									"Darkus": 0.0,
+									"Haos": 0.0,
+									"Pyrus": 80.0,
+									"Subterra": 0.0,
+									"Ventus": 50.0
+								},
+								"type": "attribute_power"
+							},
+							"id": "p0_ds_card_604",
+							"key": "ds_card_604",
+							"kind": "ability",
+							"message_index": 171.0,
+							"name": "Blaze",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa19ae",
+								"multiplier": 10.0,
+								"native_card_table_index": 171.0,
+								"native_g_units": [
+									8.0,
+									5.0,
+									0.0,
+									0.0,
+									0.0,
+									5.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_604_nce.png",
+							"playable": true,
+							"printed_rule": "Your Bakugan gains G-Power based on its Attribute.",
+							"rules_profile": "ds",
+							"source_card_id": 604.0,
+							"source_description": "Your Bakugan gains G-Power based on its Attribute.",
+							"source_image_sha256": "afc6ae9d3c9acca9dd7c7fb8448a9db6e0b793cec5b5b30077f2cb478f704ac9",
+							"source_key": "ds_card_604",
+							"title": "Blaze",
+							"type": "attribute_power"
+						}
+					],
+					[
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "red",
+							"description": "Darkus: поменять текущие G бакуганов местами.",
+							"effect": {
+								"own_attribute": "Darkus",
+								"type": "power_swap"
+							},
+							"id": "p1_ds_card_405",
+							"key": "ds_card_405",
+							"kind": "ability",
+							"message_index": 108.0,
+							"name": "Darkus Swap",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa1834",
+								"multiplier": 10.0,
+								"native_card_table_index": 108.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_405_nce.png",
+							"playable": true,
+							"printed_rule": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+							"rules_profile": "ds",
+							"source_card_id": 405.0,
+							"source_description": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+							"source_image_sha256": "c332694f83da9a68d58ca9d9d6cd0b622e6d80946fe8eec83f19dbfd865a2b22",
+							"source_key": "ds_card_405",
+							"title": "Darkus Swap",
+							"type": "power_swap"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 200.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "green",
+							"description": "Hydranoid получает +200 G.",
+							"effect": {
+								"bonus": 200.0,
+								"species": "Hydranoid",
+								"type": "species_bonus"
+							},
+							"id": "p1_ds_card_520",
+							"key": "ds_card_520",
+							"kind": "ability",
+							"message_index": 155.0,
+							"name": "Chaos of the Darkness",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa194e",
+								"multiplier": 10.0,
+								"native_card_table_index": 155.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_520_nce.png",
+							"playable": true,
+							"printed_rule": "Hydranoid gets +200 G-Power.",
+							"rules_profile": "ds",
+							"source_card_id": 520.0,
+							"source_description": "Hydranoid gets +200 G-Power.",
+							"source_image_sha256": "98b5fc456fc2613638e38a7a18874def18880530818065c1915bbf67d5010f1a",
+							"source_key": "ds_card_520",
+							"title": "Chaos of the Darkness",
+							"type": "species_bonus"
+						},
+						{
+							"attributes": [
+								"Haos",
+								"Darkus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 140.0,
+								"Haos": 60.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "blue",
+							"description": "Бонус G по стихии, если бой идёт на воротах соперника.",
+							"effect": {
+								"boosts": {
+									"Aquos": 0.0,
+									"Darkus": 140.0,
+									"Haos": 60.0,
+									"Pyrus": 0.0,
+									"Subterra": 0.0,
+									"Ventus": 0.0
+								},
+								"gate_relation": "opponent",
+								"type": "gate_owned_power"
+							},
+							"id": "p1_ds_card_606",
+							"key": "ds_card_606",
+							"kind": "ability",
+							"message_index": 173.0,
+							"name": "Power From Darkness",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa19ba",
+								"multiplier": 10.0,
+								"native_card_table_index": 173.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									6.0,
+									14.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_606_nce.png",
+							"playable": true,
+							"printed_rule": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+							"rules_profile": "ds",
+							"source_card_id": 606.0,
+							"source_description": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+							"source_image_sha256": "216ca474666149cc5403a14e5de43d615b63897d5f69e5d7232d55bbb440aa40",
+							"source_key": "ds_card_606",
+							"title": "Power From Darkness",
+							"type": "gate_owned_power"
+						}
+					]
+				],
+				"mini": {
+					"_angle": 0.0,
+					"_bound_move": 0.0,
+					"_burst": 0.0,
+					"_hit_ids": {
+
+					},
+					"_pointer": "(166.0, 89.06)",
+					"_spin_direction": 0.0,
+					"advantage": 0.471553610503282,
+					"blocked": 0.0,
+					"clock": 1.01484274747475,
+					"hits": 0.0,
+					"input_multiplier": 1.0,
+					"mode": "scratch",
+					"score": 101.806730666667
+				},
+				"phase": "battle",
+				"position": "(-3.864459, 0.441, -1.87031)",
+				"rng_state": "3412412646149744265",
+				"scores": [
+					2.0,
+					0.0
+				],
+				"special": {
+					"main": {
+						"extra_throw_owner": -1.0,
+						"field_effects": {
+							"early": false,
+							"ids": [],
+							"invulnerable": false,
+							"multiplier": 1.0,
+							"removal_protected": false,
+							"replace_unit": false,
+							"road_trip": false,
+							"surprise": false,
+							"swap_gate": false
+						},
+						"flight_special": ""
+					},
+					"sphere": {
+						"field_start_clock": 21.5009737388164,
+						"special_shot": ""
+					}
+				},
+				"state_digest": "c83282f1643cb5c32e67f7ec8aad1ce9244ce2cbdd01b6f60d55a5f487069110",
+				"velocity": "(-6.144891, 0.0, 19.69965)"
+			},
+			"run_id": "1791922539025-3080",
+			"scores": [
+				3.0,
+				0.0
+			],
+			"version": "0.24.0",
+			"winner": 0.0
+		},
+		"battle-save": {
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-save-aim.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-save-rolling.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-save-result.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-save-battle_ready.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-save-battle.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/battle-save-paused-mid-battle.png"
+			],
+			"checks": [
+				{
+					"label": "Paused flight checkpoint is valid",
+					"passed": true
+				},
+				{
+					"label": "Checkpoint write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.24/profile.cfg",
+			"events": [
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.218
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.452
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.689
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 1.204
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 2.265
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 3.517
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 7.701
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 8.629
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 8.782
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 9.091
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 9.518
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 10.408
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 11.597
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 15.715
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 16.68
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 16.825
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 17.081
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 18.045
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 18.975
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 20.156
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 24.257
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 25.202
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 25.341
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 25.621
+				},
+				{
+					"phase": "double",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 26.474
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 26.542
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 27.523
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 28.75
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 32.953
+				},
+				{
+					"phase": "place",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 33.903
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 33.975
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 34.736
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 35.058
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 36.077
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 37.003
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 38.202
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 38.481
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 39.238
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 43.073
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 43.354
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 44.723
+				}
+			],
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 509.0,
+				"marks": [
+					{
+						"at_ms": 986.237,
+						"elapsed_ms": 986.211,
+						"label": "main_ready",
+						"nodes": 1015.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 109311935.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"ai": {
+						"cpu_peak_ms": 251.519,
+						"fps": 18.9011933842714,
+						"frame_p95_ms": 58.3333333333333,
+						"frame_p99_ms": 58.9196666666674,
+						"frames": 114.0,
+						"nodes_peak": 1078.0,
+						"orphans_peak": 0.0,
+						"seconds": 6.0313651991342,
+						"static_peak_bytes": 128371142.0,
+						"video_peak_bytes": 67738754.0
+					},
+					"aim": {
+						"cpu_peak_ms": 349.809,
+						"fps": 14.9724705580527,
+						"frame_p95_ms": 124.259333333333,
+						"frame_p99_ms": 129.198,
+						"frames": 24.0,
+						"nodes_peak": 1089.0,
+						"orphans_peak": 8.0,
+						"seconds": 1.60294187301587,
+						"static_peak_bytes": 128352577.0,
+						"video_peak_bytes": 67678314.0
+					},
+					"battle": {
+						"cpu_peak_ms": 266.703,
+						"fps": 14.780615063097,
+						"frame_p95_ms": 140.945000000001,
+						"frame_p99_ms": 140.945000000001,
+						"frames": 15.0,
+						"nodes_peak": 1082.0,
+						"orphans_peak": 0.0,
+						"seconds": 1.01484274747475,
+						"static_peak_bytes": 133525450.0,
+						"video_peak_bytes": 69009684.0
+					},
+					"battle_ready": {
+						"cpu_peak_ms": 69.49,
+						"fps": 15.0,
+						"frame_p95_ms": 66.6666666666667,
+						"frame_p99_ms": 66.6666666666667,
+						"frames": 1.0,
+						"nodes_peak": 1082.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0666666666666667,
+						"static_peak_bytes": 133365698.0,
+						"video_peak_bytes": 68796212.0
+					},
+					"ds_scene": {
+						"cpu_peak_ms": 340.85,
+						"fps": 15.1567717694819,
+						"frame_p95_ms": 69.473,
+						"frame_p99_ms": 144.316666666667,
+						"frames": 81.0,
+						"nodes_peak": 1097.0,
+						"orphans_peak": 0.0,
+						"seconds": 5.34414591919192,
+						"static_peak_bytes": 133491894.0,
+						"video_peak_bytes": 69091040.0
+					},
+					"flying": {
+						"cpu_peak_ms": 349.809,
+						"fps": 8.14515154264405,
+						"frame_p95_ms": 141.666666666667,
+						"frame_p99_ms": 143.519555555556,
+						"frames": 99.0,
+						"nodes_peak": 1082.0,
+						"orphans_peak": 0.0,
+						"seconds": 12.154469991342,
+						"static_peak_bytes": 128333393.0,
+						"video_peak_bytes": 67743482.0
+					},
+					"result": {
+						"cpu_peak_ms": 405.11,
+						"fps": 17.0183270267898,
+						"frame_p95_ms": 101.495333333333,
+						"frame_p99_ms": 142.289333333333,
+						"frames": 155.0,
+						"nodes_peak": 1102.0,
+						"orphans_peak": 0.0,
+						"seconds": 9.10782826984126,
+						"static_peak_bytes": 128489098.0,
+						"video_peak_bytes": 67778030.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 349.809,
+						"fps": 7.58515857532518,
+						"frame_p95_ms": 141.002333333334,
+						"frame_p99_ms": 141.002333333334,
+						"frames": 20.0,
+						"nodes_peak": 1082.0,
+						"orphans_peak": 0.0,
+						"seconds": 2.636728,
+						"static_peak_bytes": 128342173.0,
+						"video_peak_bytes": 67743482.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 580096000.0,
+					"source": "Get-Process",
+					"working_set_bytes": 574185472.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"policy": "Target enemy stands and use controlled mouse input",
+			"run_id": "1791922539025-3080",
+			"saved": {
+				"battle_points": 101.0,
+				"battle_time": 1.01484274747475,
+				"camera_state": {
+					"_aim_camera": false,
+					"_aim_sphere": "(0.0, 0.5, 12.24)",
+					"_camera_focus": "(0.0, 0.0, 0.0)",
+					"_camera_following": false,
+					"_follow_sphere_point": "(-3.864459, 0.441, -1.87031)",
+					"_throw_heading": "(-0.637339, 0.0, 0.770583)"
+				},
+				"chapter": 0.0,
+				"collected": [
+					7.0,
+					9.0,
+					12.0,
+					13.0,
+					14.0
+				],
+				"effects": {
+					"counts": [
+						0.0,
+						0.0
+					],
+					"forced_type": "",
+					"played_ids": [
+						{
+
+						},
+						{
+
+						}
+					],
+					"states": [
+						{
+							"blocked_families": [],
+							"drain": 0.0,
+							"focus": 1.0,
+							"g_bonus": 0.0,
+							"input_block": 0.0,
+							"input_multiplier": 1.0,
+							"power": 0.0,
+							"redo_used": false,
+							"shield": false
+						},
+						{
+							"blocked_families": [],
+							"drain": 0.0,
+							"focus": 1.0,
+							"g_bonus": 0.0,
+							"input_block": 0.0,
+							"input_multiplier": 1.0,
+							"power": 0.0,
+							"redo_used": false,
+							"shield": false
+						}
+					],
+					"used": [
+						false,
+						false
+					]
+				},
+				"elapsed": 0.55,
+				"enemy_progress": 13.8018613656566,
+				"hands": [
+					[
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "red",
+							"description": "Поменять текущие G местами, если стихии отличаются.",
+							"effect": {
+								"relationship": "different",
+								"type": "power_swap"
+							},
+							"id": "p0_ds_card_408",
+							"key": "ds_card_408",
+							"kind": "ability",
+							"message_index": 111.0,
+							"name": "Counter Swap",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa1846",
+								"multiplier": 10.0,
+								"native_card_table_index": 111.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_408_nce.png",
+							"playable": true,
+							"printed_rule": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+							"rules_profile": "ds",
+							"source_card_id": 408.0,
+							"source_description": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+							"source_image_sha256": "e81c5dfb4a3df3ed36db93d27676bc7147364425eb9c083a1ee93690b2b668d5",
+							"source_key": "ds_card_408",
+							"title": "Counter Swap",
+							"type": "power_swap"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "green",
+							"description": "Заблокировать у соперника карты типа swap.",
+							"effect": {
+								"family": "swap",
+								"type": "block_family"
+							},
+							"id": "p0_ds_card_502",
+							"key": "ds_card_502",
+							"kind": "ability",
+							"message_index": 137.0,
+							"name": "No Trading",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa18e2",
+								"multiplier": 10.0,
+								"native_card_table_index": 137.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_502_nce.png",
+							"playable": true,
+							"printed_rule": "Your opponent cannot use any Swap cards.",
+							"rules_profile": "ds",
+							"source_card_id": 502.0,
+							"source_description": "Your opponent cannot use any Swap cards.",
+							"source_image_sha256": "184b2e9227b86358800f6b22bca0b6df25a102c80e731e953e250872f94bfdc8",
+							"source_key": "ds_card_502",
+							"title": "No Trading",
+							"type": "block_family"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 50.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 80.0,
+								"Subterra": 0.0,
+								"Ventus": 50.0
+							},
+							"color_type": "blue",
+							"description": "Бонус G зависит от стихии вашего бакугана.",
+							"effect": {
+								"boosts": {
+									"Aquos": 50.0,
+									"Darkus": 0.0,
+									"Haos": 0.0,
+									"Pyrus": 80.0,
+									"Subterra": 0.0,
+									"Ventus": 50.0
+								},
+								"type": "attribute_power"
+							},
+							"id": "p0_ds_card_604",
+							"key": "ds_card_604",
+							"kind": "ability",
+							"message_index": 171.0,
+							"name": "Blaze",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa19ae",
+								"multiplier": 10.0,
+								"native_card_table_index": 171.0,
+								"native_g_units": [
+									8.0,
+									5.0,
+									0.0,
+									0.0,
+									0.0,
+									5.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_604_nce.png",
+							"playable": true,
+							"printed_rule": "Your Bakugan gains G-Power based on its Attribute.",
+							"rules_profile": "ds",
+							"source_card_id": 604.0,
+							"source_description": "Your Bakugan gains G-Power based on its Attribute.",
+							"source_image_sha256": "afc6ae9d3c9acca9dd7c7fb8448a9db6e0b793cec5b5b30077f2cb478f704ac9",
+							"source_key": "ds_card_604",
+							"title": "Blaze",
+							"type": "attribute_power"
+						}
+					],
+					[
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "red",
+							"description": "Darkus: поменять текущие G бакуганов местами.",
+							"effect": {
+								"own_attribute": "Darkus",
+								"type": "power_swap"
+							},
+							"id": "p1_ds_card_405",
+							"key": "ds_card_405",
+							"kind": "ability",
+							"message_index": 108.0,
+							"name": "Darkus Swap",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa1834",
+								"multiplier": 10.0,
+								"native_card_table_index": 108.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_405_nce.png",
+							"playable": true,
+							"printed_rule": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+							"rules_profile": "ds",
+							"source_card_id": 405.0,
+							"source_description": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+							"source_image_sha256": "c332694f83da9a68d58ca9d9d6cd0b622e6d80946fe8eec83f19dbfd865a2b22",
+							"source_key": "ds_card_405",
+							"title": "Darkus Swap",
+							"type": "power_swap"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 200.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "green",
+							"description": "Hydranoid получает +200 G.",
+							"effect": {
+								"bonus": 200.0,
+								"species": "Hydranoid",
+								"type": "species_bonus"
+							},
+							"id": "p1_ds_card_520",
+							"key": "ds_card_520",
+							"kind": "ability",
+							"message_index": 155.0,
+							"name": "Chaos of the Darkness",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa194e",
+								"multiplier": 10.0,
+								"native_card_table_index": 155.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_520_nce.png",
+							"playable": true,
+							"printed_rule": "Hydranoid gets +200 G-Power.",
+							"rules_profile": "ds",
+							"source_card_id": 520.0,
+							"source_description": "Hydranoid gets +200 G-Power.",
+							"source_image_sha256": "98b5fc456fc2613638e38a7a18874def18880530818065c1915bbf67d5010f1a",
+							"source_key": "ds_card_520",
+							"title": "Chaos of the Darkness",
+							"type": "species_bonus"
+						},
+						{
+							"attributes": [
+								"Haos",
+								"Darkus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 140.0,
+								"Haos": 60.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "blue",
+							"description": "Бонус G по стихии, если бой идёт на воротах соперника.",
+							"effect": {
+								"boosts": {
+									"Aquos": 0.0,
+									"Darkus": 140.0,
+									"Haos": 60.0,
+									"Pyrus": 0.0,
+									"Subterra": 0.0,
+									"Ventus": 0.0
+								},
+								"gate_relation": "opponent",
+								"type": "gate_owned_power"
+							},
+							"id": "p1_ds_card_606",
+							"key": "ds_card_606",
+							"kind": "ability",
+							"message_index": 173.0,
+							"name": "Power From Darkness",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa19ba",
+								"multiplier": 10.0,
+								"native_card_table_index": 173.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									6.0,
+									14.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_606_nce.png",
+							"playable": true,
+							"printed_rule": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+							"rules_profile": "ds",
+							"source_card_id": 606.0,
+							"source_description": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+							"source_image_sha256": "216ca474666149cc5403a14e5de43d615b63897d5f69e5d7232d55bbb440aa40",
+							"source_key": "ds_card_606",
+							"title": "Power From Darkness",
+							"type": "gate_owned_power"
+						}
+					]
+				],
+				"mini": {
+					"_angle": 0.0,
+					"_bound_move": 0.0,
+					"_burst": 0.0,
+					"_hit_ids": {
+
+					},
+					"_pointer": "(166.0, 89.06)",
+					"_spin_direction": 0.0,
+					"advantage": 0.471553610503282,
+					"blocked": 0.0,
+					"clock": 1.01484274747475,
+					"hits": 0.0,
+					"input_multiplier": 1.0,
+					"mode": "scratch",
+					"score": 101.806730666667
+				},
+				"phase": "battle",
+				"position": "(-3.864459, 0.441, -1.87031)",
+				"rng_state": "3412412646149744265",
+				"scores": [
+					2.0,
+					0.0
+				],
+				"special": {
+					"main": {
+						"extra_throw_owner": -1.0,
+						"field_effects": {
+							"early": false,
+							"ids": [],
+							"invulnerable": false,
+							"multiplier": 1.0,
+							"removal_protected": false,
+							"replace_unit": false,
+							"road_trip": false,
+							"surprise": false,
+							"swap_gate": false
+						},
+						"flight_special": ""
+					},
+					"sphere": {
+						"field_start_clock": 21.5009737388164,
+						"special_shot": ""
+					}
+				},
+				"state_digest": "c83282f1643cb5c32e67f7ec8aad1ce9244ce2cbdd01b6f60d55a5f487069110",
+				"velocity": "(-6.144891, 0.0, 19.69965)"
+			},
+			"version": "0.24.0"
+		},
+		"elemental": {
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/elemental-aim.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/elemental-rolling.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/elemental-result.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/elemental-battle_ready.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/elemental-battle.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/elemental-final.png"
+			],
+			"checks": [
+				{
+					"label": "A real full match reached its result",
+					"passed": true
+				},
+				{
+					"label": "Profile write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Results and rewards survive profile reload",
+					"passed": true
+				},
+				{
+					"label": "Completed match leaves no stale resume",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.24/profile.cfg",
+			"enemy_stats": {
+				"abilities": 1.0,
+				"battles": 3.0,
+				"captures": 1.0,
+				"collected_g": 0.0,
+				"double_stands": 0.0,
+				"hits": 3.0,
+				"mini_g": 390.0,
+				"misses": 1.0,
+				"throws": 4.0
+			},
+			"events": [
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.63
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.93
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 1.188
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 1.622
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 2.604
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 3.833
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 4.02
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 5.003
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 8.887
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 9.137
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 10.524
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 12.707
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 14.357
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 15.373
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 17.064
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 24.119
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 26.883
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 27.054
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 27.238
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 27.983
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 28.885
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 30.088
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 30.308
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 30.852
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 34.673
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 34.73
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 36.123
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 46.181
+				},
+				{
+					"phase": "place",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 48.94
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 49.028
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 49.749
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 50.004
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 51.19
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 52.063
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 53.293
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 55.01
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 60.634
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 64.443
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 64.496
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 65.891
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 75.942
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 78.75
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 78.964
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 79.209
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 79.702
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 80.603
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 81.786
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 85.428
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 94.986
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 95.896
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 96.087
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 96.293
+				},
+				{
+					"phase": "result",
+					"scores": [
+						3.0,
+						1.0
+					],
+					"t": 96.82
+				},
+				{
+					"phase": "finished",
+					"scores": [
+						3.0,
+						1.0
+					],
+					"t": 97.755
+				}
+			],
+			"finished": true,
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"journal": [
+				"Ты забирает ворота 29.",
+				"Соперник промахнулся: собранный G потерян.",
+				"Бакуган стоит на воротах 29.",
+				"Ты забирает ворота. G: 280 / 360; очки мини-игры: 600 / 92.",
+				"Открыты ворота Stand Off: В этом бою нельзя играть способности.",
+				"Лава: −30 G. Pyrus защищён."
+			],
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 1543.0,
+				"marks": [
+					{
+						"at_ms": 950.696,
+						"elapsed_ms": 950.668,
+						"label": "main_ready",
+						"nodes": 1015.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 109312131.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"ai": {
+						"cpu_peak_ms": 178.706,
+						"fps": 24.2790724512657,
+						"frame_p95_ms": 47.6953333333333,
+						"frame_p99_ms": 52.1252222222222,
+						"frames": 116.0,
+						"nodes_peak": 1366.0,
+						"orphans_peak": 0.0,
+						"seconds": 4.77777724963924,
+						"static_peak_bytes": 140471305.0,
+						"video_peak_bytes": 78564730.0
+					},
+					"aim": {
+						"cpu_peak_ms": 834.591,
+						"fps": 16.5257017506635,
+						"frame_p95_ms": 116.666666666667,
+						"frame_p99_ms": 137.188666666667,
+						"frames": 27.0,
+						"nodes_peak": 1377.0,
+						"orphans_peak": 16.0,
+						"seconds": 1.63381866666667,
+						"static_peak_bytes": 140558695.0,
+						"video_peak_bytes": 78582058.0
+					},
+					"battle": {
+						"cpu_peak_ms": 248.742,
+						"fps": 18.9224753053341,
+						"frame_p95_ms": 55.296,
+						"frame_p99_ms": 61.1111111111111,
+						"frames": 569.0,
+						"nodes_peak": 1385.0,
+						"orphans_peak": 0.0,
+						"seconds": 30.0700617027416,
+						"static_peak_bytes": 139916999.0,
+						"video_peak_bytes": 78600234.0
+					},
+					"battle_ready": {
+						"cpu_peak_ms": 53.22,
+						"fps": 16.8393636965771,
+						"frame_p95_ms": 59.3846666666667,
+						"frame_p99_ms": 59.3846666666667,
+						"frames": 1.0,
+						"nodes_peak": 1385.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0593846666666667,
+						"static_peak_bytes": 137237454.0,
+						"video_peak_bytes": 59974170.0
+					},
+					"ds_scene": {
+						"cpu_peak_ms": 313.322,
+						"fps": 19.6769434555111,
+						"frame_p95_ms": 53.3333333333333,
+						"frame_p99_ms": 126.85,
+						"frames": 384.0,
+						"nodes_peak": 1400.0,
+						"orphans_peak": 4.0,
+						"seconds": 19.5152260750361,
+						"static_peak_bytes": 139972919.0,
+						"video_peak_bytes": 78626694.0
+					},
+					"finished": {
+						"cpu_peak_ms": 56.724,
+						"fps": 18.1938371408997,
+						"frame_p95_ms": 54.9636666666649,
+						"frame_p99_ms": 54.9636666666649,
+						"frames": 1.0,
+						"nodes_peak": 1338.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0549636666666649,
+						"static_peak_bytes": 139220098.0,
+						"video_peak_bytes": 78539752.0
+					},
+					"flying": {
+						"cpu_peak_ms": 834.591,
+						"fps": 9.02449200248997,
+						"frame_p95_ms": 140.726,
+						"frame_p99_ms": 144.444444444444,
+						"frames": 53.0,
+						"nodes_peak": 1370.0,
+						"orphans_peak": 0.0,
+						"seconds": 5.87290675036075,
+						"static_peak_bytes": 140544047.0,
+						"video_peak_bytes": 78583690.0
+					},
+					"result": {
+						"cpu_peak_ms": 834.591,
+						"fps": 17.9667820329508,
+						"frame_p95_ms": 72.2222222222222,
+						"frame_p99_ms": 136.359,
+						"frames": 259.0,
+						"nodes_peak": 1381.0,
+						"orphans_peak": 0.0,
+						"seconds": 14.4154918518519,
+						"static_peak_bytes": 140652733.0,
+						"video_peak_bytes": 78678594.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 834.591,
+						"fps": 7.56885967690786,
+						"frame_p95_ms": 144.444444444444,
+						"frame_p99_ms": 146.320666666667,
+						"frames": 133.0,
+						"nodes_peak": 1370.0,
+						"orphans_peak": 0.0,
+						"seconds": 17.5719997037037,
+						"static_peak_bytes": 140552423.0,
+						"video_peak_bytes": 78583690.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 643719168.0,
+					"source": "Get-Process",
+					"working_set_bytes": 638091264.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"player_stats": {
+				"abilities": 1.0,
+				"battles": 3.0,
+				"captures": 3.0,
+				"collected_g": 0.0,
+				"double_stands": 1.0,
+				"hits": 5.0,
+				"mini_g": 1800.0,
+				"misses": 0.0,
+				"throws": 5.0
+			},
+			"policy": "Target enemy stands and use controlled mouse input",
+			"run_id": "1791922539025-3080",
+			"scores": [
+				3.0,
+				1.0
+			],
+			"version": "0.24.0",
+			"winner": 0.0
+		},
+		"loss": {
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/loss-aim.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/loss-rolling.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/loss-result.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/loss-battle_ready.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/loss-battle.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/loss-final.png"
+			],
+			"checks": [
+				{
+					"label": "A real full match reached its result",
+					"passed": true
+				},
+				{
+					"label": "No-input battle scenario reaches an actual defeat",
+					"passed": true
+				},
+				{
+					"label": "Profile write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Results and rewards survive profile reload",
+					"passed": true
+				},
+				{
+					"label": "Completed match leaves no stale resume",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.24/profile.cfg",
+			"enemy_stats": {
+				"abilities": 1.0,
+				"battles": 3.0,
+				"captures": 3.0,
+				"collected_g": 20.0,
+				"double_stands": 0.0,
+				"hits": 3.0,
+				"mini_g": 388.0,
+				"misses": 4.0,
+				"throws": 7.0
+			},
+			"events": [
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.207
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.471
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.694
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 3.38
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 4.905
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 5.951
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 7.161
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 11.481
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 12.45
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 12.651
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 12.784
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 16.837
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 18.379
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 19.292
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 20.473
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 20.67
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 21.797
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 22.713
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 22.854
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 23.114
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 23.618
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 27.483
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 27.764
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 29.186
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 32.4
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 34.137
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 41.141
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 43.932
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 45.129
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 49.072
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 50.039
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 50.182
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 50.463
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 52.169
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 53.639
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 54.544
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 55.696
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 55.961
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 56.523
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 57.421
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 57.615
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 57.879
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 58.266
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 59.234
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 60.45
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 64.572
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 65.543
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 65.694
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 65.956
+				},
+				{
+					"phase": "double",
+					"scores": [
+						0.0,
+						1.0
+					],
+					"t": 66.582
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 66.647
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 67.616
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 68.82
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 69.102
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 69.536
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 70.451
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 70.635
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 70.923
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 71.941
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 75.761
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 75.83
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 77.17
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 87.25
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 90.023
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 91.209
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 95.686
+				},
+				{
+					"phase": "place",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 96.635
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 96.715
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 97.477
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 97.822
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 99.165
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 102.954
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 103.022
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						1.0,
+						2.0
+					],
+					"t": 104.453
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						3.0
+					],
+					"t": 114.497
+				},
+				{
+					"phase": "finished",
+					"scores": [
+						1.0,
+						3.0
+					],
+					"t": 117.289
+				}
+			],
+			"finished": true,
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"journal": [
+				"Соперник забирает ворота. G: 290 / 390; очки мини-игры: 0 / 106.",
+				"Открыты ворота Sunrise: Бонус стихии ворот применяется при раскрытии.",
+				"Соперник промахнулся: собранный G потерян.",
+				"Соперник забирает ворота. G: 270 / 470; очки мини-игры: 0 / 89.",
+				"Открыты ворота Juggernoid: Juggernoid: бонус ворот удваивается.",
+				"Бакуган стоит на воротах 12."
+			],
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 1470.0,
+				"marks": [
+					{
+						"at_ms": 952.465,
+						"elapsed_ms": 952.437,
+						"label": "main_ready",
+						"nodes": 1015.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 109309767.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"ai": {
+						"cpu_peak_ms": 253.259,
+						"fps": 19.1992624070033,
+						"frame_p95_ms": 56.107333333333,
+						"frame_p99_ms": 65.276,
+						"frames": 160.0,
+						"nodes_peak": 1091.0,
+						"orphans_peak": 0.0,
+						"seconds": 8.33365348148148,
+						"static_peak_bytes": 135168053.0,
+						"video_peak_bytes": 82083430.0
+					},
+					"aim": {
+						"cpu_peak_ms": 397.775,
+						"fps": 15.079177653683,
+						"frame_p95_ms": 123.547,
+						"frame_p99_ms": 138.183666666666,
+						"frames": 32.0,
+						"nodes_peak": 1102.0,
+						"orphans_peak": 8.0,
+						"seconds": 2.12213163973064,
+						"static_peak_bytes": 135161528.0,
+						"video_peak_bytes": 82109566.0
+					},
+					"battle": {
+						"cpu_peak_ms": 279.344,
+						"fps": 15.0735394257294,
+						"frame_p95_ms": 68.0555555555555,
+						"frame_p99_ms": 72.298,
+						"frames": 454.0,
+						"nodes_peak": 1110.0,
+						"orphans_peak": 0.0,
+						"seconds": 30.1190043809523,
+						"static_peak_bytes": 135442661.0,
+						"video_peak_bytes": 82814552.0
+					},
+					"battle_ready": {
+						"cpu_peak_ms": 64.577,
+						"fps": 14.51048866489,
+						"frame_p95_ms": 68.9156666666664,
+						"frame_p99_ms": 68.9156666666664,
+						"frames": 1.0,
+						"nodes_peak": 1105.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0689156666666664,
+						"static_peak_bytes": 133348004.0,
+						"video_peak_bytes": 64092970.0
+					},
+					"ds_scene": {
+						"cpu_peak_ms": 318.151,
+						"fps": 15.5168033264669,
+						"frame_p95_ms": 66.6666666666667,
+						"frame_p99_ms": 130.855666666667,
+						"frames": 277.0,
+						"nodes_peak": 1125.0,
+						"orphans_peak": 0.0,
+						"seconds": 17.8516150634921,
+						"static_peak_bytes": 135504821.0,
+						"video_peak_bytes": 82842308.0
+					},
+					"finished": {
+						"cpu_peak_ms": 67.471,
+						"fps": 18.9473684210526,
+						"frame_p95_ms": 52.7777777777778,
+						"frame_p99_ms": 52.7777777777778,
+						"frames": 1.0,
+						"nodes_peak": 1035.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0527777777777778,
+						"static_peak_bytes": 134609421.0,
+						"video_peak_bytes": 82725582.0
+					},
+					"flying": {
+						"cpu_peak_ms": 397.775,
+						"fps": 8.21666356975839,
+						"frame_p95_ms": 141.864666666667,
+						"frame_p99_ms": 144.444444444444,
+						"frames": 134.0,
+						"nodes_peak": 1095.0,
+						"orphans_peak": 0.0,
+						"seconds": 16.3083225767196,
+						"static_peak_bytes": 135137812.0,
+						"video_peak_bytes": 82102678.0
+					},
+					"result": {
+						"cpu_peak_ms": 256.524,
+						"fps": 16.5690003727796,
+						"frame_p95_ms": 70.214,
+						"frame_p99_ms": 130.246999999999,
+						"frames": 339.0,
+						"nodes_peak": 1115.0,
+						"orphans_peak": 0.0,
+						"seconds": 20.4598945242905,
+						"static_peak_bytes": 135442768.0,
+						"video_peak_bytes": 82882520.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 319.01,
+						"fps": 7.5357466515468,
+						"frame_p95_ms": 141.666666666667,
+						"frame_p99_ms": 148.798,
+						"frames": 72.0,
+						"nodes_peak": 1095.0,
+						"orphans_peak": 0.0,
+						"seconds": 9.55446133333333,
+						"static_peak_bytes": 135145016.0,
+						"video_peak_bytes": 82102678.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 592896000.0,
+					"source": "Get-Process",
+					"working_set_bytes": 557133824.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"player_stats": {
+				"abilities": 0.0,
+				"battles": 3.0,
+				"captures": 1.0,
+				"collected_g": 20.0,
+				"double_stands": 1.0,
+				"hits": 5.0,
+				"mini_g": 0.0,
+				"misses": 3.0,
+				"throws": 8.0
+			},
+			"policy": "Attack occupied enemy gates, miss intentionally when none exist, no Scratch/abilities",
+			"run_id": "1791922539025-3080",
+			"scores": [
+				1.0,
+				3.0
+			],
+			"version": "0.24.0",
+			"winner": 1.0
+		},
+		"quick": {
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-aim.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-rolling.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-result.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-battle_ready.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-battle.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/quick-final.png"
+			],
+			"checks": [
+				{
+					"label": "A real full match reached its result",
+					"passed": true
+				},
+				{
+					"label": "Controlled input scenario reaches an actual victory",
+					"passed": true
+				},
+				{
+					"label": "Profile write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Results and rewards survive profile reload",
+					"passed": true
+				},
+				{
+					"label": "Completed match leaves no stale resume",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.24/profile.cfg",
+			"enemy_stats": {
+				"abilities": 2.0,
+				"battles": 2.0,
+				"captures": 2.0,
+				"collected_g": 40.0,
+				"double_stands": 1.0,
+				"hits": 4.0,
+				"mini_g": 322.0,
+				"misses": 2.0,
+				"throws": 6.0
+			},
+			"events": [
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 4.497
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 4.738
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 5.004
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 5.528
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 6.979
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 8.206
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 12.576
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 13.554
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 13.701
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 13.992
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 14.417
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 15.335
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 16.514
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 16.787
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 17.428
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 18.36
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 18.509
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 18.749
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 20.161
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 24.179
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 24.461
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 25.801
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 28.484
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 30.042
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 31.046
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 32.776
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 39.769
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 42.53
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 43.719
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 44.001
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 44.421
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 45.34
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 45.537
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 45.885
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 46.955
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 47.863
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 49.075
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 53.465
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 54.336
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 54.529
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 54.826
+				},
+				{
+					"phase": "double",
+					"scores": [
+						1.0,
+						1.0
+					],
+					"t": 55.757
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 55.824
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 56.817
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 57.998
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 58.339
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 58.593
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 59.53
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 59.683
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 59.961
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 61.112
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 61.988
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 63.217
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 63.623
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 64.193
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 68.036
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 68.108
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 69.421
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 72.499
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						2.0
+					],
+					"t": 74.24
+				},
+				{
+					"phase": "result",
+					"scores": [
+						3.0,
+						2.0
+					],
+					"t": 81.246
+				},
+				{
+					"phase": "finished",
+					"scores": [
+						3.0,
+						2.0
+					],
+					"t": 84.012
+				}
+			],
+			"finished": true,
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"journal": [
+				"Ты забирает ворота. G: 350 / 510; очки мини-игры: 600 / 158.",
+				"Соперник: Power From Darkness: Бонус G по стихии, если бой идёт на воротах соперника.",
+				"Открыты ворота Aquos Vortex: Бонус стихии ворот применяется при раскрытии.",
+				"Ускоритель разогнал сферу.",
+				"Бакуган стоит на воротах 20.",
+				"Соперник забирает ворота 12."
+			],
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 1018.0,
+				"marks": [
+					{
+						"at_ms": 893.946,
+						"elapsed_ms": 893.917,
+						"label": "main_ready",
+						"nodes": 1015.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 109298027.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"ai": {
+						"cpu_peak_ms": 545.28,
+						"fps": 18.7816424343853,
+						"frame_p95_ms": 58.3333333333333,
+						"frame_p99_ms": 69.0406666666672,
+						"frames": 134.0,
+						"nodes_peak": 1091.0,
+						"orphans_peak": 0.0,
+						"seconds": 7.13462629629629,
+						"static_peak_bytes": 134859492.0,
+						"video_peak_bytes": 81841810.0
+					},
+					"aim": {
+						"cpu_peak_ms": 4621.542,
+						"fps": 13.1236875649623,
+						"frame_p95_ms": 133.333333333333,
+						"frame_p99_ms": 133.333333333333,
+						"frames": 15.0,
+						"nodes_peak": 1102.0,
+						"orphans_peak": 8.0,
+						"seconds": 1.14297143434343,
+						"static_peak_bytes": 135024693.0,
+						"video_peak_bytes": 81858898.0
+					},
+					"battle": {
+						"cpu_peak_ms": 281.464,
+						"fps": 14.4515257289648,
+						"frame_p95_ms": 71.6666666666667,
+						"frame_p99_ms": 84.5754814814815,
+						"frames": 290.0,
+						"nodes_peak": 1105.0,
+						"orphans_peak": 0.0,
+						"seconds": 20.0670853333334,
+						"static_peak_bytes": 134497668.0,
+						"video_peak_bytes": 82048638.0
+					},
+					"battle_ready": {
+						"cpu_peak_ms": 72.25,
+						"fps": 14.5999610667705,
+						"frame_p95_ms": 68.4933333333333,
+						"frame_p99_ms": 68.4933333333333,
+						"frames": 1.0,
+						"nodes_peak": 1105.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0684933333333333,
+						"static_peak_bytes": 133487372.0,
+						"video_peak_bytes": 72913018.0
+					},
+					"ds_scene": {
+						"cpu_peak_ms": 621.868,
+						"fps": 14.6319373988536,
+						"frame_p95_ms": 75.1763333333338,
+						"frame_p99_ms": 138.394,
+						"frames": 232.0,
+						"nodes_peak": 1120.0,
+						"orphans_peak": 4.0,
+						"seconds": 15.8557266666667,
+						"static_peak_bytes": 134573904.0,
+						"video_peak_bytes": 82060414.0
+					},
+					"finished": {
+						"cpu_peak_ms": 70.266,
+						"fps": 18.75,
+						"frame_p95_ms": 53.3333333333333,
+						"frame_p99_ms": 53.3333333333333,
+						"frames": 1.0,
+						"nodes_peak": 1035.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0533333333333333,
+						"static_peak_bytes": 133421990.0,
+						"video_peak_bytes": 81946912.0
+					},
+					"flying": {
+						"cpu_peak_ms": 4621.542,
+						"fps": 8.68324203813833,
+						"frame_p95_ms": 143.067666666667,
+						"frame_p99_ms": 149.166185185185,
+						"frames": 63.0,
+						"nodes_peak": 1095.0,
+						"orphans_peak": 0.0,
+						"seconds": 7.25535459259259,
+						"static_peak_bytes": 134927136.0,
+						"video_peak_bytes": 81860770.0
+					},
+					"result": {
+						"cpu_peak_ms": 545.28,
+						"fps": 15.9909190164949,
+						"frame_p95_ms": 75.9011111111111,
+						"frame_p99_ms": 139.052333333333,
+						"frames": 251.0,
+						"nodes_peak": 1115.0,
+						"orphans_peak": 0.0,
+						"seconds": 15.6964086767677,
+						"static_peak_bytes": 135067652.0,
+						"video_peak_bytes": 82124862.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 4621.542,
+						"fps": 7.52391817180762,
+						"frame_p95_ms": 144.964,
+						"frame_p99_ms": 145.826333333333,
+						"frames": 31.0,
+						"nodes_peak": 1095.0,
+						"orphans_peak": 0.0,
+						"seconds": 4.12019366666667,
+						"static_peak_bytes": 134935128.0,
+						"video_peak_bytes": 81860770.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 628248576.0,
+					"source": "Get-Process",
+					"working_set_bytes": 622481408.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"player_stats": {
+				"abilities": 1.0,
+				"battles": 2.0,
+				"captures": 3.0,
+				"collected_g": 20.0,
+				"double_stands": 2.0,
+				"hits": 6.0,
+				"mini_g": 1200.0,
+				"misses": 0.0,
+				"throws": 6.0
+			},
+			"policy": "Target enemy stands and use controlled mouse input",
+			"run_id": "1791922539025-3080",
+			"scores": [
+				3.0,
+				2.0
+			],
+			"version": "0.24.0",
+			"winner": 0.0
+		},
+		"resume": {
+			"campaign_progress": {
+				"arenas": [
+					"ds_toy",
+					"ds_aquos"
+				],
+				"attributes": [
+					"Pyrus",
+					"Ventus",
+					"Aquos"
+				],
+				"cards": [
+					"ds_card_119",
+					"ds_card_217",
+					"ds_card_306",
+					"ds_card_408",
+					"ds_card_502",
+					"ds_card_604",
+					"ds_card_136",
+					"ds_card_201",
+					"ds_card_301",
+					"ds_card_401",
+					"ds_card_527",
+					"ds_card_602"
+				],
+				"chapter": 1.0,
+				"claimed": [
+					0.0
+				],
+				"coins": 90.0,
+				"completed": false,
+				"decks": {
+					"ability": [
+						"ds_card_408",
+						"ds_card_502",
+						"ds_card_604"
+					],
+					"gate": [
+						"ds_card_119",
+						"ds_card_217",
+						"ds_card_306"
+					]
+				},
+				"evolution_base": {
+
+				},
+				"levels": {
+
+				},
+				"schema": 1.0,
+				"species": [
+					"serpenoid",
+					"falconeer",
+					"juggernoid",
+					"dragonoid"
+				],
+				"team": [
+					"serpenoid",
+					"falconeer",
+					"juggernoid"
+				]
+			},
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-slot-menu.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-rolling.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-result.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-aim.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-battle_ready.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-battle.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/resume-final.png"
+			],
+			"checks": [
+				{
+					"label": "Exact binary state matches after process restart",
+					"passed": true
+				},
+				{
+					"label": "A real full match reached its result",
+					"passed": true
+				},
+				{
+					"label": "Profile write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Results and rewards survive profile reload",
+					"passed": true
+				},
+				{
+					"label": "Completed match leaves no stale resume",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.24/profile.cfg",
+			"enemy_stats": {
+				"abilities": 0.0,
+				"battles": 1.0,
+				"captures": 1.0,
+				"collected_g": 20.0,
+				"double_stands": 1.0,
+				"hits": 3.0,
+				"mini_g": 57.0,
+				"misses": 2.0,
+				"throws": 5.0
+			},
+			"events": [
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.02
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.442
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 1.472
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 2.652
+				},
+				{
+					"phase": "result",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 5.674
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 6.607
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 6.907
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 7.157
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 7.564
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 8.487
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 9.683
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 13.882
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 14.802
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 14.95
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 15.221
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 15.84
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 16.775
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 17.938
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 18.191
+				},
+				{
+					"phase": "result",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 18.805
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 19.688
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 19.84
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 20.106
+				},
+				{
+					"phase": "double",
+					"scores": [
+						1.0,
+						0.0
+					],
+					"t": 20.521
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 20.587
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 21.559
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 22.757
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						0.0
+					],
+					"t": 23.018
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 23.596
+				},
+				{
+					"phase": "place",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 24.515
+				},
+				{
+					"phase": "aim",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 24.583
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 25.316
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 25.6
+				},
+				{
+					"phase": "result",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 26.204
+				},
+				{
+					"phase": "ai",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 27.109
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 28.297
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 28.557
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 29.257
+				},
+				{
+					"phase": "battle_ready",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 33.117
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 33.395
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 34.762
+				},
+				{
+					"phase": "ds_scene",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 37.033
+				},
+				{
+					"phase": "battle",
+					"scores": [
+						2.0,
+						1.0
+					],
+					"t": 38.642
+				},
+				{
+					"phase": "result",
+					"scores": [
+						3.0,
+						1.0
+					],
+					"t": 46.613
+				},
+				{
+					"phase": "finished",
+					"scores": [
+						3.0,
+						1.0
+					],
+					"t": 49.384
+				}
+			],
+			"finished": true,
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"journal": [
+				"Ты забирает ворота. G: 340 / 310; очки мини-игры: 600 / 57.",
+				"Blaze: Бонус G зависит от стихии вашего бакугана.",
+				"Открыты ворота Sunrise: Бонус стихии ворот применяется при раскрытии.",
+				"Falconeer сохранил +20 G.",
+				"Бакуган стоит на воротах 21.",
+				"Ускоритель разогнал сферу."
+			],
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 666.0,
+				"marks": [
+					{
+						"at_ms": 943.361,
+						"elapsed_ms": 943.324,
+						"label": "main_ready",
+						"nodes": 1015.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 109549007.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"ai": {
+						"cpu_peak_ms": 209.017,
+						"fps": 18.9058417930908,
+						"frame_p95_ms": 58.323,
+						"frame_p99_ms": 77.9823333333333,
+						"frames": 112.0,
+						"nodes_peak": 1078.0,
+						"orphans_peak": 0.0,
+						"seconds": 5.92409484992785,
+						"static_peak_bytes": 128731557.0,
+						"video_peak_bytes": 68112549.0
+					},
+					"aim": {
+						"cpu_peak_ms": 213.024,
+						"fps": 16.3683736367946,
+						"frame_p95_ms": 98.1063333333333,
+						"frame_p99_ms": 146.861424242424,
+						"frames": 21.0,
+						"nodes_peak": 1094.0,
+						"orphans_peak": 0.0,
+						"seconds": 1.28296191582492,
+						"static_peak_bytes": 128940726.0,
+						"video_peak_bytes": 68047981.0
+					},
+					"battle": {
+						"cpu_peak_ms": 265.615,
+						"fps": 15.1891296462165,
+						"frame_p95_ms": 66.6666666666667,
+						"frame_p99_ms": 67.341,
+						"frames": 152.0,
+						"nodes_peak": 1082.0,
+						"orphans_peak": 0.0,
+						"seconds": 10.0071566666667,
+						"static_peak_bytes": 133349371.0,
+						"video_peak_bytes": 69041163.0
+					},
+					"battle_ready": {
+						"cpu_peak_ms": 65.302,
+						"fps": 14.331183221572,
+						"frame_p95_ms": 69.7779090909081,
+						"frame_p99_ms": 69.7779090909081,
+						"frames": 1.0,
+						"nodes_peak": 1082.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0697779090909081,
+						"static_peak_bytes": 133162543.0,
+						"video_peak_bytes": 68827691.0
+					},
+					"ds_scene": {
+						"cpu_peak_ms": 300.831,
+						"fps": 15.429959885965,
+						"frame_p95_ms": 66.6666666666667,
+						"frame_p99_ms": 135.135333333333,
+						"frames": 109.0,
+						"nodes_peak": 1097.0,
+						"orphans_peak": 4.0,
+						"seconds": 7.06417909090909,
+						"static_peak_bytes": 133428575.0,
+						"video_peak_bytes": 69122519.0
+					},
+					"finished": {
+						"cpu_peak_ms": 66.943,
+						"fps": 18.75,
+						"frame_p95_ms": 53.3333333333333,
+						"frame_p99_ms": 53.3333333333333,
+						"frames": 1.0,
+						"nodes_peak": 1035.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.0533333333333333,
+						"static_peak_bytes": 132345658.0,
+						"video_peak_bytes": 68773567.0
+					},
+					"flying": {
+						"cpu_peak_ms": 227.353,
+						"fps": 8.77769897500306,
+						"frame_p95_ms": 145.087666666667,
+						"frame_p99_ms": 146.951,
+						"frames": 52.0,
+						"nodes_peak": 1087.0,
+						"orphans_peak": 0.0,
+						"seconds": 5.92410381673882,
+						"static_peak_bytes": 128811689.0,
+						"video_peak_bytes": 68117277.0
+					},
+					"result": {
+						"cpu_peak_ms": 420.617,
+						"fps": 16.46553638157,
+						"frame_p95_ms": 122.525333333333,
+						"frame_p99_ms": 138.727666666668,
+						"frames": 196.0,
+						"nodes_peak": 1107.0,
+						"orphans_peak": 0.0,
+						"seconds": 11.9036510841751,
+						"static_peak_bytes": 133194343.0,
+						"video_peak_bytes": 69074749.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 324.777,
+						"fps": 7.54929310935755,
+						"frame_p95_ms": 141.322333333334,
+						"frame_p99_ms": 141.322333333334,
+						"frames": 20.0,
+						"nodes_peak": 1087.0,
+						"orphans_peak": 0.0,
+						"seconds": 2.64925466666667,
+						"static_peak_bytes": 128819681.0,
+						"video_peak_bytes": 68117277.0
+					},
+					"saves": {
+						"cpu_peak_ms": 0.0,
+						"fps": 10.3060908997217,
+						"frame_p95_ms": 127.393333333333,
+						"frame_p99_ms": 127.393333333333,
+						"frames": 2.0,
+						"nodes_peak": 1015.0,
+						"orphans_peak": 8.0,
+						"seconds": 0.19406,
+						"static_peak_bytes": 111820264.0,
+						"video_peak_bytes": 32268379.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 574906368.0,
+					"source": "Get-Process",
+					"working_set_bytes": 561971200.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"player_stats": {
+				"abilities": 1.0,
+				"battles": 1.0,
+				"captures": 3.0,
+				"collected_g": 20.0,
+				"double_stands": 2.0,
+				"hits": 5.0,
+				"mini_g": 600.0,
+				"misses": 0.0,
+				"throws": 5.0
+			},
+			"policy": "Target enemy stands and use controlled mouse input",
+			"resumed": {
+				"battle_points": 0.0,
+				"battle_time": 0.0,
+				"camera_state": {
+					"_aim_camera": false,
+					"_aim_sphere": "(0.0, 0.5, 12.24)",
+					"_camera_focus": "(0.972655, 0.455435, 5.117467)",
+					"_camera_following": true,
+					"_follow_sphere_point": "(0.883763, 0.441, 5.443618)",
+					"_throw_heading": "(0.128329, 0.0, -0.991732)"
+				},
+				"chapter": 0.0,
+				"collected": [
+					7.0
+				],
+				"effects": {
+					"counts": [
+						0.0,
+						0.0
+					],
+					"forced_type": "",
+					"played_ids": [
+						{
+
+						},
+						{
+
+						}
+					],
+					"states": [
+						{
+							"blocked_families": [],
+							"drain": 0.0,
+							"focus": 1.0,
+							"g_bonus": 0.0,
+							"input_block": 0.0,
+							"input_multiplier": 1.0,
+							"power": 0.0,
+							"redo_used": false,
+							"shield": false
+						},
+						{
+							"blocked_families": [],
+							"drain": 0.0,
+							"focus": 1.0,
+							"g_bonus": 0.0,
+							"input_block": 0.0,
+							"input_multiplier": 1.0,
+							"power": 0.0,
+							"redo_used": false,
+							"shield": false
+						}
+					],
+					"used": [
+						false,
+						false
+					]
+				},
+				"elapsed": 0.283333333333333,
+				"enemy_progress": 0.0,
+				"hands": [
+					[
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "red",
+							"description": "Поменять текущие G местами, если стихии отличаются.",
+							"effect": {
+								"relationship": "different",
+								"type": "power_swap"
+							},
+							"id": "p0_ds_card_408",
+							"key": "ds_card_408",
+							"kind": "ability",
+							"message_index": 111.0,
+							"name": "Counter Swap",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa1846",
+								"multiplier": 10.0,
+								"native_card_table_index": 111.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_408_nce.png",
+							"playable": true,
+							"printed_rule": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+							"rules_profile": "ds",
+							"source_card_id": 408.0,
+							"source_description": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+							"source_image_sha256": "e81c5dfb4a3df3ed36db93d27676bc7147364425eb9c083a1ee93690b2b668d5",
+							"source_key": "ds_card_408",
+							"title": "Counter Swap",
+							"type": "power_swap"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "green",
+							"description": "Заблокировать у соперника карты типа swap.",
+							"effect": {
+								"family": "swap",
+								"type": "block_family"
+							},
+							"id": "p0_ds_card_502",
+							"key": "ds_card_502",
+							"kind": "ability",
+							"message_index": 137.0,
+							"name": "No Trading",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa18e2",
+								"multiplier": 10.0,
+								"native_card_table_index": 137.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_502_nce.png",
+							"playable": true,
+							"printed_rule": "Your opponent cannot use any Swap cards.",
+							"rules_profile": "ds",
+							"source_card_id": 502.0,
+							"source_description": "Your opponent cannot use any Swap cards.",
+							"source_image_sha256": "184b2e9227b86358800f6b22bca0b6df25a102c80e731e953e250872f94bfdc8",
+							"source_key": "ds_card_502",
+							"title": "No Trading",
+							"type": "block_family"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 50.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 80.0,
+								"Subterra": 0.0,
+								"Ventus": 50.0
+							},
+							"color_type": "blue",
+							"description": "Бонус G зависит от стихии вашего бакугана.",
+							"effect": {
+								"boosts": {
+									"Aquos": 50.0,
+									"Darkus": 0.0,
+									"Haos": 0.0,
+									"Pyrus": 80.0,
+									"Subterra": 0.0,
+									"Ventus": 50.0
+								},
+								"type": "attribute_power"
+							},
+							"id": "p0_ds_card_604",
+							"key": "ds_card_604",
+							"kind": "ability",
+							"message_index": 171.0,
+							"name": "Blaze",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa19ae",
+								"multiplier": 10.0,
+								"native_card_table_index": 171.0,
+								"native_g_units": [
+									8.0,
+									5.0,
+									0.0,
+									0.0,
+									0.0,
+									5.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_604_nce.png",
+							"playable": true,
+							"printed_rule": "Your Bakugan gains G-Power based on its Attribute.",
+							"rules_profile": "ds",
+							"source_card_id": 604.0,
+							"source_description": "Your Bakugan gains G-Power based on its Attribute.",
+							"source_image_sha256": "afc6ae9d3c9acca9dd7c7fb8448a9db6e0b793cec5b5b30077f2cb478f704ac9",
+							"source_key": "ds_card_604",
+							"title": "Blaze",
+							"type": "attribute_power"
+						}
+					],
+					[
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "red",
+							"description": "Darkus: поменять текущие G бакуганов местами.",
+							"effect": {
+								"own_attribute": "Darkus",
+								"type": "power_swap"
+							},
+							"id": "p1_ds_card_405",
+							"key": "ds_card_405",
+							"kind": "ability",
+							"message_index": 108.0,
+							"name": "Darkus Swap",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa1834",
+								"multiplier": 10.0,
+								"native_card_table_index": 108.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_405_nce.png",
+							"playable": true,
+							"printed_rule": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+							"rules_profile": "ds",
+							"source_card_id": 405.0,
+							"source_description": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+							"source_image_sha256": "c332694f83da9a68d58ca9d9d6cd0b622e6d80946fe8eec83f19dbfd865a2b22",
+							"source_key": "ds_card_405",
+							"title": "Darkus Swap",
+							"type": "power_swap"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 200.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "green",
+							"description": "Hydranoid получает +200 G.",
+							"effect": {
+								"bonus": 200.0,
+								"species": "Hydranoid",
+								"type": "species_bonus"
+							},
+							"id": "p1_ds_card_520",
+							"key": "ds_card_520",
+							"kind": "ability",
+							"message_index": 155.0,
+							"name": "Chaos of the Darkness",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa194e",
+								"multiplier": 10.0,
+								"native_card_table_index": 155.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_520_nce.png",
+							"playable": true,
+							"printed_rule": "Hydranoid gets +200 G-Power.",
+							"rules_profile": "ds",
+							"source_card_id": 520.0,
+							"source_description": "Hydranoid gets +200 G-Power.",
+							"source_image_sha256": "98b5fc456fc2613638e38a7a18874def18880530818065c1915bbf67d5010f1a",
+							"source_key": "ds_card_520",
+							"title": "Chaos of the Darkness",
+							"type": "species_bonus"
+						},
+						{
+							"attributes": [
+								"Haos",
+								"Darkus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 140.0,
+								"Haos": 60.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "blue",
+							"description": "Бонус G по стихии, если бой идёт на воротах соперника.",
+							"effect": {
+								"boosts": {
+									"Aquos": 0.0,
+									"Darkus": 140.0,
+									"Haos": 60.0,
+									"Pyrus": 0.0,
+									"Subterra": 0.0,
+									"Ventus": 0.0
+								},
+								"gate_relation": "opponent",
+								"type": "gate_owned_power"
+							},
+							"id": "p1_ds_card_606",
+							"key": "ds_card_606",
+							"kind": "ability",
+							"message_index": 173.0,
+							"name": "Power From Darkness",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa19ba",
+								"multiplier": 10.0,
+								"native_card_table_index": 173.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									6.0,
+									14.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_606_nce.png",
+							"playable": true,
+							"printed_rule": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+							"rules_profile": "ds",
+							"source_card_id": 606.0,
+							"source_description": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+							"source_image_sha256": "216ca474666149cc5403a14e5de43d615b63897d5f69e5d7232d55bbb440aa40",
+							"source_key": "ds_card_606",
+							"title": "Power From Darkness",
+							"type": "gate_owned_power"
+						}
+					]
+				],
+				"mini": {
+					"_angle": 0.0,
+					"_bound_move": 0.0,
+					"_burst": 0.0,
+					"_hit_ids": {
+
+					},
+					"_pointer": "(0.0, 0.0)",
+					"_spin_direction": 0.0,
+					"advantage": 0.5,
+					"blocked": 0.0,
+					"clock": 0.0,
+					"hits": 0.0,
+					"input_multiplier": 1.0,
+					"mode": "scratch",
+					"score": 0.0
+				},
+				"phase": "rolling",
+				"position": "(0.883763, 0.441, 5.443618)",
+				"rng_state": "-4136346584464952565",
+				"scores": [
+					0.0,
+					0.0
+				],
+				"special": {
+					"main": {
+						"extra_throw_owner": -1.0,
+						"field_effects": {
+							"early": false,
+							"ids": [],
+							"invulnerable": false,
+							"multiplier": 1.0,
+							"replace_unit": false,
+							"road_trip": false,
+							"surprise": false,
+							"swap_gate": false
+						},
+						"flight_special": ""
+					},
+					"sphere": {
+						"field_start_clock": 0.25,
+						"special_shot": ""
+					}
+				},
+				"state_digest": "f5a714248219a1d2dfc0bcd6493b4e3025902ef6895e9bc29f7ec7c257f589c4",
+				"velocity": "(2.575864, 0.0, -22.60476)"
+			},
+			"run_id": "1791922539025-3080",
+			"scores": [
+				3.0,
+				1.0
+			],
+			"version": "0.24.0",
+			"winner": 0.0
+		},
+		"save": {
+			"captures": [
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-preparation.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-aim.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-rolling.png",
+				"D:\\a\\RBHETWN\\RBHETWN\\reports\\matches/save-paused-mid-throw.png"
+			],
+			"checks": [
+				{
+					"label": "Paused flight checkpoint is valid",
+					"passed": true
+				},
+				{
+					"label": "Checkpoint write succeeded",
+					"passed": true
+				},
+				{
+					"label": "Next verification process starts",
+					"passed": true
+				}
+			],
+			"diagnostic_profile": "C:/Users/runneradmin/AppData/Roaming/Godot/app_userdata/Bakugan — Arena Prototype/diagnostics/0.24/profile.cfg",
+			"events": [
+				{
+					"phase": "aim",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.02
+				},
+				{
+					"phase": "flying",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.312
+				},
+				{
+					"phase": "rolling",
+					"scores": [
+						0.0,
+						0.0
+					],
+					"t": 0.556
+				}
+			],
+			"forced_landings": false,
+			"forced_winner": false,
+			"input_driven": true,
+			"metrics": {
+				"adapter": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+				"engine": {
+					"build": "official",
+					"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+					"hex": 263683.0,
+					"major": 4.0,
+					"minor": 6.0,
+					"patch": 3.0,
+					"status": "stable",
+					"string": "4.6.3-stable (official)",
+					"timestamp": 0.0
+				},
+				"frames": 6.0,
+				"marks": [
+					{
+						"at_ms": 914.046,
+						"elapsed_ms": 914.023,
+						"label": "main_ready",
+						"nodes": 1015.0,
+						"orphans": 0.0,
+						"static_memory_bytes": 109310095.0
+					}
+				],
+				"os": "Windows",
+				"phases": {
+					"aim": {
+						"cpu_peak_ms": 395.709,
+						"fps": 8.0,
+						"frame_p95_ms": 132.175333333333,
+						"frame_p99_ms": 132.175333333333,
+						"frames": 2.0,
+						"nodes_peak": 1078.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.25,
+						"static_peak_bytes": 127380461.0,
+						"video_peak_bytes": 48220857.0
+					},
+					"campaign": {
+						"cpu_peak_ms": 0.0,
+						"fps": 15.0,
+						"frame_p95_ms": 66.6666666666667,
+						"frame_p99_ms": 66.6666666666667,
+						"frames": 1.0,
+						"nodes_peak": 1021.0,
+						"orphans_peak": 8.0,
+						"seconds": 0.0666666666666667,
+						"static_peak_bytes": 111377290.0,
+						"video_peak_bytes": 32522251.0
+					},
+					"flying": {
+						"cpu_peak_ms": 395.709,
+						"fps": 13.8719984463362,
+						"frame_p95_ms": 94.1753333333333,
+						"frame_p99_ms": 94.1753333333333,
+						"frames": 2.0,
+						"nodes_peak": 1071.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.144175333333333,
+						"static_peak_bytes": 127466561.0,
+						"video_peak_bytes": 48222489.0
+					},
+					"rolling": {
+						"cpu_peak_ms": 143.542,
+						"fps": 7.18607625864126,
+						"frame_p95_ms": 139.158,
+						"frame_p99_ms": 139.158,
+						"frames": 1.0,
+						"nodes_peak": 1071.0,
+						"orphans_peak": 0.0,
+						"seconds": 0.139158,
+						"static_peak_bytes": 127493985.0,
+						"video_peak_bytes": 48222489.0
+					}
+				},
+				"physical_gamepad_tested": false,
+				"process_memory": {
+					"available": true,
+					"peak_working_set_bytes": 506507264.0,
+					"source": "Get-Process",
+					"working_set_bytes": 501088256.0
+				},
+				"renderer": "gl_compatibility",
+				"windows_execution_tested": true
+			},
+			"passed": true,
+			"policy": "Target enemy stands and use controlled mouse input",
+			"run_id": "1791922539025-3080",
+			"saved": {
+				"battle_points": 0.0,
+				"battle_time": 0.0,
+				"camera_state": {
+					"_aim_camera": false,
+					"_aim_sphere": "(0.0, 0.5, 12.24)",
+					"_camera_focus": "(0.972655, 0.455435, 5.117467)",
+					"_camera_following": true,
+					"_follow_sphere_point": "(0.883763, 0.441, 5.443618)",
+					"_throw_heading": "(0.128329, 0.0, -0.991732)"
+				},
+				"chapter": 0.0,
+				"collected": [
+					7.0
+				],
+				"effects": {
+					"counts": [
+						0.0,
+						0.0
+					],
+					"forced_type": "",
+					"played_ids": [
+						{
+
+						},
+						{
+
+						}
+					],
+					"states": [
+						{
+							"blocked_families": [],
+							"drain": 0.0,
+							"focus": 1.0,
+							"g_bonus": 0.0,
+							"input_block": 0.0,
+							"input_multiplier": 1.0,
+							"power": 0.0,
+							"redo_used": false,
+							"shield": false
+						},
+						{
+							"blocked_families": [],
+							"drain": 0.0,
+							"focus": 1.0,
+							"g_bonus": 0.0,
+							"input_block": 0.0,
+							"input_multiplier": 1.0,
+							"power": 0.0,
+							"redo_used": false,
+							"shield": false
+						}
+					],
+					"used": [
+						false,
+						false
+					]
+				},
+				"elapsed": 0.283333333333333,
+				"enemy_progress": 0.0,
+				"hands": [
+					[
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "red",
+							"description": "Поменять текущие G местами, если стихии отличаются.",
+							"effect": {
+								"relationship": "different",
+								"type": "power_swap"
+							},
+							"id": "p0_ds_card_408",
+							"key": "ds_card_408",
+							"kind": "ability",
+							"message_index": 111.0,
+							"name": "Counter Swap",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa1846",
+								"multiplier": 10.0,
+								"native_card_table_index": 111.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_408_nce.png",
+							"playable": true,
+							"printed_rule": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+							"rules_profile": "ds",
+							"source_card_id": 408.0,
+							"source_description": "If you and your opponent's Bakugan have different Attributes, the Bakugan have their G-Power swapped.",
+							"source_image_sha256": "e81c5dfb4a3df3ed36db93d27676bc7147364425eb9c083a1ee93690b2b668d5",
+							"source_key": "ds_card_408",
+							"title": "Counter Swap",
+							"type": "power_swap"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "green",
+							"description": "Заблокировать у соперника карты типа swap.",
+							"effect": {
+								"family": "swap",
+								"type": "block_family"
+							},
+							"id": "p0_ds_card_502",
+							"key": "ds_card_502",
+							"kind": "ability",
+							"message_index": 137.0,
+							"name": "No Trading",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa18e2",
+								"multiplier": 10.0,
+								"native_card_table_index": 137.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_502_nce.png",
+							"playable": true,
+							"printed_rule": "Your opponent cannot use any Swap cards.",
+							"rules_profile": "ds",
+							"source_card_id": 502.0,
+							"source_description": "Your opponent cannot use any Swap cards.",
+							"source_image_sha256": "184b2e9227b86358800f6b22bca0b6df25a102c80e731e953e250872f94bfdc8",
+							"source_key": "ds_card_502",
+							"title": "No Trading",
+							"type": "block_family"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 50.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 80.0,
+								"Subterra": 0.0,
+								"Ventus": 50.0
+							},
+							"color_type": "blue",
+							"description": "Бонус G зависит от стихии вашего бакугана.",
+							"effect": {
+								"boosts": {
+									"Aquos": 50.0,
+									"Darkus": 0.0,
+									"Haos": 0.0,
+									"Pyrus": 80.0,
+									"Subterra": 0.0,
+									"Ventus": 50.0
+								},
+								"type": "attribute_power"
+							},
+							"id": "p0_ds_card_604",
+							"key": "ds_card_604",
+							"kind": "ability",
+							"message_index": 171.0,
+							"name": "Blaze",
+							"owner": 0.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa19ae",
+								"multiplier": 10.0,
+								"native_card_table_index": 171.0,
+								"native_g_units": [
+									8.0,
+									5.0,
+									0.0,
+									0.0,
+									0.0,
+									5.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_604_nce.png",
+							"playable": true,
+							"printed_rule": "Your Bakugan gains G-Power based on its Attribute.",
+							"rules_profile": "ds",
+							"source_card_id": 604.0,
+							"source_description": "Your Bakugan gains G-Power based on its Attribute.",
+							"source_image_sha256": "afc6ae9d3c9acca9dd7c7fb8448a9db6e0b793cec5b5b30077f2cb478f704ac9",
+							"source_key": "ds_card_604",
+							"title": "Blaze",
+							"type": "attribute_power"
+						}
+					],
+					[
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "red",
+							"description": "Darkus: поменять текущие G бакуганов местами.",
+							"effect": {
+								"own_attribute": "Darkus",
+								"type": "power_swap"
+							},
+							"id": "p1_ds_card_405",
+							"key": "ds_card_405",
+							"kind": "ability",
+							"message_index": 108.0,
+							"name": "Darkus Swap",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa1834",
+								"multiplier": 10.0,
+								"native_card_table_index": 108.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_405_nce.png",
+							"playable": true,
+							"printed_rule": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+							"rules_profile": "ds",
+							"source_card_id": 405.0,
+							"source_description": "If your Bakugan is Darkus, the Bakugan have their G-Power swapped.",
+							"source_image_sha256": "c332694f83da9a68d58ca9d9d6cd0b622e6d80946fe8eec83f19dbfd865a2b22",
+							"source_key": "ds_card_405",
+							"title": "Darkus Swap",
+							"type": "power_swap"
+						},
+						{
+							"attributes": [
+								"Pyrus",
+								"Aquos",
+								"Subterra",
+								"Haos",
+								"Darkus",
+								"Ventus"
+							],
+							"bonus": 200.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 0.0,
+								"Haos": 0.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "green",
+							"description": "Hydranoid получает +200 G.",
+							"effect": {
+								"bonus": 200.0,
+								"species": "Hydranoid",
+								"type": "species_bonus"
+							},
+							"id": "p1_ds_card_520",
+							"key": "ds_card_520",
+							"kind": "ability",
+							"message_index": 155.0,
+							"name": "Chaos of the Darkness",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa194e",
+								"multiplier": 10.0,
+								"native_card_table_index": 155.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_520_nce.png",
+							"playable": true,
+							"printed_rule": "Hydranoid gets +200 G-Power.",
+							"rules_profile": "ds",
+							"source_card_id": 520.0,
+							"source_description": "Hydranoid gets +200 G-Power.",
+							"source_image_sha256": "98b5fc456fc2613638e38a7a18874def18880530818065c1915bbf67d5010f1a",
+							"source_key": "ds_card_520",
+							"title": "Chaos of the Darkness",
+							"type": "species_bonus"
+						},
+						{
+							"attributes": [
+								"Haos",
+								"Darkus"
+							],
+							"bonus": 0.0,
+							"boosts": {
+								"Aquos": 0.0,
+								"Darkus": 140.0,
+								"Haos": 60.0,
+								"Pyrus": 0.0,
+								"Subterra": 0.0,
+								"Ventus": 0.0
+							},
+							"color_type": "blue",
+							"description": "Бонус G по стихии, если бой идёт на воротах соперника.",
+							"effect": {
+								"boosts": {
+									"Aquos": 0.0,
+									"Darkus": 140.0,
+									"Haos": 60.0,
+									"Pyrus": 0.0,
+									"Subterra": 0.0,
+									"Ventus": 0.0
+								},
+								"gate_relation": "opponent",
+								"type": "gate_owned_power"
+							},
+							"id": "p1_ds_card_606",
+							"key": "ds_card_606",
+							"kind": "ability",
+							"message_index": 173.0,
+							"name": "Power From Darkness",
+							"owner": 1.0,
+							"parameter_source": {
+								"decompressed_arm9_offset": "0xa19ba",
+								"multiplier": 10.0,
+								"native_card_table_index": 173.0,
+								"native_g_units": [
+									0.0,
+									0.0,
+									0.0,
+									6.0,
+									14.0,
+									0.0
+								]
+							},
+							"path": "res://assets/ds/ui/Game_Card_Graphic_Large_card_l_606_nce.png",
+							"playable": true,
+							"printed_rule": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+							"rules_profile": "ds",
+							"source_card_id": 606.0,
+							"source_description": "If playing on one of your opponent's Gate Cards, your Bakugan gains G-Power based on its attribute.",
+							"source_image_sha256": "216ca474666149cc5403a14e5de43d615b63897d5f69e5d7232d55bbb440aa40",
+							"source_key": "ds_card_606",
+							"title": "Power From Darkness",
+							"type": "gate_owned_power"
+						}
+					]
+				],
+				"mini": {
+					"_angle": 0.0,
+					"_bound_move": 0.0,
+					"_burst": 0.0,
+					"_hit_ids": {
+
+					},
+					"_pointer": "(0.0, 0.0)",
+					"_spin_direction": 0.0,
+					"advantage": 0.5,
+					"blocked": 0.0,
+					"clock": 0.0,
+					"hits": 0.0,
+					"input_multiplier": 1.0,
+					"mode": "scratch",
+					"score": 0.0
+				},
+				"phase": "rolling",
+				"position": "(0.883763, 0.441, 5.443618)",
+				"rng_state": "-4136346584464952565",
+				"scores": [
+					0.0,
+					0.0
+				],
+				"special": {
+					"main": {
+						"extra_throw_owner": -1.0,
+						"field_effects": {
+							"early": false,
+							"ids": [],
+							"invulnerable": false,
+							"multiplier": 1.0,
+							"replace_unit": false,
+							"road_trip": false,
+							"surprise": false,
+							"swap_gate": false
+						},
+						"flight_special": ""
+					},
+					"sphere": {
+						"field_start_clock": 0.25,
+						"special_shot": ""
+					}
+				},
+				"state_digest": "f5a714248219a1d2dfc0bcd6493b4e3025902ef6895e9bc29f7ec7c257f589c4",
+				"velocity": "(2.575864, 0.0, -22.60476)"
+			},
+			"version": "0.24.0"
+		}
+	},
+	"version": "0.24.0",
+	"victory_and_defeat_tested": true,
+	"windows_execution_tested": true
+}
