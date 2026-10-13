@@ -9,7 +9,7 @@ jobs:
       zip_sha256: ${{ steps.build.outputs.zip_sha256 }}
     env:
       GH_TOKEN: ${{ github.token }}
-      PCK_SHA256: 88daa491e8ccfcbb235115abcb25dd6e4857e310719f475c116712c9af80585f
+      PCK_SHA256: 87f2845c49d3ef8940816d5a1343208a433c5f9bf378136a1eb5a5ae057fb0bb
     steps:
     - uses: actions/checkout@v4
     - name: Download the pinned prior release as assembly input
@@ -78,7 +78,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       ANGLE_DEFAULT_PLATFORM: warp
       ZIP_SHA256: ${{ needs.assemble.outputs.zip_sha256 }}
-      PCK_SHA256: 88daa491e8ccfcbb235115abcb25dd6e4857e310719f475c116712c9af80585f
+      PCK_SHA256: 87f2845c49d3ef8940816d5a1343208a433c5f9bf378136a1eb5a5ae057fb0bb
     steps:
     - uses: actions/checkout@v4
     - name: Download and verify the complete standalone release
@@ -102,7 +102,7 @@ jobs:
       run: |
         $ErrorActionPreference='Stop'
         $exe=Join-Path $env:GAME_DIR 'BakuganPrototype-Windows.exe'
-        foreach ($test in @(@{script='qa/probe_ds_package.gd';report='resources.json';checks=13293},@{script='qa/test_release22.gd';report='regressions.json';checks=69},@{script='qa/test_release23.gd';report='slots.json';checks=37},@{script='qa/test_release24.gd';report='fields.json';checks=82},@{script='qa/audit_minigame23.gd';report='balance.json';checks=542})) {
+        foreach ($test in @(@{script='qa/probe_ds_package.gd';report='resources.json';checks=13293},@{script='qa/test_release22.gd';report='regressions.json';checks=69},@{script='qa/test_release23.gd';report='slots.json';checks=37},@{script='qa/test_release24.gd';report='fields.json';checks=83},@{script='qa/audit_minigame23.gd';report='balance.json';checks=542})) {
           $script=Join-Path $PWD $test.script; $report=Join-Path (Join-Path $PWD 'reports') $test.report
           $p=Start-Process $exe -ArgumentList @('--headless','--audio-driver','Dummy','--script',$script,'--log-file',($report+'.log'),'--',"--report=$report") -WorkingDirectory $env:GAME_DIR -PassThru
           if (-not $p.WaitForExit(240000)) { $p.Kill(); throw "Test timeout: $script" }

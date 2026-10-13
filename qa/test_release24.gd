@@ -57,6 +57,8 @@ func run() -> void:
 	game.rules.turn_action_taken=false; game.rules.turn=1
 	var attack: Dictionary=game.rules.apply_sphere_attack(1,20,10000)
 	check(attack.event=="sphere_attack" and attack.remaining_g==1,"Invulnerable prevents Critical K.O. without negating all damage")
+	game.rules.gates[20].bakugan[0].field_damage=10000; attack=game.rules.apply_sphere_attack(1,20,10000)
+	check(attack.event=="sphere_attack" and game.rules.gates.has(20),"Invulnerable also prevents Critical K.O. when earlier hazards left zero G")
 	fixture(); game._activate_field_card(709); game.rules.land(0,0,20,120,0,game.field_effects)
 	check(game.rules.gates[20].bakugan[0].roll_bonus==240,"All For One doubles pickups above the ordinary 120 cap")
 	game.roll_bonus=120; check(game._effective_pickup_g()==240,"Flight indicator/statistic uses the same doubled G as landing")

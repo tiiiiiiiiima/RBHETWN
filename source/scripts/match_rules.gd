@@ -436,7 +436,7 @@ func apply_sphere_attack(owner: int, slot: int, damage: int) -> Dictionary:
 	}
 	# Surviving Sphere damage alone does not cancel Stay. The documented
 	# cancellation conditions are a subsequent battle or Critical K.O.
-	if remaining == 0:
+	if remaining == 0 and not bool(unit.get("knockoff_protected",false)):
 		_capture_gate(slot, owner)
 		result["event"] = "critical_ko"
 		result["winner"] = winner
