@@ -102,7 +102,7 @@ jobs:
       run: |
         $ErrorActionPreference='Stop'
         $exe=Join-Path $env:GAME_DIR 'BakuganPrototype-Windows.exe'
-        foreach ($test in @(@{script='qa/probe_ds_package.gd';report='resources.json';checks=13293},@{script='qa/test_release22.gd';report='regressions.json';checks=69},@{script='qa/test_release23.gd';report='slots.json';checks=37},@{script='qa/test_release24.gd';report='fields.json';checks=80},@{script='qa/audit_minigame23.gd';report='balance.json';checks=542})) {
+        foreach ($test in @(@{script='qa/probe_ds_package.gd';report='resources.json';checks=13293},@{script='qa/test_release22.gd';report='regressions.json';checks=69},@{script='qa/test_release23.gd';report='slots.json';checks=37},@{script='qa/test_release24.gd';report='fields.json';checks=82},@{script='qa/audit_minigame23.gd';report='balance.json';checks=542})) {
           $script=Join-Path $PWD $test.script; $report=Join-Path (Join-Path $PWD 'reports') $test.report
           $p=Start-Process $exe -ArgumentList @('--headless','--audio-driver','Dummy','--script',$script,'--log-file',($report+'.log'),'--',"--report=$report") -WorkingDirectory $env:GAME_DIR -PassThru
           if (-not $p.WaitForExit(240000)) { $p.Kill(); throw "Test timeout: $script" }

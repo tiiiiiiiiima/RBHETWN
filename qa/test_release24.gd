@@ -70,12 +70,15 @@ func run() -> void:
 	fixture(); game.flight_special="Subterra"; check(game._special_landing(19) and game.rules.gates[19].bakugan.is_empty() and game.rules.scores==[0,0],"Quake removes occupants without capturing gates")
 	fixture(); game.flight_special="Haos"; check(game._special_landing(19) and game.rules.gates[19].bakugan.is_empty(),"Haos contact empties the field")
 	fixture(); game.flight_special="Darkus"; check(not game._special_landing(19) and game.field_effects.invulnerable and game.field_effects.removal_protected,"Darkus passes without Sphere Attack and retains standing protection")
-	game.match_id+=1; game.phase="aim"; game.flight_special="Aquos"; game.ds_sphere.special_shot="Aquos"
-	game.field_effects=Cards.initial(); game.field_effects.multiplier=2; game.extra_throw_owner=0
+	game.match_id+=1; fixture(); game.rules.teams[0][0].attribute="Aquos"; game.s_power[0]=100; game.powered_throw=true
+	game._launch_ball(0,0,game.arena.slot_position(19)); game._update_ds_sphere(0.08)
+	game.field_effects.multiplier=2; game.extra_throw_owner=0
 	var saved: Dictionary=Store.capture(game); check(Store.valid(saved),"Shot and field-card checkpoint validates")
 	check(Store.write(saved)==OK and Store.read().special==saved.special,"New mechanics round-trip through disk without losing typed state")
 	game.saved_match=saved; game._resume_match(); game.set_process(false)
 	check(game.flight_special=="Aquos" and game.ds_sphere.special_shot=="Aquos" and game.field_effects.multiplier==2 and game.extra_throw_owner==0,"Main controller restores active shot, field effects and extra throw")
+	check(game.ds_sphere.position==saved.sphere.position and game.ds_sphere.velocity==saved.sphere.velocity,"Active special flight restores exact position and velocity")
+	check(is_instance_valid(game.flight_ball) and game.flight_ball.get_node_or_null("SpecialAura")!=null,"Resumed special sphere restores its visual aura")
 	fixture(); var ghost_from: Vector3=game.arena.slot_position(19)+Vector3(0,0.44,1); var ghost_to: Vector3=game.arena.slot_position(19)+Vector3(0,0.44,-1)
 	check(game._ds_shot_gate_contact(ghost_from,ghost_to,"Darkus",8,0,0)==-1,"Moving Darkus passes the opponent instead of colliding")
 	check(game._ds_shot_gate_contact(ghost_from,ghost_to,"Pyrus",8,0,0)==19,"Other shots still contact the same occupied gate")
